@@ -54,57 +54,6 @@
 			
 			
 			
-			        para la parte front se podria usar frameworks como angular o react los cuales son bastante potentes y dan mucha posibilidad
-        gracias a liberias que tienen para hacer cosas visuales que queden vistosas. El problema de estas opciones que para dominarlas
-        hay que hacer algun curso que te permita tener conocimientos, y para la gente que no tiene tiempo o ganas, esta la opcion
-        de hacer con lo mas basico que seria una combinacion de HTML + CSS + JavaScript. De esta forma funcionalmente quedara bien
-        pero lo que es tema visual pues hay que hacer mucho mas esfuerzo y requiere de mas tiempo que si se usa alguno de los frameworks
-        mencionados anteriormente.
+		   
 		
-		        Para la parte del back deberia de utilizarse un lenguaje interpretado, esto nos va a permitir que para ejecutar nuestro programa
-        no tenga que compilarse cada vez que queramos porbarlo, por ello nos ahorrara mucho tiempo a la hora de ir probando y viendo como
-        queda nuestra aplicacion. Uno de los mas potentes para web es PHP, el cual tiene a su vez frameworks que facilitan la vida al 
-        programador
-		
-		 En cuanto a la base de datos, se utiliza una de tipo relacional ya que se necesita guardar relacion de
-            que esta estudiando cada usuario, ademas de toda su configuracion personalizada. A parte la relacion y
-            traduccion que puede haber entre palabras.
-
-            Y por ultimo la aplicación al tener bastante carga de usuario estara alojada en un servidor tanto local,en la nube o hibrido
-            al igual que la base de datos. Si la aplicacion contiene muchos datos sensibles lo mas recomendable es tener la base de datos
-            en un almacenamiento local asi los datos estaran en tu propiedad y se dejan que los tenga un tercero.
-			
-			
-			       Para la base de datos se explicara primero todas las entidades para entender de que trata cada una
-           y despues las diferentes relaciones de la que consta
-
-            Rol: En esta entidad se van a definir los diferentes roles que pueden tener los usuarios, demomento solo habra un par de roles.
-            El administrador, el cual, es el que va a gestionar las palabras que se suben para estudiar y modificar alguna configuracion
-            de los estudiantes.
-            El otro rol sera el del estudiante, el cual, podra gestionar su propia configuración y estudiar.
-
-            Usuario:Son todas aquellas personas que estan registradas en la plataforma, y por lo tanto pueden acceder a ella.
-
-            Configuracion: Es el registro de que esta estudiando cada usuario.
-            Recurso: Son todas las plabras,frase,sonidos que se le mostraran a el usuario para su aprendizaje en diferentes idiomas.
-            Dificultad: El nivel de exigencia que tiene el usuario a la hora de aprender.
-            Idioma: Los idiomas disponibles para estudiar en la aplicacion.
-            Familia recurso:Son todas las agrupaciones de palabras que hay en la plataforma.
-            Vocabulario: Son todas las pablabras disponibles en el sistema.
-
-            Rol es Usuario: Cada usuario va a tener un rol asignado y dependiendo de el podra hacer unas cosas u otras.
-            Usuario tiene Configuracion: Los usuarios de la plataforma podran aprender varios idiomas, por lo que podran tener varias
-            configuraciones, y ya dentro de la plataforma podran elegir con cual quieren continuar.
-            Usuario estudia Recurso: Al ser una plataforma de aprendizaje, tendremos un registro de que usuario ha estudiado que recurso.
-            Configuracion presenta Dificultad: Cada configuracion tendra una dificultad asociada, eligiendo el usuario cual quiere.
-            Configuracion hay Idioma:Como se ha comentado anteriormente las configuraciones nos determinan que idioma estamos estudiando.
-            Dificultad compuesta Recurso:Cada dificultad tendra unos recursos asociados, no sera lo mismo lo que se estudiara en un nivel
-            basico que un nivel avanzado.
-            Recurso traduce Vocabulario: Como hemos descrito en la entidad vocabulario,esta estara compuesta por todas las palabras del sistema
-            y en recurso tendremos todas las traducciones de esta palabra. Por ejemplo, si en vocabulario tenemos la palabra coche, en recurso
-            tendremos coche,car por lo que esta relacion nos dice cuales son las traducciones de la palabra en vocabulario.
-            Recurso pertenece Idioma:Cada recurso estara en un idioma diferente, por lo que tendremos que saber a cual pertenece
-            Vocabulario afinidad Familia recursos:Para que la expereriencia del usuario sea mejor, vamos a agrupar las palabras de nuestro
-            vocabulario. Por ejemplo en familia recursos tendremos guardado Transportes y de nuestro vocabulario todas las palabras que tengan 
-            que ver con transporter estaran asociadas a esta familia, asi cuando a el estudiante le salga para traducir coche, le saldran
-            opciones parecidas a coche y no algo aleatorio como cafe,ducha,manzana.
+	
