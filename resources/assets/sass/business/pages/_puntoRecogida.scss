@@ -1,0 +1,413 @@
+.domicilio-map {
+  min-height: 302px;
+}
+
+.check-item {
+  padding: 16px 40px;
+  border: 1px solid $light-grey-2;
+  position: relative;
+  margin-bottom: 10px;
+
+  & i {
+    @extend %help-icon;
+    position: absolute;
+    left: 16px;
+    top: 14px;
+  }
+
+  & label {
+    margin: 0;
+    padding-left: 15px;
+    font-size: 1.15em;
+    font-weight: bold;
+    cursor: pointer;
+
+    &.material-checkbox-container {
+      top: 15px !important;
+      right: 3px !important;
+    }
+  }
+
+  & .radio-container {
+    float: right;
+
+    & > label {
+      position: absolute;
+      top: 15px;
+    }
+  }
+}
+
+/** Stores search **/
+.stores-search-container {
+
+  & .stores-list {
+    min-height: 570px;
+    max-height: 570px;
+    overflow-y: auto;
+
+    & > .punto-list-item {
+      background: #ffffff;
+    }
+  }
+}
+
+.map-search-bar {
+  background-color: $transporter-secondary;
+  padding: 10px 20px;
+  display: flex;
+
+  & > span {
+    margin: 0 7px;
+    text-align: center;
+  }
+
+  & > .location {
+    flex: 0;
+
+    & > .btn-location {
+      border: solid 1px #dddddd;
+      background-color: #ffffff;
+
+      &:hover {
+        //background-color: #c3c3c3;
+        background: #eae7e7;
+        border-color: #a2a2a2;
+      }
+
+      &:active {
+        background-color: #9e9d9d;
+        border-color: #807e7e;
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125)
+      }
+
+      & > i {
+        top: 13px;
+        left: 12px;
+      }
+    }
+  }
+
+  & > .input {
+    flex: 5;
+    display: flex;
+  }
+
+  & .search-input {
+    border-radius: 0;
+    width: 100%;
+    height: 90%;
+    margin: auto;
+    border: 0;
+    font-size: 1.3em;
+    padding:10px 45px 10px 10px;
+
+    & + .fa-question-circle {
+      position: absolute;
+      right: 116px;
+      top: 22px;
+      font-size: 2em;
+      color: $light-grey-2;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  & .btn-buscar {
+    width: 70px;
+    height: 90%;
+    margin: auto;
+
+    & > i.fa-search {
+      font-size: 2em;
+    }
+  }
+
+}
+
+.stores-list {
+
+  & .punto-list-item.store-active::before {
+    border-left: 6px solid $transporter-primary;
+    top: 0;
+    left: 0;
+    height: 100%;
+    position: absolute;
+    content: '';
+  }
+
+  & .punto-datos .fa-map {
+    font-size: 0.84em;
+  }
+}
+
+.table-horario-popover {
+  margin: 0;
+
+  & .day {
+    text-align: left !important;
+    font-weight: bold;
+  }
+}
+
+.ver-mas-link {
+  cursor: pointer;
+}
+
+.popover-content .table-horario-popover tr td {
+  background: #ffffff;
+}
+
+.popover-content  .table-horario-popover, .popover-content .table-horario-popover tr td {
+  border: none !important;
+}
+
+.punto-list-item {
+  border-bottom: 1px solid lightgrey;
+  outline: 0;
+
+  &:focus {
+    outline: 0;
+  }
+
+  & #seleccionar-store-btn {
+    padding-top: 8px;
+    display: none;
+  }
+
+  &.store-active #seleccionar-store-btn {
+    display: block;
+  }
+}
+
+.stores-search-map {
+  width: 100%;
+  height: 502px;
+}
+
+.direccion-label {
+  font-weight: normal;
+}
+
+.mCustomScrollbar div {
+  outline: 0;
+}
+
+.sin-stores {
+  @extend %sin-datos;
+}
+
+#modal-stores-search .close-mobile-btn {
+  display: none;
+}
+
+#modal-stores-search > .modal-dialog {
+  min-width: 992px;
+  max-width: 1177px;
+}
+
+#mapa-store-seleccionado {
+  height: 251px;
+}
+
+#store-seleccionado-container {
+
+  & .store-image {
+    max-width: 100%;
+    padding-bottom: 20px;
+  }
+
+  & .table-horarios td {
+    color: $transporter-secondary;
+  }
+
+}
+
+.recogida-periodica {
+  border: 1px solid #cfd8dc;
+  padding: 36px 0;
+}
+
+#direccion-input-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: $transporter-primary;
+}
+
+@media (max-width: 768px) {
+  #store-seleccionado-container, #domicilio-seleccionado-container {
+    padding: 15px 10px;
+  }
+
+  // Stores search
+  #modal-stores-search {
+    padding-left: 0;
+    position: fixed;
+
+    & .btn-location {
+      position: absolute;
+      top: 65px;
+      z-index: 1;
+      left: 11px;
+      box-shadow: none;
+      border: 0;
+
+      & > i {
+        top: 11px !important;
+        left: 11px !important;
+      }
+
+    }
+
+    & .close-mobile-btn {
+      display: block;
+      font-size: 33px;
+      padding-top: 6px;
+      color: white;
+      position: relative;
+      left: -5px;
+    }
+
+    & > .modal-dialog {
+      margin: auto;
+    }
+
+    & > .modal-dialog, & .modal-content {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      min-width: unset;
+      min-height: unset;
+    }
+
+    & .modal-body {
+      height: 100%;
+      padding: 0;
+      overflow: auto;
+    }
+
+    & .stores-search-container {
+      height: 100%;
+
+      & .map-search-bar {
+        height: 54px;
+        padding: 5px 20px;
+
+        & > span {
+          margin: 0;
+        }
+
+        & .btn-location {
+          padding: 10px 15px;
+          width: 42px;
+          height: 41px;
+
+          & > i {
+            font-size: 20px;
+            top: 10px;
+            left: 10px;
+          }
+        }
+
+        & .input {
+          padding: 1px 10px !important;
+
+          & > i {
+            right: 100px;
+            top: 14px;
+          }
+        }
+
+        & .btn-buscar > i.fa-search {
+          font-size: 1.8em;
+        }
+      }
+
+      & > div {
+        padding: 0;
+        width: 100%;
+        position: relative;
+
+        &:first-child {
+          height: calc(100% - 300px);
+          min-height: 268px;
+        }
+
+        &:last-child {
+          height: 300px;
+        }
+      }
+    }
+
+    & .stores-search-map {
+      overflow: hidden;
+      height: calc(100% - 54px);
+      position: relative;
+      min-height: unset;
+    }
+
+    & .stores-container {
+      height: 100%;
+
+      & > .stores-list {
+        max-height: unset !important;
+
+        & > .punto-list-item {
+          text-align: center;
+
+          & > img {
+            max-height: 119px;
+            width: auto;
+            float: none;
+          }
+
+          & > .punto-datos {
+            text-align: left;
+            padding: 5px 15px !important;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .ver-mas-link, .horario-hoy {
+    white-space: nowrap;
+  }
+
+  .seleccionar-store-btn {
+    margin-top: 10px;
+  }
+
+
+  .stores-search-container {
+    padding: 0;
+  }
+
+  .stores-list {
+    display: flex;
+    flex-direction: row;
+    min-height: 255px !important;
+    max-height: 255px !important;
+  }
+
+  .stores-list > .punto-list-item:hover {
+    border-left: none;
+  }
+
+  .punto-list-item {
+    min-width: 277px;
+    border-bottom: none;
+  }
+
+  .store-active::before {
+    border-top: 6px solid #0097a7 !important;
+    border-left: none !important;
+    width: 100%;
+  }
+}

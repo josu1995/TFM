@@ -1,0 +1,492 @@
+.icon-car-naranja {
+  transform: translateY(-7px);
+  margin-right: 8px;
+  margin-left: 5px;
+}
+
+.bloque-paquetes {
+
+  & h4 {
+    margin: 0;
+    display: block;
+    padding: 15px 25px;
+  }
+}
+
+.lista-paquetes--modal {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  background: $white;
+  display: none;
+}
+
+.lista-paquetes--modal .lista-paquetes {
+  max-height: 100% !important;
+  padding-top: 35px;
+}
+
+.lista-paquetes--modal .lista-paquetes--cerrar, .lista-envios-modal .lista-paquetes--cerrar {
+  padding: 10px;
+  background: #505050;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: 99;
+}
+
+.lista-paquetes--modal .lista-paquetes--cerrar .cerrar-popup, .lista-envios-modal .lista-paquetes--cerrar .cerrar-popup {
+  float: right;
+}
+
+.lista-paquetes {
+  height: auto;
+}
+
+.lista-paquetes ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  overflow-y: hidden;
+}
+
+.precio-paquete {
+  padding: 15px 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 140px;
+}
+
+.pagar-mas-tarde {
+  position: absolute;
+  top: 15px;
+  left: 60px;
+}
+
+.pagar-mas-tarde button {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: $blue;
+  color: $white;
+  font-size: 1.5rem;
+  border: none;
+
+  &:hover {
+    background-color: $blue-hover;
+    color: $white;
+  }
+}
+
+.precio-paquete p {
+  color: $white;
+  text-align: center;
+  margin: 0 !important;
+  line-height: 2em;
+  margin-top: 10px;
+  position: absolute;
+  display: block;
+  width: 100%;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  & span {
+    font-size: 2em;
+    display: block;
+  }
+}
+
+.lista-paquetes ul li.resumen-paquete {
+  padding: 10px;
+  height: 34%;
+  border-bottom: 1px solid $white;
+  position: relative;
+  background-color: $white;
+  line-height: 1.8em;
+  overflow: hidden;
+
+  & .icono-paquete {
+    float: left;
+    position: relative;
+
+    & span {
+      font-size: 5em;
+      text-align: center;
+      line-height: 1.3em;
+    }
+  }
+
+  & .datos-paquete {
+    padding: 0 120px 0 95px;
+
+    & .direccion-paquete {
+      font-size: 1em;
+    }
+
+    & .datos-dos {
+      overflow: hidden;
+
+      & p {
+        float: left;
+        margin-right: 20px;
+        font-size: 13px;
+      }
+    }
+
+    & .contenido-paquete {
+      font-size: 13px;
+    }
+  }
+
+  & .datos-paquete-viaje {
+    padding: 0;
+  }
+}
+
+.lista-paquetes {
+  & .delete {
+    margin-top: -5px;
+
+    & label {
+      font-size: 85%;
+      color: $destino-red;
+      &:before {
+        height: 15px;
+        width: 15px;
+      }
+    }
+  }
+  & p {
+    margin-bottom: 5px;
+  }
+}
+
+.lista-pago ul {
+  overflow: visible;
+}
+
+.lista-pago ul li.resumen-paquete {
+  overflow: visible !important;
+}
+
+.lista-pago > ul li.resumen-paquete {
+  border: 1px solid $white;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.lista-pago > ul li.resumen-paquete:before {
+  content: "";
+  position: absolute;
+  border-top: 7px solid rgba(0, 0, 0, 0.07);
+  border-right: 335px solid transparent;
+  top: 100%;
+  left: 7px;
+}
+
+.lista-pago > ul li.resumen-paquete:after {
+  content: "";
+  position: absolute;
+  border-top: 7px solid rgba(0, 0, 0, 0.07);
+  border-left: 335px solid transparent;
+  top: 100%;
+  right: 7px;
+}
+
+.lista-pago .datos-paquete ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.lista-pago .datos-paquete ul li {
+  display: inline-block;
+}
+
+.metodo_cobro_select[value="2"] + h2 + div .tarjeta, .metodo_cobro_select[value="1"] + h2 + div + div .paypal {
+  box-shadow: 0 0 0 2px $transporter-primary;
+  border: none;
+}
+
+.metodo_cobro_select[value="3"] + h2 + div div .transferencia, .metodo_cobro_select[value="1"] + h2 + div div + div .paypal {
+  box-shadow: 0 0 0 2px $transporter-primary;
+  border: none;
+}
+
+.m-metodo-cobro .paypal {
+  background: url("/img/iconos-pagos/paypal.svg");
+  margin-bottom: 1em;
+}
+
+.m-metodo-cobro .tarjeta {
+  background: url("/img/drivers/tarjetas.png");
+}
+
+.m-metodo-cobro .transferencia {
+  background: url("/img/drivers/transferencia.svg");
+  background-size: 70% !important;
+  margin-bottom: 1em;
+}
+
+.metodo_cobro_select[value="2"] + h2 + div .g-cobro, .metodo_cobro_select[value="3"] + h2 + div div .transferencia + .g-cobro, .metodo_cobro_select[value="1"] + h2 + div div + div .paypal + .g-cobro {
+  margin-bottom:10px;
+  display: block;
+}
+
+.g-cobro {
+  display: none;
+  padding: 20px 10px;
+}
+
+.g-cobro-transfer input[value="nuevo"] {
+  position: relative;
+  top: 10px;
+}
+
+.g-cobro-paypal input[value="nuevo"] {
+  position: relative;
+  top: 10px;
+}
+
+.bloque-total {
+
+  & > p span {
+    font-size: 0.4em;
+  }
+
+  & .precio-paquete p {
+    line-height: 4em;
+  }
+}
+
+.spinner {
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.5);
+}
+
+#floatingBarsG{
+  display: flex;
+  height: 100% !important;
+}
+
+.opinionesSpinner {
+  font-size:7em;margin: auto;color: $transporter-primary;
+}
+
+.show-paquetes-viaje-button {
+  background-color: #9be56b;
+}
+
+div.show-paquetes-viaje-button:hover {
+  cursor: pointer;
+  background-color: #4e9c1b;
+}
+
+.show-paquetes-viaje-button p {
+  font-weight:bold;
+  color: #333;
+}
+
+.show-paquetes-viaje-button:hover p {
+  font-weight:bold;
+  color: #fff;
+}
+
+.show-paquetes-viaje-button:hover p i {
+  font-weight:bold;
+  color: #fff;
+  animation: animacionMarca 0.6s infinite ease-in;
+  -webkit-animation: animacionMarca 0.6s infinite ease-in;
+  -moz-animation: animacionMarca 0.6s infinite ease-in;
+  -ms-animation: animacionMarca 0.6s infinite ease-in;
+}
+
+.msg--fianza {
+  display: block;
+  padding: 20px 20px;
+  border-radius: 3px;
+  color: $white;
+  font-weight: bold;
+  background: #15c5f8;
+  text-align: center;
+}
+
+.paquetes-scroll {
+  display:block;
+  overflow: auto;
+}
+
+.busquedaHead {
+  background-color: $transporter-primary;
+  display: table;
+  padding: 30px;
+  width: 100%;
+  color: #fff;
+  height:80px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.busquedaHead > p {
+  display: table-cell;
+}
+
+.punto-list-item {
+  border-bottom: 1px solid lightgrey;
+}
+
+.add-punto {
+  cursor: pointer;
+  width: 50px;
+  padding: 0 !important;
+  margin-top: 15px;
+}
+
+.direccion-label {
+  font-weight: normal;
+}
+
+.check-punto {
+  margin-top: 15px;
+}
+
+.punto-icon i {
+  position: relative;
+  -webkit-transition: font-size 0.6s;
+  -moz-transition: font-size 0.6s;
+  -ms-transition: font-size 0.6s;
+  -o-transition: font-size 0.6s;
+  transition: font-size 0.6s;
+}
+
+.punto-list-item.unselected:hover .punto-icon i {
+  font-size: 2.5em;
+}
+
+
+.continuarContainer {
+  display: none;
+}
+
+.busquedaTabs {
+  background-color: $transporter-primary;
+  color: #fff;
+  height:80px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/** MATERIAL TABS **/
+
+.material-tabs { border-bottom: none; height: 100%; }
+.material-tabs > li { width: 50%; height: 100%; display: table; }
+.material-tabs > li > a { height: 100%; display: table-cell; vertical-align: middle; }
+.material-tabs > li > a:focus { background-color: $transporter-primary !important; outline: none; }
+.material-tabs > li.active > a, .material-tabs > li.active > a:focus, .material-tabs > li.active > a:hover { border-width: 0; }
+.material-tabs > li > a { border: none; color: #1f2229; }
+.material-tabs > li.active > a, .material-tabs > li > a:hover { border: none; color: #fff !important;  background-color: $transporter-primary !important; }
+.material-tabs > li > a::after { content: ""; background: #1f2229; height: 2px; position: absolute; width: 100%; left: 0; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); z-index: 1; }
+.material-tabs > li.active > a::after, .material-tabs > li:hover > a::after { transform: scale(1); }
+
+/** MATERIAL TABS **/
+
+.new-form-seleccion, .new-form-seleccion > .paquetes-scroll {
+  height: 348px;
+}
+
+.mapa-viaje-container {
+  height: 625px;
+}
+
+.mapa-viaje-puntos {
+  position: relative;
+  width: 90%;
+  height: 595px;
+  border: 1px solid #e5e5e5;
+  float: right;
+}
+
+.viaje-sin-paquetes {
+  @extend %sin-datos;
+}
+
+#map.viaje-map {
+  height: 563px;
+}
+
+.mapa-header {
+  padding: 20px;
+  color: $white;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.viajeCard {
+  margin-bottom: 0;
+  min-width: 254px;
+  height: 540px;
+}
+
+.limpiarButtonContainer {
+  height: 40px;
+}
+
+.limpiarButton {
+  height: 100%;
+}
+
+.limpiarButton:focus {
+  outline: none !important;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn-app-black {
+  background-color: #505050;
+  border-radius: 3px;
+  padding: 0 20px;
+  display: block;
+  color: $white;
+  box-shadow: 0 3px 0 #1f2229;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  line-height: 2.5em;
+  border: none;
+  transition: background-color 0.2s; }
+
+.btn-app-black:hover {
+  background-color: #1f2229;
+  color: $white;
+  text-decoration: none; }
+
+.viaje-eliminar-check:before {
+  left: -3px;
+}
+
+#map-resumen {
+  width: 100%;
+  height: 500px;
+}
+
+.btn-verMapa {
+  color: #0D47A1;
+}
+.btn-verMapa:hover, .btn-verMapa:focus {
+  color: #0a3576;
+  text-decoration: none !important;
+}

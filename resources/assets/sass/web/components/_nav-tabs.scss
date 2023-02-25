@@ -1,0 +1,33 @@
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  cursor: pointer;
+  color: $white;
+  background-color: $transporter-primary;
+  border: 1px solid $transporter-primary;
+  border-radius:4px;
+}
+.nav-tabs > li > a,
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+  cursor: pointer;
+  background-color: whitesmoke;
+  border:0;
+
+}
+.nav-tabs > li#paquetesTab > a,
+.nav-tabs > li#paquetesTab > a:hover,
+.nav-tabs > li#paquetesTab > a:focus {
+  border-radius: 0;
+  margin: 0;
+  background-color: $transporter-primary
+
+}
+.nav-tabs > li#puntosTab > a,
+.nav-tabs > li#puntosTab > a:hover,
+.nav-tabs > li#puntosTab > a:focus {
+  border-radius: 0;
+  margin: 0;
+  background-color: $transporter-primary
+
+}

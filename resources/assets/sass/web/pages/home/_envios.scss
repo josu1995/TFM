@@ -1,0 +1,43 @@
+.datos-destinatario-pedido p {
+  margin-bottom: 0.33em;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.td--msg {
+  position: relative;
+}
+
+.inner-popover {
+  padding: 20px;
+  margin:0;
+  text-align: center;
+}
+
+.lista-envios-modal {
+  position: relative;
+  height: 100%;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  background: $white;
+  display: block;
+}
+
+.lista-envios-modal .lista-paquetes {
+  padding-top: 35px;
+}
+
+.btns--acciones li {
+  padding-right: 0;
+  display: inline-block;
+}
+
+.check-ok {
+  font-size: 5em;
+  color: #9be56b;
+}
+
+.btn-app-center {
+  margin: auto;
+}

@@ -1,0 +1,464 @@
+#hero {
+  background: url(/img/business/citystock-business-background.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: scroll;
+  height: calc(100vh - 64px) !important;
+  max-height: 1005px;
+  min-height: 598px;
+}
+
+@media(max-height: 727px) and (min-width: 824px) {
+  #hero {
+    background-position: center -30px;
+  }
+
+  .hero .caption h1 {
+    margin: 0 0 150px 0 !important;
+  }
+}
+
+.inner-hero {
+  height: 100%;
+  display: flex;
+  width: 100%;
+
+  & > .container {
+    @extend .inner-hero;
+  }
+}
+
+.texto-portada {
+  width: calc(100% + 30px);
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.hero .caption h1 {
+  @extend %text-shadow;
+  color: $white;
+  font-family: "open_bold", Helvetica, Arial, sans-serif;
+  font-size: 5em;
+  margin: 0 0 22vh 0;
+  font-weight: bold;
+  word-break: break-word;
+  text-align: left;
+  padding-left: 6vw;
+}
+
+.hero .caption p {
+  color: $white;
+  font-family: "open_regular", Helvetica, Arial, sans-serif;
+  font-size: 21px;
+  line-height: 30px;
+}
+.hero .caption a {
+  background-color: rgba(192, 192, 192, 0.75);
+  text-decoration: none;
+  color: $white;
+  font-weight: bold;
+  padding: 10px 20px;
+  font-size: .8em;
+}
+
+.hero form {
+  text-align: center;
+}
+
+#hero.hero-corto,
+#hero.hero-xs {
+  height: 250px !important;
+  background-position: center calc(50% - 40px) !important;
+  min-height: unset;
+
+  & .caption {
+    width: 100%;
+    display: flex;
+
+    & > .span12 {
+      margin: auto;
+    }
+  }
+
+}
+
+#hero.hero-xs {
+  height: 75px !important;
+}
+
+.hero .caption a:hover {
+  background-color: rgba(35,37,37,0.75)!important;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.peso-input .form-control-feedback {
+  font-size: 1.5em;
+  right: 10px;
+  top: 13px;
+  display: none;
+  color: $error-red;
+  position: absolute;
+}
+
+.origen-input, .destino-input, .peso-input {
+  display: inline-block;
+
+  & > input {
+    width: 100%;
+  }
+}
+
+.precioButton {
+  min-width: 224px;
+}
+
+.precioPortadaLabel {
+  float: left !important;
+  font-size: 16px !important;
+  margin-right: 10px !important;
+  line-height: inherit !important;
+  font-family: inherit !important;
+  margin-top: 10px !important;
+}
+
+.precioSpinner {
+  font-size: 3em;
+  color: #fff;
+  display: none;
+  position: absolute;
+  top: 14px;
+  left: 88px;
+}
+
+/** Start Search bar **/
+
+.home-separator {
+
+  background: $transporter-secondary;
+  padding: 20px 7vw;
+
+  & h3 {
+    color: #fff;
+    font-family: PT Sans,sans-serif;
+    font-size: 1.8em;
+    margin: 0;
+  }
+
+}
+
+.home-separator.home-search-bar {
+  padding: 20px 0;
+  background: $transporter-secondary;
+  text-align: center;
+  clear: both;
+  position: relative;
+  display: flex;
+
+  & label {
+    color: $white;
+  }
+
+
+}
+
+.home-search-bar > div {
+  //width: 50%;
+  max-width: 700px;
+}
+
+.location-search, .stores-search {
+  margin: auto;
+
+  & .tracking-input {
+    font-size: 1.1em;
+    min-width: 257px;
+  }
+}
+
+.home-search-bar > .location-search, .home-search-bar > .stores-search {
+  padding: 0 15px;
+  & > span {
+    width: 50%;
+    vertical-align: middle;
+
+    & > label {
+      text-align: right;
+      margin-left: 15px;
+      margin-right: 15px;
+      font-size: 1.3em;
+      vertical-align: middle;
+    }
+  }
+}
+
+@media (max-width: 1210px) and (min-width: 635px) {
+  .home-search-bar > .location-search > .square-input, .home-search-bar > .stores-search > .square-input {
+    width: auto;
+    //margin-top: 20px;
+  }
+}
+
+//.home-search-bar > .location-search {
+//  border-right: 1px white solid;
+//}
+
+
+/** End Search bar **/
+
+/** Start App Features **/
+
+.app_features {
+  width: 100%;
+  padding: 100px 0 20px;
+  background-color: #fdfdfd;
+  background-attachment: fixed;
+  color: #000;
+}
+.app_features .details {
+  visibility: hidden;
+}
+
+.featured_on ul {
+  margin: 0; }
+
+.featured_on li {
+  position: relative;
+  height: 100%; }
+
+.featured_on li:first-child {
+  margin-left: 0; }
+
+.peso-input .has-error {
+  border-color: $error-red;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+.app_features h2 {
+  color: #212121;
+  font-family: "open_semibold", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  margin: 50px 0 0;
+  word-break: break-word;
+}
+
+.app_features p {
+  color: #404040;
+  font-family: "open_regular", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  margin: 30px 0 0;
+  line-height: 28px;
+}
+
+.app_features .details {
+  margin-bottom: 80px;
+}
+
+.app_features .icono-caracteristica {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 8.5em;
+  margin: 0 auto;
+  display: block;
+  background-color: $transporter-primary;
+  border-radius: 50%;
+}
+
+.icono-caracteristica i {
+  color:#fff; font-size:3em;
+}
+
+/** End App Features **/
+
+/** Start Business **/
+
+.section-business {
+  height: calc(50vw * 0.668);
+  display: flex;
+
+  & > div {
+    flex: 1;
+  }
+}
+
+.business-image-container {
+  //background-image: url('/img/home/transporter-business.jpg');
+  background-size: cover !important;
+  background-position: center 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.business-text-container {
+  padding: 0 3vw;
+  height: 100%;
+  display: flex;
+
+  div > & {
+    background: $transporter-secondary;
+    color: $white;
+  }
+
+  & > div {
+    margin: auto;
+  }
+
+  & h4 {
+    font-size: 1.5vw;
+  }
+
+  & h1 {
+    margin-top: 3.2vw;
+    font-size: 2.6vw;
+  }
+
+  & h3 {
+    margin-top: 3.5vw;
+    line-height: 1.4;
+    font-size: 1.6vw;
+  }
+
+  & a {
+    @extend %square-button;
+    margin-top: 2vw;
+    font-size: 2vw;
+
+    & > i {
+      margin-left: 30px;
+    }
+  }
+}
+
+/** End Business **/
+
+/** PRENSA **/
+
+.section-prensa {
+  background-color: #fdfdfd;
+  padding: 40px 0;
+}
+
+.section-prensa a {
+  padding: 2rem;
+}
+
+.section-prensa img {
+  display: table;
+  margin: auto;
+  max-width: 100%;
+  padding: 0 10px;
+}
+
+.title-medios {
+  margin-bottom: 50px;
+  font-size: 1.5em;
+}
+
+.section-prensa li a:hover img {
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+.prensa-list {
+  display: flex;
+}
+
+.prensa-list > li {
+  margin: auto;
+}
+
+/** PRENSA **/
+
+/** OPINIONES **/
+
+.testimonials {
+  padding: 20px 0;
+}
+
+.opiniones {
+  background-color: #fff;
+  border: 1px solid #F1F1F1;
+  position: relative;
+  overflow: hidden;
+  height: 348px;
+}
+
+.rating {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+.rating > .valoracion {
+  color: #666;
+  font-size: 1.3em;
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+.ministar {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -3px;
+}
+.ministar-full {
+  background: url("/img/encuestas/ministar-full.png") no-repeat;
+}
+.ministar-half {
+  background: url("/img/encuestas/ministar-half.png") no-repeat;
+}
+.ministar-none {
+  background: url("/img/encuestas/ministar-none.png") no-repeat;
+}
+
+.opiniones > ul {
+  position: absolute;
+  width: 9000px;
+  -webkit-animation: slide-animation-lg 25s infinite;
+  animation: slide-animation-lg 25s infinite;
+  -webkit-transition: left .3s linear;
+  transition: left .3s linear;
+}
+
+.opinion {
+  padding: 80px;
+  /*display: none;*/
+  font-size: 1.4em;
+  color: #777;
+  float: left;
+  display: inline-block;
+  position: relative;
+  width: 1100px;
+}
+
+.opinion-avatar {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  border: 2px solid #9a9898;
+}
+
+.opinion.active {
+  display: block;
+}
+
+.opinionSlideIn {
+  -webkit-animation: backslideIn 0.5s forwards;
+  animation: backslideIn 0.5s forwards;
+}
+
+.opinion-nombre {
+  display: block;
+  color: #999;
+  margin-top: 8px;
+}
+
+.opinion-fecha {
+  display: block;
+  font-size: 0.8em;
+  margin-top: 8px;
+}
+
+/** OPINIONES **/

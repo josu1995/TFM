@@ -1,0 +1,27 @@
+#pagina_error {
+  padding: 100px 0;
+  background: url("/img/errors/404.svg") no-repeat left;
+}
+
+.enlaces-error {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.enlaces-error li {
+  display: block;
+  margin: 10px 0;
+}
+
+.titulo-error {
+  font-size: 20rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.texto-error {
+  text-align: center;
+  color: #505050;
+  font-weight: bold;
+  font-size: 1.5rem;
+}

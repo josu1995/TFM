@@ -1,0 +1,226 @@
+.business-table {
+
+  overflow: hidden;
+
+  & .fa-exclamation.error {
+    margin-left: 5px;
+    color: $error-red;
+  }
+
+  & > thead {
+    background-color: #0097a7;
+    color: #ffffff;
+
+    &.center th {
+      text-align: center;
+    }
+
+    & th {
+      padding: 7px 15px !important;
+      font-weight: bold;
+      font-size: 1.3em;
+      text-align: left;
+      vertical-align: middle !important;
+
+      & .header-info {
+        font-size: 14px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  & tr td {
+    vertical-align: middle !important;
+    text-align: left;
+  }
+
+  & > tbody {
+
+
+    & > tr {
+      background: #fff !important;
+      & > td {
+        padding: 10px 14px;
+        color: $transporter-secondary;
+        font-size: 1.2em;
+        font-weight: 600;
+        border-bottom: 1px solid $light-grey;
+        &:first-child {
+          border-left: 1px solid $light-grey;
+        }
+
+        &:last-child {
+          border-right: 2px solid $light-grey;
+        }
+
+        & a, & a:active, & a:focus {
+          color: $transporter-secondary;
+          text-decoration: underline;
+
+          &:hover {
+            color: $transporter-footer;
+            text-decoration: underline;
+          }
+        }
+
+        &.editable {
+
+          & .field {
+            position: relative;
+            white-space: nowrap;
+
+            & > .fa-pencil-alt, & > .fa-eye {
+              display: none;
+              font-size: 0.8em;
+              padding-left: 5px;
+            }
+          }
+
+          &:hover {
+            cursor: pointer;
+
+            & .field, & .field * {
+              color: $table-edit-blue;
+            }
+
+            & .fa-pencil-alt, & .fa-eye {
+              display: inline;
+              position: absolute;
+              top: 6px;
+              right: -20px;
+            }
+          }
+        }
+
+        & .small {
+          color: #8c8c8c;
+          font-size: 0.75em;
+        }
+
+        &.image-column {
+          padding-top: 0px;
+          padding-bottom: 0px;
+          text-align:center;
+
+          img{
+            max-height:35px;
+            max-width: 70px;
+          }
+        }
+      }
+
+      & .seguimiento-link {
+        position: relative;
+
+        &:not(.small) > i {
+          position: absolute;
+          font-size: 1.1em;
+          top: 2px;
+        }
+
+        &:not(.small) > span {
+          padding-left: 20px;
+        }
+
+        &.small > i {
+          position: absolute;
+          font-size: 1.2em;
+          top: 1px;
+        }
+
+        &.small > span {
+          padding-left: 16px;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+
+  &.extra-column-padding {
+    & thead th{
+      /*padding-left:17px;*/
+      padding-right:35px !important;
+    }
+
+    & tbody tr td{
+      /*padding-left:20px;*/
+      padding-right:34px !important;
+    }
+  }
+}
+
+@media(max-width: 767px) {
+  .business-table {
+    overflow: auto;
+  }
+
+  .business-table thead {
+    border-right: 1px solid $transporter-primary;
+  }
+
+  .business-table tbody tr td:last-child {
+    border-right: 1px solid $light-grey;
+  }
+
+  .pendientes-pago-box .buscar-input {
+    width: calc(100% - 143px);
+  }
+
+  .pendientes-expedicion-box .buscar-input {
+    width: calc(100% - 202px);
+  }
+
+  .transito-box .buscar-input, .destino-box .buscar-input, .finalizados-box .buscar-input {
+    width: calc(100% - 101px);
+  }
+
+  .buscar-input {
+    max-width: 100%;
+    height: 34px;
+  }
+}
+
+//@media (max-width: 373px) {
+//  .buscar-row.pendientes-pago {
+//    min-height: 67px;
+//
+//    & > .buscar-input {
+//      margin-top: 14px;
+//    }
+//  }
+//}
+
+//@media (max-width: 433px) {
+//  .buscar-row.pendientes-expedicion {
+//    min-height: 67px;
+//
+//    & > .buscar-input {
+//      margin-top: 14px;
+//    }
+//  }
+//}
+
+// Tarifas table
+.tarifa-table {
+  table-layout: fixed;
+
+  & td, & th:not(:first-child) {
+    border: 1px solid #ddd;
+    padding: 2px 8px;
+    text-align: center;
+    color: $tarifas-blue;
+  }
+
+  & th, & td:not(:first-child) {
+    width: 115px;
+  }
+
+  & th:not(:first-child), & td:first-child {
+    background: $tarifa-heading-grey;
+  }
+
+  & td:first-child {
+    text-align: left;
+  }
+}

@@ -1,0 +1,271 @@
+.business-hero {
+  height: 100vh;
+  background-position: center 0;
+  background-size: cover;
+  min-height: 600px;
+
+  &::before {
+    content: '';
+    // background: linear-gradient(360deg, transparent 0%, rgb(0 151 167 / 75%) 100%);
+    background: rgb(0 151 167 / 30%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .business-logo.color {
+    display: none;
+  }
+
+  & > .content {
+    padding: 0 40px;
+    display: flex;
+    height: 100%;
+
+    & > div {
+      margin: auto;
+      color: $white;
+      text-align: center;
+
+      & > .titulo {
+        @extend %text-shadow;
+        font-size: 5em;
+        font-weight: bold;
+      }
+
+      & > .subtitulo {
+        @extend %text-shadow;
+        margin: 50px 0;
+        font-size: 2.2em;
+      }
+    }
+  }
+}
+
+.business-header {
+  width: 100%;
+  height: 81px;
+  display: table;
+  padding: 0 100px;
+  position: absolute;
+  background: rgba(1, 150, 167, .2);
+
+  & > div,
+  & > a {
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+
+    & > .business-logo {
+      height: 40px;
+    }
+
+    &.header-separator {
+      width: 100%;
+    }
+
+    &.header-link {
+      padding: 0 20px;
+      min-width: 20px;
+      white-space: nowrap;
+
+      & > a {
+        @extend %link-header;
+        font-size: 1.2em;
+      }
+
+      & > .btn {
+        @extend %square-button;
+        font-size: 1.2em;
+
+        &:hover {
+          color: $white !important;
+        }
+      }
+    }
+  }
+}
+
+.business-content {
+  padding: 20px 80px;
+
+  & > .section {
+    margin-bottom: 40px;
+
+    & > .wrapper {
+      display: flex;
+      flex: 1;
+      width: 100%;
+      margin: auto;
+      max-width: 1150px;
+
+      &.reverse {
+        flex-direction: row-reverse;
+
+        & img {
+          border-radius: 4px;
+          box-shadow: 9px 9px 15px -8px rgba(0, 0, 0, 0.75);
+        }
+      }
+
+      & > div {
+        flex: 1;
+        padding: 1.8vw;
+        margin: auto;
+      }
+
+      & > .col-text {
+        display: flex;
+
+        &.col-left {
+          padding-right: 3vw;
+        }
+
+        &.col-right {
+          padding-left: 3vw;
+        }
+
+        & .title {
+          color: #455a64;
+          font-size: 3.8em;
+          margin-bottom: 30px;
+        }
+
+        & .text {
+          color: #607d8b;
+          font-size: 1.32em;
+        }
+      }
+
+      & > .col-img {
+        text-align: center;
+
+        &.gif > img {
+          padding: 20px;
+        }
+
+      }
+      
+    }
+  }
+
+  & > .final-text {
+    text-align: center;
+    margin: 120px 0 80px 0;
+
+    & > h1.title {
+      color: $transporter-footer;
+    }
+
+    & > p.text {
+      color: $transporter-blue-text;
+      font-size: 1.4em;
+      margin: 30px 0;
+    }
+
+    & > a {
+      @extend %square-button;
+      font-size: 1.5em;
+    }
+  }
+}
+
+.section-prensa .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.business-footer {
+  display: table;
+  width: 100%;
+  height: 50px;
+  padding: 0 100px;
+
+  & > div {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  & > .links-footer > a {
+    @extend %link-footer;
+    font-size: 1em;
+  }
+
+  & .social > ul {
+    min-width: 150px;
+  }
+
+  & .social li a i.fa-facebook-f {
+    padding: 11px 17px 12px 16px;
+  }
+}
+
+.login-title {
+  color: $transporter-blue-text;
+  font-size: 1.3em;
+}
+
+.business-register-header {
+  background-color: rgba( $transporter-primary, .75 );
+  height: 70px;
+}
+
+.business-register-form {
+  max-width: 658px;
+  margin: auto;
+
+  & label {
+    font-size: 0.9em;
+    color: $transporter-blue-text;
+    font-weight: normal;
+  }
+
+  & select {
+    height: 40px !important;
+
+    &:focus {
+      border-color: $transporter-primary;
+      box-shadow: none;
+    }
+  }
+
+  & button {
+    background-color: $transporter-primary;
+    font-size: 1.2em;
+  }
+}
+
+.register-success-container {
+
+  & > div {
+    margin-top: 80px;
+  }
+
+  & .title {
+    font-size: 3em;
+  }
+
+  & .subtitle {
+    font-size: 2em;
+    max-width: 600px;
+    margin: auto;
+  }
+
+  & .round-icon {
+    background-color: $white;
+    font-weight: 700;
+    color: $transporter-primary;
+    border-radius: 50%;
+    border: 4px solid $transporter-primary;
+    padding: 0.6em;
+    font-size: 1.2em;
+  }
+
+  & .btn {
+    font-size: 1.3em;
+  }
+}

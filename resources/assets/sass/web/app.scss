@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+/// Sass-mq for media queries
+@import 'utils/_mq.scss';
+
+/// Utils
+@import 'utils/_colors.scss';
+@import 'utils/_helpers.scss';
+@import 'utils/_mixins.scss';
+@import 'utils/_variables.scss';
+@import 'utils/_placeholders.scss';
+
+/// Base
+@import 'base/_animations.scss';
+@import 'base/_base.scss';
+@import 'base/_icons.scss';
+@import 'base/_typography.scss';
+
+/// Layout
+@import 'layout/_blog.scss';
+@import 'layout/_error.scss';
+@import 'layout/_footer.scss';
+@import 'layout/_forms.scss';
+@import 'layout/_header.scss';
+
+/// Components
+@import 'components/_autocomplete.scss';
+@import 'components/_buscador.scss';
+@import 'components/_button.scss';
+@import 'components/_map.scss';
+@import 'components/_modal.scss';
+@import 'components/_nav-pills.scss';
+@import 'components/_nav-tabs.scss';
+@import 'components/_pagination.scss';
+@import 'components/_popover.scss';
+@import 'components/_progressbar.scss';
+@import 'components/_qr.scss';
+@import 'components/_scrollbar.scss';
+@import 'components/_slider.scss';
+@import 'components/_table.scss';
+@import 'components/_mobile-header.scss';
+
+/// Pages
+@import 'pages/estaticas/_ayuda.scss';
+@import 'pages/estaticas/_footer-links.scss';
+@import 'pages/home/cuenta/_pagos-efectuados.scss';
+@import 'pages/home/cuenta/_preferencias-cobro.scss';
+@import 'pages/home/cuenta/_saldo-recibido.scss';
+@import 'pages/home/_alertas.scss';
+@import 'pages/home/_envios.scss';
+@import 'pages/home/_imagen.scss';
+@import 'pages/home/_mensajes.scss';
+@import 'pages/home/_navegacion.scss';
+@import 'pages/home/_panel-control.scss';
+@import 'pages/home/_viajes.scss';
+@import 'pages/landing/_viajar.scss';
+@import 'pages/_auth.scss';
+@import 'pages/_crear-envio.scss';
+@import 'pages/_encuestas.scss';
+@import 'pages/_home.scss';
+@import 'pages/_viajar.scss';
+@import 'pages/_tracking.scss';
+@import 'pages/_stores-search.scss';
+@import 'pages/business/_home.scss';
+
+
+//@import 'themes/*';
+//@import 'vendor/*';

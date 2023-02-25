@@ -1,0 +1,93 @@
+.bloques-perfil .cambiar-imagen {
+  text-align: center;
+}
+
+.bloques-perfil .cambiar-imagen input[type="file"] {
+  display: none;
+}
+
+.bloques-perfil .cambiar-imagen label {
+  cursor: pointer;
+}
+
+.bloques-perfil .cambiar-imagen label.subida:before {
+  background-color: #9be56b;
+}
+
+.bloques-perfil .cambiar-imagen label:before {
+  content: "\f382";
+  font-family: Font Awesome\ 5 Free;
+  font-weight: 900;
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: $transporter-primary;
+  text-align: center;
+  color: $white;
+  font-size: 3.5em;
+  line-height: 2.1em;
+  left: 0;
+  right: 0;
+  margin: 0 auto 15px;
+  transition: all 0.4s;
+}
+
+.bloques-perfil .cambiar-imagen label:hover:before {
+  background-color: #cf8f05;
+}
+
+.bloques-perfil .cambiar-imagen input[type="submit"] {
+  margin-top: 30px;
+}
+
+.bloques-perfil .prev-perfil div {
+  height: 255px;
+  border-radius: 5px;
+  background-size: cover;
+}
+
+div.cropper-drag-box.cropper-modal {
+  opacity:1;
+  background-color: rgba(0,0,0,0.5);
+}
+
+#modalImagen .modal-content {
+  min-width: 300px;
+}
+
+.global-spinner-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+}
+
+.global-spinner-container.spin {
+  opacity: 1;
+  z-index: 1050;
+}
+
+.global-spinner {
+  opacity: 0;
+  z-index: -1;
+}
+
+.global-spinner-container.spin .global-spinner {
+  font-size: 100px;
+  color: $transporter-primary;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  z-index: 2000;
+  opacity: 1;
+}

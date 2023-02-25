@@ -1,0 +1,258 @@
+%mobile-header {
+  height: 73px;
+  display: table;
+  padding: 0 20px;
+  background: rgba(96, 125, 139, 0.2);
+  position: absolute;
+  z-index: 10;
+  border-bottom: 1px solid rgba(102, 102, 102, .2);
+  overflow: hidden;
+  animation-direction: alternate;
+
+  &:after {
+    background: $white;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 0;
+    width: 100%;
+  }
+
+  &.reverse::after {
+    animation: removeWhite 0.5s;
+    animation-fill-mode: forwards;
+  }
+
+  &.active {
+    &:after {
+      animation: fillWhite 0.5s;
+      animation-fill-mode: forwards;
+    }
+
+    & .logo, & .close-icon {
+      color: $transporter-primary;
+    }
+
+    & .section-title {
+      color: #607D8B;
+    }
+  }
+
+  & > span {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  & .logo, & .section-title, & .close-icon {
+    transition-delay: 1s;
+    transition: color 1s ease;
+  }
+
+  & .logo {
+    vertical-align: middle;
+    color: $white;
+    height: 38px;
+    font-size: 32px;
+  }
+
+  & .section-title {
+    padding: 0 20px;
+    position: relative;
+    font-size: 1.5em;
+    vertical-align: middle;
+    color: $white;
+
+    &::before {
+      height: 34px;
+      border: 0.5px solid;
+      content: '';
+      left: 5px;
+      top: 15px;
+      position: absolute;
+      vertical-align: middle;
+    }
+  }
+
+  & .header-separator {
+    width: 100%;
+    height: 100%;
+  }
+
+  & .menu-icon {
+    font-size: 2em;
+    color: $white;
+  }
+
+  & .close-icon {
+    font-size: 1.5em;
+    display: none;
+  }
+}
+
+%mobile-header-content {
+  background: $white;
+  position: absolute;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  transition: top .5s ease;
+  z-index: 2;
+
+  & > .link {
+    padding: 20px 20px 20px 30px;
+  }
+
+  & > .link > * {
+    margin: auto 0;
+    font-size: 1.3em;
+    color: #607D8B;
+    font-weight: bold;
+  }
+
+  & > .link i {
+    font-size: 1em;
+  }
+
+  & > .bottom-button > .btn {
+    margin: auto;
+    font-size: 1.3em;
+  }
+
+}
+
+.mobile-header.business {
+  @extend %mobile-header;
+  height: 64px;
+}
+
+.mobile-header.blog {
+  @extend %mobile-header;
+  background-color: $white;
+  height: 64px;
+  z-index: 2;
+  top: 0;
+  left: 0;
+
+  & .section-title {
+    color: #607D8B;
+    transition: unset;
+  }
+
+  & .logo {
+    color: $transporter-primary;
+    transition: unset;
+  }
+
+  & #closebtn > span {
+    background-color: $transporter-primary;
+  }
+
+}
+
+.mobile-header-content.business {
+  @extend %mobile-header-content;
+}
+
+.mobile-header-content.main {
+  @extend %mobile-header-content;
+  top: 64px;
+  overflow-y: auto;
+
+  & > .btn-header-inverso {
+    padding: 13px 0;
+    font-weight: bold;
+  }
+
+  & > .link-block {
+    // border-top: 1px solid #E6E6E6;
+    padding: 50px 0;
+
+    & > div {
+      margin: auto 0;
+
+      & > .title {
+        color: #455a64;
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+
+      & a {
+        color: #607d8b;
+        font-size: 1.2em;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.mobile-header-content.blog {
+  z-index: 1;
+}
+
+.inner-header {
+  z-index: 0;
+}
+
+.inner-header > .container {
+  z-index: 2;
+}
+
+.inner-header::after {
+  background: $white;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 0;
+  width: 100%;
+}
+
+header.reverse > .inner-header:after {
+  animation: removeWhite 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.navbar-brand > svg {
+  transition: fill 1s ease;
+  text-align: left;
+}
+
+header.active {
+
+  & > .inner-header {
+    &:after {
+      animation: fillWhite 0.5s;
+      animation-fill-mode: forwards;
+    }
+
+    & .logo > a > svg {
+      fill: $transporter-primary;
+    }
+
+    & #closebtn > span {
+      background-color: $transporter-primary;
+    }
+  }
+}
+
+
+  @media(min-width: 769px) {
+    .mobile-header, .mobile-header-container, .hamburger {
+      display: none !important;
+    }
+  }
+
+  @media(max-width: 768px) {
+    .desktop-header {
+      display: none !important;
+    }
+  }

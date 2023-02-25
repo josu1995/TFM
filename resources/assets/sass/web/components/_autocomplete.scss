@@ -1,0 +1,43 @@
+.ui-autocomplete {
+  background: white;
+  border-radius: 0px;
+  padding: 0 !important;
+}
+
+.ui-autocomplete .ui-menu-item {
+  padding: 10px 15px !important;
+  color: rgba(100, 100, 100, 0.5);
+  font-style: italic; }
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: white; }
+
+#ui-id-1 .ui-menu-item:hover, #ui-id-1 .ui-menu-item:focus {
+  background-color: #9be56b !important; }
+
+#ui-id-1 .ui-menu-item:before {
+  color: #9be56b; }
+
+#ui-id-2 .ui-menu-item:before {
+  color: #ff5862; }
+
+#ui-id-2 .ui-menu-item:hover, #ui-id-2 .ui-menu-item:focus {
+  background-color: #ff5862 !important; }
+
+.ui-menu .ui-menu-item {
+  border-bottom: 1px solid rgba(200, 200, 200, 0.3);
+  position: relative;
+  padding-left: 35px !important; }
+.ui-menu .ui-menu-item:before {
+  content: "\e920";
+  font-family: 'transporter';
+  font-size: 2rem;
+  position: absolute;
+  margin-left: -25px;
+  margin-top: -5px;
+  font-style: normal !important; }
+.ui-menu .ui-menu-item:hover:before {
+  color: inherit !important; }

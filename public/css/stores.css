@@ -1,0 +1,225 @@
+/* Stores */
+
+/** tablet **/
+
+
+.stores-social {
+    margin: auto;
+    float: left; display: flex;
+}
+
+.stores-social a {
+    margin: 0;
+}
+
+/** Mobile **/
+
+
+
+.form--store h3 {
+    font-size: 16px; }
+
+.form--store .bloque-input {
+    margin-bottom: 15px; }
+
+.form--store .hr-login-registro span {
+    background-color: #fdfdfd; }
+
+@media (min-width: 1152px) {
+    .container--store {
+        background: url('/img/stores/transporter-store.jpg') no-repeat bottom center;
+        background-size: cover;
+        background-position: 0 0;
+        margin: 0;
+        min-height: 650px;
+        width: 100%;
+        max-width: inherit !important;
+        padding: 0;
+    }
+
+    .row--store-superior {
+        height: 100%;
+        margin-left: 400px;
+        min-height: 650px;
+    }
+
+    .inner--store--txt {
+        min-height: 400px;
+        margin-top: 250px;
+        margin-right: 480px;
+    }
+
+    .row-servicios--store .container {
+        margin-right: 440px !important;
+        margin-left: 0;
+        width: 100%;
+        max-width: inherit;
+    }
+
+    .form--store {
+        max-width: 420px;
+        position: absolute;
+        background-color: #F1F1F1 !important;
+        border-radius: 5px;
+        padding: 30px 10px;
+        border: 1px solid rgba(120, 120, 120, 0.1);
+        transform: translateY(0%) !important;
+        top: 20px;
+        right: 20px !important;
+        width: 420px;
+    }
+
+}
+
+.stores-footer {
+    height: 55px;
+    background-color: #F1F1F1;
+    border-top: 1px solid #e6e6e6;
+}
+
+@media (max-width: 1050px) {
+    .stores-footer {
+        height: 65px;
+        background-color: #F1F1F1;
+        border-top: 1px solid #e6e6e6;
+    }
+}
+
+@media (min-width: 1530px) {
+    .row--store-superior {
+        height: 100%;
+        margin-left: 26.5%;
+        min-height: 650px;
+    }
+
+    .inner--store--txt {
+        min-height: 400px;
+        margin-top: 23%;
+        margin-right: 480px;
+    }
+
+}
+
+.copyrightStoresLink {
+    text-decoration: none;
+    color: #333;
+}
+
+.copyrightStoresLink:hover {
+    text-decoration: none;
+    color: #0097a7;
+}
+
+.stores-social a,.stores-social button {
+    padding: 8px;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    color: white;
+    font-size: 1em;
+    display: flex;
+}
+
+.stores-social a:hover,.stores-social button:hover {
+    text-decoration: none;
+}
+
+.stores-social a:focus,.stores-social button:focus {
+    text-decoration: none;
+}
+
+.stores-social a i,.stores-social button i {
+    margin: auto;
+}
+
+.stores-social a.facebook {
+    border: 1px solid #4267b2;
+    background-color: #4267b2;
+}
+
+.stores-social a.facebook:hover {
+    border: 1px solid #2e4b83;
+    background-color: #2e4b83;
+}
+
+.stores-social a.twitter {
+    border: 1px solid #1a8bf0;
+    background-color: #1a8bf0;
+}
+
+.stores-social a.twitter:hover {
+    border: 1px solid #146fbf;
+    background-color: #146fbf;
+}
+
+.stores-social a.linkedin,.stores-social button.linkedin {
+    border: 1px solid #007bb6;
+    background-color: #007bb6;
+}
+
+.stores-social a.linkedin:hover,.stores-social button.linkedin:hover {
+    border: 1px solid #00618f;
+    background-color: #00618f;
+}
+
+
+.form--store {
+    max-width: 420px;
+    background-color: #F1F1F1 !important;
+    border-radius: 5px;
+    padding: 30px 10px;
+    border: 1px solid rgba(120, 120, 120, 0.1);
+    transform: translateY(0%) !important;
+}
+
+.row-servicios--store {
+    background-color: white;
+    display: flex;
+    height: auto; }
+
+.icono--store {
+    width: 120px;
+    height: 120px;
+    display: block;
+    /*border: 2px solid #0097a7;*/
+    font-size: 3.5em;
+    text-align: center;
+    line-height: 2.3em;
+    /*border-radius: 50%;*/
+    margin: 0 auto; }
+
+.p--stores h1 {
+    font-weight: 300;
+    font-family: Lato; }
+
+.col-store--txt {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0 !important;
+    min-height: 650px;
+}
+.col-store--txt .inner--store--txt {
+    position: absolute; }
+.col-store--txt p {
+    line-height: 1.2em;
+    font-size: 23px;
+    font-weight: 200;
+    font-family: Lato;
+    margin-top: 30px;
+}
+
+.inner--store--txt .texto-inverso {
+    font-family: "open sans", Helvetica, Arial, sans-serif;
+}
+
+.input-login .fa-phone {
+    margin-left: 3px; width: 58.1px;
+}
+
+@media (max-width: 1366px) and (min-width: 1025px) {
+    .col--iconos {
+        width: 32%; }
+    .col--iconos.col-md-offset-2 {
+        margin-left: 15px !important; } }

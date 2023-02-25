@@ -1,0 +1,505 @@
+.modal-center-vertical .modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.mensaje {
+  padding: 15px;
+}
+
+.mensaje p {
+  margin-bottom: 0;
+}
+
+.mensaje-oscuro p {
+  display: inline-block;
+  margin: 0;
+  line-height: 2em;
+}
+
+body.modal-open {
+  overflow: auto;
+}
+
+/** LOGIN REGISTRO **/
+
+#l-envio-popup.modal.in .modal-dialog,
+#l-punto-popup.modal.in .modal-dialog,
+.modal.in .m-login-registro.popupHome {
+  left: 0;
+  right: 0;
+  top: 40%;
+  transform: translateY(-40%);
+}
+
+#l-login #modalloginPage.modal.in .m-login-registro.popupHome {
+  transform: translateY(20%) !important;
+}
+
+#l-login #modalregisterPage {
+  &.modal.in .m-login-registro.popupHome {
+    transform: translateY(7%) !important;
+  }
+}
+
+#l-login #modalrecoverPage.modal.in .m-login-registro.popupHome {
+  transform: translateY(70%) !important;
+}
+
+#l-login #modalemailPage.modal.in .m-login-registro.popupHome {
+  transform: translateY(12%) !important;
+}
+
+.m-login-registro .close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 1.3em;
+
+  & > span {
+    font-size: 1.3em;
+  }
+}
+
+#l-login .logo-login {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 99999;
+}
+
+#l-login, #l-login .modal {
+  display: flex;
+}
+
+#l-login {
+  height: 100%;
+  background: url('/img/business/citystock-business-background.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+
+// #l-login:before {
+//   content: "";
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   background-color: rgba(255, 175, 0, 0.8);
+//   position: absolute; }
+
+#l-login .m-login-pagina {
+  width: 60%;
+  max-width: 600px;
+  position: absolute;
+  z-index: 99;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  left: 0;
+  right: 0; }
+
+#l-login .logo {
+  width: 100%;
+  text-align: center; }
+
+#l-login .logo a img {
+  max-width: 100%;
+  height: 100%;
+  width: 60%; }
+
+#l-login .b-login {
+  background-color: $white;
+  border-radius: 3px; }
+
+#l-login .m-login-registro {
+  position: relative;
+  transform: none;
+  margin:auto;
+  top: auto;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1); }
+
+#l-login + footer {
+  display: none;
+}
+
+.m-login-registro {
+  width: 460px;
+  height: auto;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 40%;
+  background-color: $white;
+  border-radius: 5px;
+  box-shadow: 0 0 70px rgba(0, 0, 0, 0.5);
+}
+
+.m-login-registro > div {
+  padding: 40px;
+}
+
+.hr-login-registro {
+  position: relative;
+  margin: 20px 0 10px;
+  height: 1px;
+  width: 100%;
+  background-color: #e5e5e5; }
+
+.hr-login-registro {
+  margin: 20px 0; }
+
+.hr-login-registro span {
+  color: #e5e5e5;
+  position: absolute;
+  width: 26px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: -16px;
+  font-size: 1.5em;
+  background-color: $white; }
+
+.m-login-registro span {
+  font-size: 1.5em; }
+
+.m-login-registro .lista-form span {
+  font-size: 1em;
+}
+
+#modalemailPage .m-login-registro .form-group {
+  margin-bottom: 10px;
+}
+
+.m-login-registro .form-group {
+  width: 100%;
+  margin-bottom: -8px;
+}
+
+.m-login-registro .form-fecha {
+  margin-bottom: 5px;
+}
+
+.m-login-registro hr {
+  margin: 35px 0 15px;
+}
+
+.login-politicas {
+  font-size: 11px;
+  margin-top: 10px;
+}
+
+.pass-olvidada {
+  font-size: 12px;
+  text-align: right;
+  line-height: 2.5em;
+  display: block;
+}
+
+#modalloginPage .loginModal {
+  margin: auto; transform: translateY(0) !important;
+}
+
+.registroModal {
+  margin: auto; transform: translateY(0) !important; min-height: 630px;
+}
+
+.registroModal > .modal-content {
+  padding: 20px 50px 20px 50px;
+}
+
+#pwd-container {
+  overflow:hidden;
+}
+#pwd-container > div {
+  padding-top: 30px;
+}
+
+/** LOGIN REGISTRO **/
+
+/** PUNTO **/
+
+.m-punto-popup {
+  background-color: $white;
+  width: 70%;
+  max-width: 800px;
+  height: auto;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.m-punto-popup .modal-content {
+  border: none;
+}
+
+.m-punto-popup .barra-superior {
+  position: relative;
+  overflow: hidden;
+}
+
+.m-punto-popup .barra-superior .icono-iz {
+  float: left;
+}
+
+.m-punto-popup .barra-superior .icono-iz span {
+  font-size: 3em;
+  text-align: center;
+  display: block;
+  height: 100%;
+  padding: 15px;
+}
+
+.m-punto-popup .barra-superior .ubicacion {
+  float: left;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.m-punto-popup .barra-superior .ubicacion p {
+  margin-bottom: 0;
+  font-weight: 100;
+}
+
+.m-punto-popup .barra-superior .ubicacion p.nombre-punto {
+  font-size: 1.5em;
+}
+
+.m-punto-popup .barra-superior .cerrar-popup {
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.m-punto-popup .viaje button {
+  padding: 20px 0;
+}
+
+.paquetes-punto .lista-paquetes .datos-paquete {
+  padding-right: 275px !important;
+}
+
+.paquetes-punto .lista-paquetes .datos-paquete-viaje {
+  padding-right: 0 !important;
+}
+
+.paquetes-punto .lista-paquetes .datos-paquete > div {
+  border-right: 1px solid #e5e5e5;
+}
+
+.ahorro-paquete {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.6em;
+  height: 100%;
+}
+
+.ahorro-paquete > p {
+  margin-bottom: 0 !important;
+  font-weight: 100;
+  line-height: 1.6em;
+  margin-top: 15px;
+}
+
+.ahorro-paquete button.add-paquete {
+  margin-top: 35px;
+  float: left;
+}
+
+/** PUNTO **/
+
+/** MAPA **/
+
+.m-mapa-popup {
+
+  & iframe {
+    height: 130%;
+    margin-top: -110px;
+    width: 130%;
+    margin-left: -230px;
+  }
+
+  & .mapa {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  & .m-info-punto {
+    position: absolute;
+    height: 90%;
+    width: 40%;
+    background-color: $white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(86, 86, 86, 0.3);
+    right: 30px;
+
+    & .foto-punto {
+      height: 150px;
+      overflow: hidden;
+      position: relative;
+      padding: 15px;
+
+      & img {
+        width: 100%;
+        max-width: 100%;
+      }
+
+    }
+
+    & .titulo-horario {
+      padding: 7px 15px;
+
+      & p {
+        margin: 0;
+      }
+    }
+  }
+
+  & .horario-punto table {
+    border-bottom: 0;
+
+    & tr:nth-child(even) {
+      background-color: #fbfbfb;
+    }
+
+    & tr td:first-child {
+      padding-left: 15px;
+    }
+
+    & td {
+      padding: 5px;
+      border: none;
+      text-align: center;
+
+      &.mañana {
+        border-right: 1px solid #e5e5e5;
+      }
+    }
+  }
+}
+
+/** MAPA **/
+
+/** ENVIO POPUP **/
+
+.agregar-origen-destino ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.agregar-origen-destino ul li {
+  float: left;
+  width: 100%;
+}
+
+.agregar-origen-destino ul li button {
+  border: none;
+  width: 100%;
+  height: 90px;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.agregar-origen-destino ul li button:focus {
+  border: none;
+  outline: none;
+}
+
+.agregar-origen-destino ul li button i {
+  position: relative;
+  top: 0;
+}
+
+.agregar-origen-destino ul li button:hover i {
+  animation: animacionMarca 0.6s infinite ease-in;
+  -webkit-animation: animacionMarca 0.6s infinite ease-in;
+  -moz-animation: animacionMarca 0.6s infinite ease-in;
+  -ms-animation: animacionMarca 0.6s infinite ease-in;
+}
+
+/** ENVIO POPUP **/
+
+.btn-positive {
+  background-color: $transporter-primary;
+  color: #fff;
+}
+
+.btn-positive:hover {
+  color: $white;
+}
+
+.btn-negative {
+  background-color: #1f2229;
+  color: #fff;
+}
+
+.btn-negative:hover {
+  color: $white;
+}
+
+.modal-title {
+  float: left;
+}
+
+button.close {
+  font-size: 35px;
+}
+
+.close-modal {
+  position: absolute;
+  right: 10px;
+  z-index: 100;
+}
+
+/** PERMISOS FACEBOOK **/
+
+#modalPermission, #modalVinculacion {
+  display: flex;
+}
+#modalPermission > .modal-dialog, #modalVinculacion > .modal-dialog {
+  margin: auto;
+}
+#modalPermission .fa-envelope, #modalVinculacion .fa-link {
+  font-size: 80px;
+}
+.facebook-button {
+  background-color: #4267b2;
+  color: #fff;
+  width: 200px;
+}
+.facebook-button:hover {
+  color: #fff;
+}
+.facebook-button > .fa-facebook-official {
+  font-size: 22px;
+  float: left;
+  left: 33px;
+}
+
+/** PERMISOS FACEBOOK **/

@@ -1,0 +1,547 @@
+header {
+    background-color: #455a64;
+    width: 100%;
+    height: 70px;
+    text-align: center;
+}
+
+header > img {
+    margin-top: 7px;
+}
+
+form {
+    display: none;
+}
+
+input:focus, select:focus {
+    border-color: #0097a7 !important;
+    box-shadow: none !important;
+}
+
+html, body {
+    height: 100%;
+}
+
+.main-container {
+    padding-top: 40px;
+}
+
+.success-container {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.success-container > div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.success-container > .inicio-container {
+    padding-top: 60px;
+}
+
+.ui-autocomplete {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.texto-corporativo {
+    color: #0097a7;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.mg-auto {
+    margin: auto;
+}
+
+.pd-15 {
+    padding: 15px 20px 15px 20px;
+}
+
+.pd-l-13 {
+    padding-left: 13px;
+}
+
+.pd-b-10 {
+    padding-bottom: 10px;
+}
+
+.pd-r-13 {
+    padding-right: 13px;
+}
+
+.image-card {
+    background: #e2e1e0;
+    border-radius: 2px;
+    margin: 1rem;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    position: relative;
+}
+
+.image-card > div, .image-card > div > small {
+    max-width: calc(100% - 20px);
+}
+
+.image-card > div {
+    margin-right: auto;
+    width: 100%;
+}
+
+.image-card > div > small {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: auto auto auto 0;
+}
+
+.ic-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.ic-close:hover {
+    color: #9B9E9B;
+}
+
+/** STEPS **/
+
+/*
+    Common
+*/
+
+.wizard,
+.tabcontrol
+{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.wizard a,
+.tabcontrol a
+{
+    outline: 0;
+}
+
+.wizard ul,
+.tabcontrol ul
+{
+    list-style: none !important;
+    padding: 0;
+    margin: 0;
+}
+
+.wizard ul > li,
+.tabcontrol ul > li
+{
+    display: block;
+    padding: 0;
+}
+
+/* Accessibility */
+.wizard > .steps .current-info,
+.tabcontrol > .steps .current-info
+{
+    position: absolute;
+    left: -999em;
+}
+
+.wizard > .content > .title,
+.tabcontrol > .content > .title
+{
+    position: absolute;
+    left: -999em;
+}
+
+section {
+    padding-bottom: 10px;
+}
+
+/*
+    Wizard
+*/
+
+.wizard > .steps
+{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.wizard.vertical > .steps
+{
+    display: inline;
+    float: left;
+    width: 30%;
+}
+
+.wizard > .steps .number
+{
+    font-size: 1.429em;
+}
+
+.wizard > .steps > ul > li
+{
+    width: 33.33%;
+    text-align: center;
+}
+
+.wizard > .steps > ul > li,
+.wizard > .actions > ul > li
+{
+    float: left;
+}
+
+.wizard.vertical > .steps > ul > li
+{
+    float: none;
+    width: 100%;
+}
+
+.wizard > .steps a,
+.wizard > .steps a:hover,
+.wizard > .steps a:active
+{
+    display: block;
+    width: auto;
+    margin: 0 0.5em 0.5em;
+    padding: 1em 1em;
+    text-decoration: none;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.wizard > .steps .disabled a,
+.wizard > .steps .disabled a:hover,
+.wizard > .steps .disabled a:active
+{
+    color: #aaa;
+    cursor: default;
+}
+
+.wizard > .steps .current a,
+.wizard > .steps .current a:hover,
+.wizard > .steps .current a:active
+{
+    background: #0097a7;
+    color: #fff;
+    cursor: default;
+    font-weight: bold;
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);
+}
+
+.wizard > .steps .done:not(.current) a,
+.wizard > .steps .done:not(.current) a:hover,
+.wizard > .steps .done:not(.current) a:active
+{
+    color: #aaa;
+}
+
+.wizard > .content
+{
+    display: block;
+    margin: 0.5em;
+    overflow: hidden;
+    position: relative;
+    width: auto;
+    transition: all linear 0.1s;
+    min-height: 24em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+
+    header {
+        height: 50px;
+    }
+
+    header img {
+        height: 37px;
+    }
+
+    .success-container {
+        padding-top: 0;
+    }
+
+    .success-container > div {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .success-container > div > h2 {
+        font-size: 2.5em;
+    }
+
+    .success-container > div > p {
+        font-size: 1.1em;
+    }
+
+    .success-container > .inicio-container {
+        padding-top: 0;
+        margin-top: 40px;
+    }
+
+    .number {
+        display: none;
+    }
+
+}
+
+.wizard.vertical > .content
+{
+    display: inline;
+    float: left;
+    margin: 0 2.5% 0.5em 2.5%;
+    width: 65%;
+}
+
+.wizard > .content > .body
+{
+    float: left;
+    position: absolute;
+    width: 95%;
+    padding: 2.5%;
+}
+
+.wizard > .content > .body ul
+{
+    list-style: disc !important;
+}
+
+.wizard > .content > .body ul > li
+{
+    display: list-item;
+}
+
+.wizard > .content > .body > iframe
+{
+    border: 0 none;
+    width: 100%;
+    height: 100%;
+}
+
+.wizard > .content > .body input[type="checkbox"]
+{
+    display: inline-block;
+}
+
+.wizard > .content > .body input.error
+{
+    background: rgb(251, 227, 228);
+    border: 1px solid #fbc2c4;
+    color: #8a1f11;
+}
+
+.wizard > .content > .body label
+{
+    display: inline-block;
+    margin-bottom: 0.5em;
+}
+
+.wizard > .content > .body label.error
+{
+    color: #8a1f11;
+    display: inline-block;
+    margin-left: 1.5em;
+}
+
+.wizard > .actions
+{
+    position: relative;
+    display: block;
+    text-align: right;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.wizard.vertical > .actions
+{
+    display: inline;
+    float: right;
+    margin: 0 2.5%;
+    width: 95%;
+}
+
+.wizard > .actions > ul
+{
+    display: inline-block;
+    text-align: right;
+}
+
+.wizard > .actions > ul > li
+{
+    margin: 0 0.5em;
+}
+
+.wizard.vertical > .actions > ul > li
+{
+    margin: 0 0 0 1em;
+}
+
+.wizard > .actions a,
+.wizard > .actions a:hover,
+.wizard > .actions a:active
+{
+    background: rgba(31,34,41);
+    color: #fff;
+    display: block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.wizard > .actions a[href="#previous"] {
+    background: transparent;
+    color: rgba(31,34,41);
+}
+
+.wizard > .actions a[href="#previous"]:hover {
+    text-decoration: underline;
+}
+
+.wizard > .actions a[href="#next"],
+.wizard > .actions a[href="#next"]:hover,
+.wizard > .actions a[href="#next"]:active,
+.wizard > .actions a[href="#finish"],
+.wizard > .actions a[href="#finish"]:hover,
+.wizard > .actions a[href="#finish"]:active
+{
+    background: #0097a7;
+}
+
+.wizard > .actions .disabled a,
+.wizard > .actions .disabled a:hover,
+.wizard > .actions .disabled a:active
+{
+    background: #eee;
+    color: #aaa;
+}
+
+.wizard > .loading
+{
+}
+
+.wizard > .loading .spinner
+{
+}
+
+
+
+/*
+    Tabcontrol
+*/
+
+.tabcontrol > .steps
+{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.tabcontrol > .steps > ul
+{
+    position: relative;
+    margin: 6px 0 0 0;
+    top: 1px;
+    z-index: 1;
+}
+
+.tabcontrol > .steps > ul > li
+{
+    float: left;
+    margin: 5px 2px 0 0;
+    padding: 1px;
+
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.tabcontrol > .steps > ul > li:hover
+{
+    background: #edecec;
+    border: 1px solid #bbb;
+    padding: 0;
+}
+
+.tabcontrol > .steps > ul > li.current
+{
+    background: #fff;
+    border: 1px solid #bbb;
+    border-bottom: 0 none;
+    padding: 0 0 1px 0;
+    margin-top: 0;
+}
+
+.tabcontrol > .steps > ul > li > a
+{
+    color: #5f5f5f;
+    display: inline-block;
+    border: 0 none;
+    margin: 0;
+    padding: 10px 30px;
+    text-decoration: none;
+}
+
+.tabcontrol > .steps > ul > li > a:hover
+{
+    text-decoration: none;
+}
+
+.tabcontrol > .steps > ul > li.current > a
+{
+    padding: 15px 30px 10px 30px;
+}
+
+.tabcontrol > .content
+{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 35em;
+    overflow: hidden;
+    border-top: 1px solid #bbb;
+    padding-top: 20px;
+}
+
+.tabcontrol > .content > .body
+{
+    float: left;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    padding: 2.5%;
+}
+
+.tabcontrol > .content > .body ul
+{
+    list-style: disc !important;
+}
+
+.tabcontrol > .content > .body ul > li
+{
+    display: list-item;
+}

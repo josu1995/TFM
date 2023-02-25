@@ -1,0 +1,32 @@
+.b--busquedas {
+  overflow: hidden;
+  border-bottom: 1px solid rgba(150, 150, 150, 0.3);
+  padding-bottom: 20px;
+}
+
+.b--busquedas:hover {
+  background-color: $white;
+}
+
+.b--busquedas:last-child {
+  border: none;
+}
+
+.b--busquedas p {
+  font-size: 1.5em !important;
+}
+
+.hidden-ayuda {
+  display: none;
+  position: absolute;
+  z-index: 99999;
+  height: auto;
+  max-height: 300px;
+  background: #fafafa;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  overflow: auto;
+  font-size: 80% !important;
+  margin-top: 5px;
+  width: auto;
+}

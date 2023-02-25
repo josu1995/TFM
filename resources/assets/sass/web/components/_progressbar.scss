@@ -1,0 +1,161 @@
+.container--progreso {
+  padding: 35px 0 15px 0;
+}
+
+.container--progreso i, div .container--progreso .progress-text {
+  width: 38.78px;
+}
+
+div .activo-envio, div .activo-viaje {
+  border-bottom: 4px solid rgba(227,227,227,0.92);
+}
+
+.business-progress div.activo-envio {
+  border-bottom: 1px solid rgba(227,227,227,0.92);
+}
+
+div .finalizado, div.activo-pago, div .finalizado-viaje {
+  border-bottom: 4px solid $transporter-primary;
+}
+
+.business-progress div.finalizado, .business-progress div.activo-pago {
+  border-bottom: 1px solid $transporter-primary;
+}
+
+div .activo-envio > i, div .activo-viaje > i {
+  position: absolute;
+  bottom: -1.5em;
+  left: 0;
+  background-color: $transporter-primary;
+  font-weight: 700;
+  color: $white;
+  border-radius: 50%;
+  border: 4px solid $transporter-primary;
+  padding: 0.6em;
+}
+
+div .activo-envio > .progress-text {
+  position: absolute;
+  bottom: -1.2em;
+  left: 0;
+  background-color: $white;
+  font-weight: 700;
+  color: $transporter-primary;
+  border-radius: 50%;
+  border: 1px solid $transporter-primary;
+  padding: 0.4em 0.8em;
+}
+
+div .activo-envio > span, div .finalizado > span{
+  position: absolute;
+  bottom: 1.8em;
+  left: -8px;
+  color:$transporter-primary;
+}
+div .activo-viaje > span, div .finalizado-viaje > span{
+  position: absolute;
+  bottom: 1.8em;
+  left: -33px;
+  color:$transporter-primary;
+}
+div .activo-pago > i{
+  position: absolute;
+  bottom: -0.8em;
+  right: 0;
+  background-color: $transporter-primary;
+  font-size: 1.5em;
+  color: $white;
+  border-radius: 50%;
+  border: 4px solid $transporter-primary;
+  padding: 0.233em;
+}
+
+%progress-text {
+  position: absolute;
+  bottom: -1em;
+  right: 0;
+  border-radius: 50%;
+  padding: 0.25em 0.6em;
+}
+
+div .activo-pago > .progress-text {
+  @extend %progress-text;
+  background-color: $white;
+  color: $transporter-primary;
+  border: 1px solid $transporter-primary;
+  padding: 0.45em 0.75em;
+  bottom: -1.2em;
+}
+
+div .activo-pago > span {
+  position: absolute;
+  bottom: 2.1em;
+  right: -46px;
+  color: $transporter-primary;
+}
+div .para-hacer {
+  border-bottom: 4px solid rgba(227,227,227,0.92);
+  width: 100%;
+  float: right;
+}
+
+.business-progress div.para-hacer {
+  border-bottom: 1px solid rgba(227,227,227,0.92);
+}
+
+div .para-hacer > i {
+  position: absolute;
+  bottom: -0.8em;
+  right: 0;
+  background-color: #f7f4f2;
+  font-size: 1.5em;
+  color: rgba(227,227,227,1);
+  border-radius: 50%;
+  border: 4px solid rgba(227,227,227,0.92);
+  padding: 0.233em;
+}
+
+div .para-hacer > .progress-text {
+  @extend %progress-text;
+  background-color: $white;
+  font-weight: 700;
+  color: rgba(227,227,227,1);
+  border: 1px solid rgba(227,227,227,0.92);
+  bottom: -1.15em;
+  padding: 0.4em 0.8em;
+}
+
+div .para-hacer > span{
+  position: absolute;
+  bottom: 2.1em;
+  right: -46px;
+  color:rgba(192, 192, 192, 0.35);
+}
+
+div .finalizado > i, div .finalizado-viaje > i {
+  position: absolute;
+  bottom: -1.5em;
+  left: 0;
+  background-color: $white;
+  font-weight: 700;
+  color: $transporter-primary;
+  border-radius: 50%;
+  border: 4px solid $transporter-primary;
+  padding: 0.6em;
+}
+
+.business-progress div.finalizado > i {
+  position: absolute;
+  bottom: -1.5em;
+  left: 0;
+  background-color: $white;
+  font-weight: 700;
+  color: $transporter-primary;
+  border-radius: 50%;
+  border: 1px solid $transporter-primary;
+  padding: 0.85em 0.75em;
+}
+
+.progress-text {
+  font-size: 1.2em;
+}

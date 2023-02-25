@@ -1,0 +1,609 @@
+/*.middleDiv1, .middleDiv2, .middleDiv3,.cardRow1, .cardRow2 {*/
+    /*opacity: 0;*/
+/*}*/
+
+body {
+    width: inherit !important;
+}
+
+nav .link {
+    font-family: "open_regular", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+}
+
+nav .link:hover {
+    color: #0097a7;
+}
+
+/* Hamburger start */
+
+.hamburger {
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+
+#topNav {
+    transition: all 0.4s ease-in-out;
+    background-color: grey;
+}
+
+.imageContainerTop {
+    transition: all 0.4s ease-in-out;
+}
+
+.line1, .line2, .line3 {
+    background-color:#fff;
+    width:25px;
+    height:3px;
+    display:block;
+    position:relative;
+    opacity:1.0;
+    border-radius:15%;
+    transition: all .3s;
+}
+
+.line2, .line3 {
+    margin-top:5px;
+}
+
+.line1.active {
+    transform: rotate(270deg);
+    opacity:0.0;
+    top:5px;
+}
+
+.line2.active {
+    transform: rotate(45deg);
+}
+
+.line3.active {
+    transform: rotate(-45deg);
+    top:-7px;
+}
+
+#mobileMenu {
+    background-color: #455a64;
+    width: 100%;
+    transition: all .5s ease-in-out;
+    height: 68px;
+    position: absolute;
+    padding-right: 5px;
+    right: -100%;
+}
+
+#mobileMenu > li {
+    transition: all .5s ease-in-out;
+    opacity: 0;
+    height: 68px;
+    position: relative;
+    top: -15px;
+}
+
+#mobileMenu > li > a.link {
+    height: 68px;
+}
+
+#closebtn {
+    height:25px;
+    width:25px;
+    text-decoration:none;
+    font-size: 36px !important;
+    z-index:100;
+    color:#fff;
+    cursor:pointer;
+    transition:background-position .3s;
+}
+
+/* Hamburger end */
+
+.middleDiv p,.comoFunciona-block p {
+    font-size: 18px;
+}
+
+.card-title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.comoFunciona-block {
+    padding: 0 40px 0 40px;
+    margin-bottom: 40px;
+}
+
+.imageContainerTop {
+    background-image: url('/img/drivers/portada-transporter-drivers.jpg');
+    -webkit-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 630px;
+    flex-direction: column;
+    align-items: inherit;
+}
+
+.imageContainerTop > .row {
+    background-image: linear-gradient(to left, rgba(250,250,250,0) 47%, rgba(250,250,250,0.8) 98%, rgba(250,250,250,1.00) 100%);
+    margin: inherit;
+    display: flex;
+}
+
+.imageContainerTop > .row > .col {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.titleTop {
+    color: #333;
+}
+
+.titleTop > h1 {
+    font-weight: bold;
+    font-size: 48px;
+    margin-top: 0;
+}
+
+.titleTop > h2 {
+    font-size: 22px;
+    line-height: 28px;
+}
+
+.titleTop > a {
+    margin-top: 0.6rem;
+    height: 67px;
+    line-height: 67px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.middleContainer > .row {
+    padding-top: 20px;
+}
+
+.odd {
+    background-color: #f4f5f6;
+}
+
+.middleTextContainer {
+    padding-top: 70px;
+}
+
+.circled {
+    border-radius: 100%;
+}
+
+.middleDiv {
+    padding-top: 50px !important;
+}
+
+.middleDiv {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+}
+
+.orange-divider {
+    width: 100%;
+    height: 100px;
+    color: #fff;
+}
+
+.orange-divider > h4 {
+    width: 100%;
+}
+
+.comoFunciona {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.h-150 {
+    height: 150px;
+}
+
+.no-mg-b {
+    margin-bottom: 0;
+}
+
+.mg-r-8 {
+    margin-right: 8px;
+}
+
+.mg-t-20 {
+    margin-top: 20px;
+}
+
+.mg-t-26 {
+    margin-top: 26px;
+}
+
+.pd-b-10 {
+    padding-bottom: 10px;
+}
+
+.pd-b-40 {
+    padding-bottom: 40px;
+}
+.no-pd-l {
+    padding-left: 0 !important;
+}
+
+.no-pd-r {
+    padding-right: 0 !important;
+}
+
+.pd-l-5 {
+    padding-left: 5px;
+}
+
+.pd-l-20 {
+    padding-left: 20px !important;
+}
+
+.no-mg {
+    margin: 0 !important;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.transporter-fill {
+    fill: #0097a7 !important;
+}
+
+.svg-container > svg {
+    display: block;
+    width: 100%;
+    height:100%;
+}
+
+/* FOOTER */
+
+footer {
+    color: #fff;
+    background-color: #263238 !important;
+    height: 100px;
+}
+
+.social-link {
+    display: -webkit-inline-box;
+    border: 1px solid white;
+    padding: 7px;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.social-link.facebook {
+    padding: 7px 8px 8px 11px;
+}
+
+.social-link.linkedin {
+    padding: 7px 8px 8px 8px;
+}
+
+.copyright a {
+     color: #fff;
+     outline: none;
+ }
+
+.copyright a:hover {
+    color: #0097a7;
+    outline: none;
+}
+
+.social-link:hover {
+    background-color: #0097a7;
+    border-color: #0097a7;
+}
+
+.social-link i {
+    color: white;
+    font-size: 1.3em;
+}
+
+.social-text {
+    font-size: 1em;
+    padding-top: 12px;
+}
+
+.social-container h4 {
+    margin-right: 10px;
+}
+
+.social-container div {
+    float: left;
+}
+
+/* MODAL */
+#modalForm, #modalLogin {
+    width: 450px;
+    background-color: #f1f1f1;
+    top: 5% !important;
+}
+
+/* Modal Login */
+.btn-facebook {
+    background-color: #3b5998;
+    height: 65px;
+    width: 100%;
+    line-height: 3em;
+    border: none;
+    font-size: 19px;
+    font-weight: 100;
+    text-transform: none;
+    letter-spacing: inherit;
+    padding: 5px 0 5px 56px;
+    position: relative;
+}
+
+.btn-facebook i {
+    font-size: 2.5em;
+    position: absolute;
+    left: 15px;
+    top: 4px;
+}
+
+.btn-facebook strong {
+    font-weight: bold;
+}
+
+.loginForm {
+    padding-top: 20px;
+}
+
+.forgot-link {
+    color: #333;
+}
+
+.register-link {
+    color: #0097a7;
+    font-weight: bold;
+}
+
+.forgot-link:hover, .register-link:hover {
+    text-decoration: underline;
+}
+
+.loginForm > button {
+    margin-top: 20px;
+}
+
+.login-footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.sesion-activa-container {
+    margin-top: 15px;
+}
+
+.sesion-activa-container > label > span {
+    font-size: 1em !important;
+}
+
+.sesion-activa-container > a {
+    font-size: 0.7em;
+    padding-top: 5px !important;
+    color: #0097a7;
+    font-weight: bold;
+}
+
+input[type="checkbox"]:checked+span:after {
+    border: 2px solid #0097a7 !important;
+    background-color: #0097a7 !important;
+}
+
+.login-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+#modalLogin > .modal-content {
+    padding: 45px;
+}
+
+@media(max-width: 350px) {
+
+    .btn-facebook {
+        height: 74px;
+        line-height: 1.7em;
+    }
+
+    .btn-facebook > i {
+        top: 20px;
+    }
+}
+
+/* Modal Register */
+
+#modalForm .row, #modalLogin .row {
+    margin-bottom: 0 !important;
+}
+.modal-header {
+    font-size: 16px;
+}
+a.texto-corporativo {
+    font-weight: bold !important; }
+a.texto-corporativo:hover, a.texto-corporativo:focus {
+    color: #0097a7 !important;
+    text-decoration: underline; }
+.texto-corporativo {
+    color: #0097a7; }
+.bold {
+    font-weight: bold;
+}
+.send-button {
+    width: 100%;
+    font-weight: bold;
+}
+.input-field > label {
+    margin-left: 32px !important;
+}
+.prefix {
+    margin-top: 6px !important;
+}
+.select {
+    margin-top: 0 !important;
+}
+.modal-close.material-icons {
+    color: #1f2229;
+}
+
+.select-invalid {
+    border-bottom: 1px solid #F44336 !important;
+    box-shadow: 0 1px 0 0 #F44336 !important;
+    color: #F44336;
+}
+.input-invalid {
+    border-bottom: 1px solid #F44336 !important;
+    box-shadow: 0 1px 0 0 #F44336 !important;
+}
+.label-invalid:after {
+    content: attr(data-error) !important;
+    color: #F44336;
+    opacity: 1 !important;
+    display: block;
+    content: "";
+    position: absolute;
+    top: 33px;
+    opacity: 0;
+    transition: .2s opacity ease-out, .2s color ease-out;
+}
+.label-invalid-with-text:after {
+    content: attr(data-error) !important;
+    color: #F44336;
+    opacity: 1 !important;
+    display: block;
+    content: "";
+    position: absolute;
+    top: 57px;
+    opacity: 0;
+    transition: .2s opacity ease-out, .2s color ease-out;
+}
+
+.condiciones {
+    font-size: 60%;
+}
+
+/* OK MODAL */
+i.teal {
+    color: #fff;
+}
+.okText {
+    padding: 0 20%;
+}
+button {
+    color: #fff !important;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .brand-logo img {
+        height: 40px;
+    }
+    .navbar-fixed, nav {
+        height: 68px;
+    }
+    .list-inline {
+        display: block;
+    }
+    .iconos--pagos, .copyright {
+        text-align: center !important;
+    }
+    .enlaces--footer li {
+        margin-top: 5px;
+    }
+    .imageContainerTop {
+        height: 520px;
+        background-position-x: center;
+    }
+    .imageContainerTop > .row {
+        background-image: linear-gradient(to bottom, rgba(255,255,255,0) 13%,rgba(255,255,255,0.5) 32%,rgba(255,255,255,0.7) 100%,rgba(255,255,255,0) 100%);
+    }
+    .imageContainerTop > .row > .col {
+        width: 100%;
+        margin-bottom: 80px;
+    }
+    .titleTop > h1 {
+        font-size: 30px;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    .titleTop > h2 {
+        margin-top:0;
+        font-size: 20px;
+    }
+
+    .titleTop > a {
+        margin-top: 0;
+    }
+    .logo-mobile {
+        width: 200px;
+        height: 80px;
+    }
+    .brand-logo {
+        left: 0 !important;
+        transform: translateX(0) !important;
+    }
+    .headerButton a {
+        margin: 0 !important;
+        padding: 0 10px;
+    }
+    .orange-divider > h3 {
+        font-size: 30px;
+    }
+    .comoFunciona-block {
+        padding: 0;
+    }
+
+    footer {
+        height: 180px;
+    }
+
+    footer > .container > .row {
+        flex-direction: column;
+    }
+    .social-container {
+        padding-bottom: 15px !important;
+    }
+    .social-container div {
+        float: none;
+        text-align: center;
+    }
+    .social-text {
+        padding-bottom: 10px;
+    }
+    #modalForm, #modalLogin {
+        width: 100%;
+        height:100%;
+        top: 0 !important;
+        background-color: #f1f1f1;
+        max-height: 100%;
+    }
+
+    #modalLogin > .modal-content {
+        padding: 45px 24px;
+    }
+
+}
+
+/** DROPDOWN **/
+.header-user-img {
+    position: relative;
+    top: 10px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}

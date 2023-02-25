@@ -1,0 +1,257 @@
+.m-principal-ayuda .guia-ayuda .inner-guia {
+  height:auto;
+  padding-bottom: 2.5em;
+  position: relative;
+}
+.m-principal-ayuda .guia-ayuda a {
+  color: $transporter-primary;
+  margin:0;
+  position: initial;
+}
+.m-principal-ayuda .inner-principal-ayuda {
+  overflow: hidden;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.m-principal-ayuda .guia-ayuda h3 {
+  display: block;
+  height: auto;
+  margin: 0 0 10px 0;
+
+}
+
+.m-busqueda-ayuda {
+  padding: 0 0 1.75em;
+}
+.m-principal-ayuda {
+  padding-bottom: 60px;
+  background-color: #fbfbfb;
+}
+
+.m-principal-ayuda a, .footer-link-container a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+}
+
+.m-principal-ayuda a:hover, .footer-link-container a:hover {
+  text-decoration: none;
+  color: $transporter-primary;
+}
+
+.m-principal-ayuda .inner-principal-ayuda {
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.m-busqueda-ayuda a:hover {
+  text-decoration: none;
+}
+
+.m-busqueda-ayuda p {
+  font-size: 1.2em;
+  line-height: 3.5em;
+  font-weight: 100;
+  margin-bottom: 0;
+}
+
+.m-busqueda-ayuda .input-ayuda {
+  height: 60px;
+  width: 100%;
+  font-size: 1.3em;
+  font-family: 'transporter', 'Open Sans';
+  font-weight: 100;
+}
+
+.m-principal-ayuda .col-principal-ayuda {
+  overflow: hidden;
+}
+
+.m-principal-ayuda .inner-principal-ayuda {
+  overflow: hidden;
+  width: 600%;
+}
+
+.m-principal-ayuda .lista-temas {
+  list-style: none;
+  margin: 0;
+  padding: 0 30px 0 0;
+  width: auto;
+  float: left;
+}
+
+.m-principal-ayuda ul li {
+  text-align: left;
+}
+
+.m-principal-ayuda ul li a {
+  display: block;
+  padding: 15px 40px 15px 15px;
+  border-left: 3px solid #fbfbfb;
+  position: relative;
+  font-size: 1em;
+  font-weight: inherit;
+  color: #82888a;
+}
+
+.m-principal-ayuda ul li a i {
+  margin-right: 10px;
+}
+
+.m-principal-ayuda ul li a span {
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.m-principal-ayuda ul li a.categoryLink:hover {
+  border-left-color: $transporter-primary;
+  color: $transporter-primary;
+  text-decoration: none; }
+
+.m-principal-ayuda ul li a.categoryLink:focus {
+  outline:none;
+  border-left-color: $transporter-primary;
+  color: $transporter-primary;
+  text-decoration: none;
+}
+
+.m-principal-ayuda .sublista-temas {
+  float: left;
+  padding-left: 15px;
+}
+
+.m-principal-ayuda .sublista-temas ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  width: 100%;
+}
+
+.m-principal-ayuda .sublista-temas ul a:hover {
+  text-decoration: none;
+}
+
+.m-principal-ayuda .sublista-temas ul .atras-ayuda {
+  text-align: left;
+  color: $transporter-primary;
+}
+
+.m-principal-ayuda .sublista-temas ul .atras-ayuda span {
+  margin-right: 0;
+}
+
+.m-principal-ayuda .sublista-temas ul .atras-ayuda i {
+  margin-right: 10px;
+}
+
+.m-principal-ayuda .sublista-temas ul li {
+  text-align: left;
+  padding-left: 25px;
+}
+
+.m-principal-ayuda h2.titulo-ayuda {
+  font-weight: 100;
+  text-align: left;
+  margin-bottom: 50px;
+  margin-top: 0;
+}
+
+.m-principal-ayuda .temas-populares {
+  overflow: hidden;
+}
+
+.m-principal-ayuda .temas-populares .b-popular {
+  padding: 5px;
+}
+
+.m-principal-ayuda .temas-populares .inner-popular {
+  overflow: hidden;
+  background-color: $white;
+  border: 1px solid #dce0e0;
+  padding: 60px 20px;
+  height: 16em;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.m-principal-ayuda .temas-populares .inner-popular:hover {
+  background-color: $transporter-primary;
+  border-color: $transporter-primary;
+}
+
+.m-principal-ayuda .temas-populares .inner-popular:hover p {
+  animation: popularIcon 0.3s forwards ease;
+  color: $white;
+}
+
+.m-principal-ayuda .temas-populares .inner-popular:hover span {
+  animation: popularTexto 0.3s forwards ease;
+  color: $white;
+}
+
+.m-principal-ayuda .temas-populares .inner-popular p {
+  text-align: center;
+  font-size: 14px;
+  color: #505050;
+  position: relative;
+}
+
+.m-principal-ayuda .temas-populares .inner-popular span {
+  text-align: center;
+  display: block;
+  color: $transporter-primary;
+  font-size: 4em;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.m-principal-ayuda hr {
+  margin: 40px 0;
+  border-color: #c9c9c9;
+}
+
+.m-principal-ayuda .guia-ayuda {
+  overflow: hidden;
+}
+
+.m-principal-ayuda .guia-ayuda .inner-guia {
+  height: 25em;
+  position: relative;
+}
+
+.m-principal-ayuda .guia-ayuda span {
+  display: block;
+  width: 140px;
+  height: 140px;
+  background-color: $transporter-primary;
+  font-size: 5em;
+  color: $white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 2em;
+  margin: 0 auto 25px;
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+.m-principal-ayuda .guia-ayuda h3,
+.m-principal-ayuda .guia-ayuda p {
+  font-weight: 100;
+}
+
+.m-principal-ayuda .guia-ayuda h3 {
+  display: block;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.m-principal-ayuda .guia-ayuda a {
+  margin-top: 20px;
+  color: $transporter-primary;
+  position: absolute;
+  bottom: 0;
+}

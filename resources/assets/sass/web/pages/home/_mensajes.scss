@@ -1,0 +1,34 @@
+.table-msg {
+  width: 100%;
+}
+
+.m-mensajes {
+  padding: 35px;
+  border: 1px solid #e5e5e5;
+  background-color: $white;
+}
+
+.msg-paquete:hover {
+  cursor: pointer; }
+
+.msg-creado,
+.msg-finalizado,
+.msg-pagado,
+.msg-ruta,
+.msg-seleccionado,
+.msg-validado,
+.msg-reserva {
+  background-color: $transporter-primary; }
+
+.msg-entrega {
+  background-color: #9be56b; }
+
+.msg-app,
+.msg-intermedio {
+  background-color: #15c5f8; }
+
+.msg-recogida,
+.msg-devuelto,
+.msg-cancelado,
+.msg-cancelado_transporter {
+  background-color: $destino-red; }

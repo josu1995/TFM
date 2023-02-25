@@ -1,0 +1,13 @@
+.nav-pills > li.active a,
+.nav-pills > li.active a:hover,
+.nav-pills > li.active a:active,
+.nav-pills > li.active > a:focus {
+  background-color: $transporter-primary;
+  color: $white;
+  border-color: $transporter-primary;
+  border-radius: 3px;
+}
+
+.pill-group {
+  background-color: #eee;
+}

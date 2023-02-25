@@ -1,0 +1,22 @@
+.expandable-motivo {
+  text-decoration: none !important;
+  color: #8c8c8c !important;
+
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
+
+#modal-detalles-motivo {
+
+  & .image-container {
+    width: 100%;
+    text-align: center;
+
+    & > img {
+      max-height: 300px;
+      width: auto;
+      max-width: 100%;
+    }
+  }
+}

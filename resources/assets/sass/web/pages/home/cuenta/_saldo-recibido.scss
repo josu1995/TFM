@@ -1,0 +1,18 @@
+.recibido-total{
+  text-align: right;
+}
+
+.total-recibido {
+  border:1px solid $transporter-primary;
+  border-radius: 3px;
+  padding: 0px 5px;
+  vertical-align: bottom;
+  font-size: 18px;
+}
+
+.bloques-perfil li#historial-saldo {
+  display: block !important;
+}
+.bloques-perfil li#pendientes-saldo {
+  display: block !important;
+}

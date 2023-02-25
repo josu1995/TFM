@@ -1,0 +1,231 @@
+input::-webkit-input-placeholder {
+  color: #646464 !important;
+}
+
+input:-moz-placeholder {
+  color: #646464 !important;
+}
+
+input::-moz-placeholder {
+  color: #646464 !important;
+}
+
+input:-ms-input-placeholder {
+  color: #646464 !important;
+}
+
+.form-horizontal .form-group label {
+  line-height: 2.5em;
+  font-weight: 400;
+  width: auto;
+}
+
+.form-horizontal .form-group {
+  margin: 0 0 15px;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  display: -ms-flexbox;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+input.form-control {
+  height: 40px !important;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  padding: 10px;
+  box-shadow: none;
+  font-size: 0.9em;
+}
+
+.input-group-addon+input {
+  border: 1px solid #ccc;
+}
+
+input.form-control:focus {
+  border-color: $transporter-primary;
+  box-shadow: none;
+  color: $transporter-primary;
+}
+
+input.form-control:focus ~ span {
+  color: $transporter-primary;
+}
+
+input.form-control:focus ~ span:before {
+  border-color: $transporter-primary;
+}
+
+input.form-control-lg {
+  height: 50px !important;
+}
+
+.bloque-input {
+  position: relative;
+  width: 100%;
+  margin-left: 10px;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  display: -ms-flexbox;
+  flex: 9;
+  -ms-flex: 9;
+  cursor: pointer;
+}
+
+.bloque-input span {
+  position: absolute;
+  margin-left: 15px;
+  font-size: 1.5em;
+  display: block;
+  line-height: 4rem;
+  height: 100%;
+  z-index: 1;
+}
+
+.bloque-input input.form-control-lg ~ span {
+  line-height: 3rem !important;
+}
+
+.form-control-lg + span {
+  line-height: 1.4em;
+}
+
+.bloque-input input,
+.bloque-input select {
+  padding-left: 45px;
+}
+
+.input-login {
+  margin-left: 0 !important;
+}
+
+.input-login input {
+  padding-left: 80px;
+}
+
+.input-login span.icono {
+  left: 0;
+  padding: 10px 0;
+  margin-left: 0;
+}
+
+.input-login span.icono:before {
+  display: block;
+  border-right: 1px solid;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.input-login .glyphicon-remove {
+  display: none;
+}
+
+.input-login.has-feedback .glyphicon-remove {
+  top: 9px;
+  display: block;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox {
+  padding-top: 0 !important;
+}
+
+.checkbox label {
+  padding-left: 0;
+  position: relative;
+  font-size: 13px;
+  font-weight: 100;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 2.5em;
+}
+
+.checkbox label:before {
+  content: "\e90a";
+  font-family: 'transporter';
+  line-height: 1.5em;
+  width: 20px;
+  color: $white;
+  height: 20px;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  background: $white;
+  position: relative;
+  display: inline-block;
+  margin-right: 8px;
+  top: 6px;
+  text-align: center;
+}
+
+input[type="checkbox"]:checked + label:before {
+  border-color: $transporter-primary;
+  background-color: $transporter-primary;
+}
+
+.bloque-errores ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.bloque-errores ul li {
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #bd0125;
+  padding: 5px 15px;
+  margin: 5px;
+  background: transparent;
+  color: #bd0125;
+  border-radius: 3px;
+}
+
+.bloque-inputs, .bloque-inputs-transportar {
+  position: relative;
+}
+
+button.modalCenter {
+  display: inline-block;
+}
+
+input[type=radio][name="metodoPago"] {
+  top: 2px;
+  position: relative;
+}
+
+/** Square Input **/
+.square-input {
+  display: inline-block;
+  position: relative;
+
+  & input {
+    border-radius: 0;
+    height: 60px !important;
+    padding: 12px 50px 12px 12px;
+    width: 100%;
+    font-size: 1.3em;
+  }
+
+  &.button-right button {
+    width: 60px;
+    height: 100%;
+    background: $transporter-primary;
+    border-radius: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    &:focus {
+      border-color: transparent;
+    }
+
+    & i {
+      font-size: 2em;
+    }
+  }
+}

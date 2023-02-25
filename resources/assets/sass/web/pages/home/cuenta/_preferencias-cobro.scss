@@ -1,0 +1,65 @@
+.perfil-container {
+  min-height: 320px;
+}
+
+.accordion-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 0 !important;
+}
+
+.accordion-header a {
+  font-size: 17px;
+  color: #333;
+  text-decoration: none;
+}
+
+.accordion-header .fa-chevron-down {
+  font-size: 14px;
+}
+
+.accordion-header .fa {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.accordion-header .fa.active {
+  transform: rotateX(180deg);
+}
+
+.metodo-cobro-form {
+  padding: 20px 30px 10px 30px;
+}
+
+.t-form-group {
+  margin-bottom: 10px;
+}
+
+.btn-eliminar-cobro {
+  line-height: 1.9em;
+}
+
+.defecto-radio {
+  font-size: 13px;
+  font-weight: normal;
+}
+
+input[name="defecto"][disabled] + label
+{
+  color: Gray;
+  cursor: not-allowed;
+}
+
+.defectoContainer input {
+  margin: 3px 0 0;
+}
+
+.defectoContainer {
+  float: right;
+  height: 0;
+}
+
+.defectoContainer * {
+  cursor: pointer;
+}

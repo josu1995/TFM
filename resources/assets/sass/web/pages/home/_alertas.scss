@@ -1,0 +1,58 @@
+.inner-alerta-tipo {
+  overflow: hidden;
+  background-color: $white;
+  border: 1px solid #dce0e0;
+  padding: 60px 20px;
+  height: 16em;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.inner-alerta-tipo span {
+  text-align: center;
+  display: block;
+  color: $transporter-primary;
+  font-size: 4em;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.inner-alerta-tipo p {
+  text-align: center;
+  font-size: 14px;
+  color: #505050;
+  position: relative;
+  font-weight: bold;
+}
+
+.inner-alerta-tipo:hover {
+  background-color: $transporter-primary;
+  border-color: $transporter-primary;
+}
+
+.inner-alerta-tipo:hover span {
+  animation: popularTexto 0.3s forwards ease;
+  color: $white;
+}
+
+.inner-alerta-tipo:hover p {
+  animation: popularIcon 0.3s forwards ease;
+  color: $white;
+}
+
+.link-tipo-alerta:hover {
+  text-decoration: none;
+}
+
+.feedback-alertas {
+  display: none !important;
+}
+
+.bloque-input.has-error > .feedback-alertas {
+  display: block !important;
+}
+
+.form-group.has-error > .feedback-alertas {
+  display: block !important;
+  color: $error-red;
+}

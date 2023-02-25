@@ -1,0 +1,7 @@
+.orange-link {
+  color: $transporter-primary;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}

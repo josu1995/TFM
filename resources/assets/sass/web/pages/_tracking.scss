@@ -1,0 +1,121 @@
+.tracking-section > .tracking-error {
+  min-height: 650px;
+  display: flex;
+
+    & .alert {
+      margin: auto;
+    }
+}
+
+.tracking-title {
+  @extend %page-title;
+}
+.tracking-container {
+  padding: 30px;
+}
+
+.tracking-map {
+  min-height: 571px;
+}
+
+.estado-actual-container > h4 {
+  color: #3d525c;
+}
+
+.estado-actual-container > p {
+  color: #577584;
+}
+
+.estado-container {
+
+  width: 50%;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  float: left;
+
+  &.last {
+    min-height: 60px;
+  }
+
+  &:not(.last) {
+    min-height: 100px;
+  }
+
+  & .titulo {
+    font-size: 1.15em;
+    font-weight: bold;
+    color: #17242c;
+  }
+
+  & .fecha {
+    color: #596c74;
+  }
+
+  & .direccion {
+    color: #688391;
+  }
+
+  &.even {
+    padding-right: 40px;
+    &:not(.last,.ruta)::after {
+      border-right: 4px solid #688391;
+      content: '';
+      right: -2px;
+      top: 0;
+      position: absolute;
+      height: 100%;
+    }
+
+    &.ruta:not(.last)::after {
+      border-right: 4px dotted #688391;
+      content: '';
+      right: -2px;
+      top: 0;
+      position: absolute;
+      height: 100%;
+    }
+
+    & > button {
+      right: -25px;
+    }
+  }
+
+  &.odd {
+    margin-left: 50%;
+    padding-left: 40px;
+    &:not(.last,.ruta)::before {
+      border-left: 4px solid #688391;
+      content: '';
+      left: -2px;
+      top: 0;
+      position: absolute;
+      height: 100%;
+    }
+
+    &.ruta:not(.last)::before {
+      border-left: 4px dotted #688391;
+      content: '';
+      left: -2px;
+      top: 0;
+      position: absolute;
+      height: 100%;
+    }
+
+    & > button {
+      left: -25px;
+    }
+  }
+
+  & button {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+}
+
+.estados-info {
+  max-height: 410px;
+  min-height: 410px;
+  overflow: hidden;
+}

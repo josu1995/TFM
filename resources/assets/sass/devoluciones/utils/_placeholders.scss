@@ -1,0 +1,16 @@
+%sin-datos {
+  transform: translateY(-50%);
+  position: absolute;
+  margin: 0 auto;
+  right: 0;
+  left: 0;
+  top: 50%;
+  text-align: center;
+  color: $disabled-grey;
+
+  & > span {
+    font-size: 8em;
+    display: block;
+    margin-bottom: 10px;
+  }
+}

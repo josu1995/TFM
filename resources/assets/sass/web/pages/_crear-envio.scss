@@ -1,0 +1,238 @@
+.input--medida {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bloque-envio {
+  height: 100%;
+  position: relative; }
+
+.bloque-envio .no-pd {
+  overflow: hidden !important; }
+
+.bloque-envio .no-pd.bloque-desplegable, .no-pd.form-group {
+  overflow: visible !important; }
+
+.bloque-alto {
+  padding-left: 38px !important;
+  text-align: left !important;
+}
+
+.dimensiones-icon {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+}
+
+.lista-form {
+  margin: 0;
+  box-shadow: none;
+  border: 1px solid;
+  border-radius: 3px;
+  height: 40px;
+  list-style: none;
+  padding: 0;
+  position: relative;
+  width: 100%; }
+
+.lista-form li {
+  overflow: hidden;
+}
+
+.lista-inverso {
+  background-color: $white;
+  color: #505050;
+  border-color: #e5e5e5; }
+
+.lista-corporativo {
+  background-color: $transporter-primary;
+  color: $white;
+  border-color: $transporter-primary; }
+
+.lista-puntos-origen {
+  background-color: $origen-green;
+  border-color: $origen-green;
+  color: #fff; }
+
+.lista-puntos-origen span {
+  color: $origen-green;
+}
+
+.lista-puntos-origen ul {
+  border-color: $origen-green; }
+
+.sublista-form.sublista-puntos-origen li:hover {
+  background-color: $origen-green;
+}
+
+.lista-puntos-destino {
+  background-color: $destino-red;
+  border-color: $destino-red;
+  color: #fff; }
+
+.lista-puntos-destino span {
+  color: $destino-red;
+}
+
+.lista-puntos-destino ul {
+  border-color: $destino-red; }
+
+.sublista-form.sublista-puntos-destino li:hover {
+  background-color: $destino-red;
+}
+
+.lista-form li {
+  height: 100%;
+  line-height: 2.5em;
+  padding-left: 45px;
+}
+
+.lista-form span.open-lista {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  height: 100%;
+  width: 30px;
+  text-align: center;
+  line-height: 3em;
+  font-size: 1em;
+  left: auto;
+}
+
+.lista-corporativo .sublista-form {
+  border-color: $transporter-primary;
+}
+
+.lista-inverso .sublista-form {
+  border-color: #e5e5e5;
+  background-color: $white;
+}
+
+.sublista-form {
+  display: none;
+  position: relative;
+  z-index: 99;
+  border: 1px solid;
+  max-height: 400px;
+  width: 100%;
+  overflow-y: auto;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  overflow: visible;
+}
+
+.sublista-form li {
+  background-color: $white;
+  text-align: left;
+  color: #505050;
+  cursor: pointer;
+  padding-left: 10px;
+  line-height: 30px;
+}
+
+.sublista-form li:hover {
+  background-color: $transporter-primary;
+  color: $white;
+}
+
+.m-resumen-paquetes .lista-paquetes ul {
+  height: auto !important;
+}
+
+.resumen-pago {
+  border: 1px solid #e5e5e5; }
+
+.resumen-pago .total-pago {
+  padding: 10px 20px; }
+
+.resumen-pago .total-pago p {
+  font-size: 1.4em; }
+
+.resumen-pago .total-pago p span {
+  font-size: 1.5em; }
+
+.resumen-pago .partes-pago {
+  padding: 0 20px; }
+
+.resumen-pago .partes-pago p {
+  border-bottom: 1px dashed #e5e5e5;
+  margin-bottom: 0;
+  padding: 20px 0;
+  font-size: 1.3em; }
+
+.resumen-pago .partes-pago .coberturas-item {
+  border-bottom: 1px dashed #e5e5e5; }
+
+.cobertura-item {
+  border: none !important;
+}
+
+.resumen-pago .partes-pago p:last-child {
+  border: none;
+}
+
+.m-metodo-cobro .metodo-cobro {
+  padding: 20px 35px;
+  border-radius: 3px;
+  border: 1px solid #e5e5e5;
+  min-height: 150px;
+  background-size: contain !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  cursor: pointer;
+}
+
+#l-envios {
+  padding: 40px 0;
+}
+
+/** CODIGO DESCUENTO **/
+
+.codigoDescuentoContainer {
+  margin-top: 30px;
+  text-align: center;
+  background-color: #505050;
+  color: #fff;
+}
+
+.codigoDescuentoLeft {
+  padding: 20px;
+}
+
+.formCodigo {
+  padding: 0 0 20px 0;
+}
+
+.noBoxShadow {
+  box-shadow: none;
+}
+
+.btn-eliminar-descuento {
+  position: absolute;
+  left: 15px;
+  color: #505050;
+}
+
+.btn-eliminar-descuento:hover {
+  color: red;
+}
+
+.btn-eliminar-descuento:focus {
+  text-decoration: none;
+  outline: 0 !important;
+  color: #505050
+}
+
+/** CODIGO DESCUENTO **/
+
+.metodoPagoLabel {
+  font-size: 1.2em;
+}
+
+.embalaje-icon {
+  font-size: 20px;
+}

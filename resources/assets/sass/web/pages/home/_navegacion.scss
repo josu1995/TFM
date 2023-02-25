@@ -1,0 +1,22 @@
+.navegacion-home {
+  padding: 0;
+  background-color: #505050;
+  position: relative;
+  z-index: 9; }
+
+.navegacion-home a {
+  color: $white;
+  padding: 20px 15px !important;
+}
+
+.navegacion-home a:focus,
+.navegacion-home a:hover {
+  border-radius: 0;
+  background-color: #323232 !important;
+}
+
+.menu--interior {
+  position: relative;
+  overflow-x: auto;
+  z-index: 999;
+}

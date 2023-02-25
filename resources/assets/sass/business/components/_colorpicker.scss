@@ -1,0 +1,20 @@
+.colorpicker-component {
+  width: 34px;
+  height: 34px;
+  
+  & > input {
+    display: none !important;
+  }
+
+  & > .input-group-addon {
+    border: none;
+    padding: 0;
+
+    & > i {
+      width: 36px !important;
+      height: 36px !important;
+      border-radius: 10px;
+    }
+  }
+  
+}

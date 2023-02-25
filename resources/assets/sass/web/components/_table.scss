@@ -1,0 +1,46 @@
+table {
+  border: 1px solid #e5e5e5;
+}
+
+table thead {
+  background-color: $transporter-primary;
+  color: $white;
+}
+
+table tbody tr td {
+  border-top: 1px dashed #e5e5e5 !important;
+}
+
+table thead td {
+  padding: 15px !important;
+  font-weight: bold;
+  border: 1px solid rgba(255, 209, 108, 0.47);
+}
+
+table tbody tr {
+  background-color: $white !important;
+}
+
+thead tr td {
+  text-align: center;
+}
+
+table.table tr td {
+  vertical-align: middle !important;
+  text-align: center; }
+
+.box-perfil .inner-box-perfil table,
+.inner-msg table {
+  border: none; }
+
+.box-perfil .inner-box-perfil table tbody tr td,
+.inner-msg table tbody tr td {
+  padding: 15px 5px; }
+
+.box-perfil .inner-box-perfil table tbody tr td:first-child,
+.inner-msg table tbody tr td:first-child {
+  width: 13%; }
+
+.box-perfil .inner-box-perfil table tbody tr:first-child td,
+.inner-msg table tbody tr:first-child td {
+  border-top: none !important; }

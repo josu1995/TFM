@@ -1,0 +1,10 @@
+.footer-link-container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  min-height: 500px;
+
+  & hr {
+    margin: 40px 0;
+    border-top: 1px solid #ccc;
+  }
+}

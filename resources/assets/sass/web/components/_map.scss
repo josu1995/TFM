@@ -1,0 +1,46 @@
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.bloque-mapa {
+  position: relative;
+  height: 595px;
+  margin-top: 15px;
+  float: right;
+  width: 90%;
+  border: 1px solid #e5e5e5;
+}
+
+.bloque-mapa .mensaje-mapa {
+  text-align: center;
+  z-index: 9;
+}
+
+.mensaje-mapa {
+  position: absolute;
+  padding: 20px;
+  color: $white;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.mensaje-mapa strong.text-lg {
+  float: right;
+  margin-left: 5px;
+}
+
+.row.mapa {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.mensaje-mapa p {
+  color: $white;
+}
+
+// Autocomplete Gmaps
+.pac-container {
+  z-index: 2000;
+}

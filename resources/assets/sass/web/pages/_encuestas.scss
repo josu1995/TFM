@@ -1,0 +1,39 @@
+.form--encuesta {
+  background: $white;
+  border-radius: 3px;
+  max-width: 720px;
+  padding: 30px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.encuestaModal {
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.bootstrap-switch-container .bootstrap-switch-handle-on{
+  color: #fff;
+  background: $transporter-primary !important;
+}
+
+.stars {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.observaciones {
+  resize: none;
+}
+
+.encuesta-container:before {
+  background-color: rgba(114, 80, 8, 0.9) !important;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+}

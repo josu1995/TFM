@@ -1,0 +1,22 @@
+.header {
+  padding-top: 20px;
+
+  & > img {
+    width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .header > img {
+    width: 200px;
+  }
+
+  .steps-container {
+    padding-top: 0 !important;
+    & > .steps {
+      height: 61px;
+    }
+  }
+
+}
