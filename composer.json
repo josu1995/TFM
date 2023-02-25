@@ -4,17 +4,75 @@
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/urtzip/sermepa-omnipay"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/urtzip/eloquent-oauth-l5"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/urtzip/eloquent-oauth"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/urtzip/socialnorm-facebook"
+        }
+    ],
     "require": {
-        "php": "^8.0.2",
+        "php": "^8.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-simplexml": "*",
+        "barryvdh/laravel-debugbar": "^3.7",
+        "barryvdh/laravel-dompdf": "^2.0",
+        "barryvdh/laravel-ide-helper": "^2.12",
+        "doctrine/dbal": "^3.3",
+        "econea/nusoap": "^0.9.12",
+        "facebook/php-ads-sdk": "^14.0",
+        "filp/whoops": "^2.14",
+        "fruitcake/laravel-cors": "^2.0.5",
+        "gabrielbull/ups-api": "^2.1",
         "guzzlehttp/guzzle": "^7.2",
-        "laravel/framework": "^9.19",
-        "laravel/sanctum": "^3.0",
+        "ignited/laravel-omnipay": "^3.4",
+        "illuminate/support": "^9.20",
+        "intervention/image": "^2.7",
+        "intervention/validation": "^3.2",
+        "laracasts/generators": "^2.0",
+        "laravel/framework": "^9.0",
+        "laravel/helpers": "^1.5",
+        "laravel/sanctum": "^2.14",
         "laravel/tinker": "^2.7",
-        "laravel/ui": "^4.2"
+        "laravel/ui": "^3.4",
+        "laravelcollective/html": "^6.3",
+        "maatwebsite/excel": "^3.1",
+        "milon/barcode": "^9.0",
+        "omnipay/common": "^3.2",
+        "omnipay/paypal": "^3.0",
+        "phpoffice/phpspreadsheet": "^1.24",
+        "propaganistas/laravel-phone": "^4.3",
+        "psr/simple-cache": "^2.0",
+        "sermepa/sermepa": "^1.4",
+        "simplesoftwareio/simple-qrcode": "^4.2",
+        "spatie/pdf-to-image": "^1.2",
+        "symfony/css-selector": "^6.1",
+        "symfony/dom-crawler": "^6.1",
+        "symfony/event-dispatcher": "^6.1",
+        "symfony/http-foundation": "^6.1",
+        "symfony/http-kernel": "^6.1",
+        "symfony/translation": "^6.1",
+        "toin0u/geocoder-laravel": "^4.5",
+        "tymon/jwt-auth": "*",
+        "webpatser/laravel-uuid": "^4.0",
+        "yajra/laravel-datatables-oracle": "^10.1"
     },
     "require-dev": {
-        "fakerphp/faker": "^1.9.1",
-        "laravel/pint": "^1.0",
+       
+        "fakerphp/faker": "^1.9.1",  
+        "laravel/dusk": "^6.25",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
@@ -56,11 +114,8 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true,
-        "allow-plugins": {
-            "pestphp/pest-plugin": true
-        }
+        "sort-packages": true
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }

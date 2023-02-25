@@ -2,51 +2,126 @@
 
 namespace App\Providers;
 
-use Illuminate\Cache\RateLimiting\Limit;
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider
 {
     /**
-     * The path to the "home" route for your application.
+     * This namespace is applied to the controller routes in your routes file.
      *
-     * Typically, users are redirected here after authentication.
+     * In addition, it is set as the URL generator's root namespace.
      *
      * @var string
      */
-    public const HOME = '/home';
+    protected $rootNamespace = 'App\Http\Controllers';
+    protected $storesApiNamespace = 'App\Http\Controllers\API\TStore';
+    protected $driversApiNamespace = 'App\Http\Controllers\API\TDriver';
+    protected $businessApiNamespace = 'App\Http\Controllers\API\TBusiness';
+    protected $adminNamespace = 'App\Http\Controllers\Admin';
+    protected $adminBlogNamespace = 'App\Http\Controllers\Admin';
+    protected $driversNamespace = 'App\Http\Controllers\Driver';
+    protected $businessNamespace = 'App\Http\Controllers\Business';
 
     /**
-     * Define your route model bindings, pattern filters, and other route configuration.
+     * Define your route model bindings, pattern filters, etc.
      *
      * @return void
      */
     public function boot()
     {
-        $this->configureRateLimiting();
-
-        $this->routes(function () {
-            Route::middleware('api')
-                ->prefix('api')
-                ->group(base_path('routes/api.php'));
-
-            Route::middleware('web')
-                ->group(base_path('routes/web.php'));
-        });
+        parent::boot();
     }
 
     /**
-     * Configure the rate limiters for the application.
+     * Define the routes for the application.
      *
      * @return void
      */
-    protected function configureRateLimiting()
+    public function map()
     {
-        RateLimiter::for('api', function (Request $request) {
-            return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
-        });
+        $this->mapVersionApiRoutes();
+        $this->mapStoresApiRoutes();
+        $this->mapDriversApiRoutes();
+        $this->mapBusinessApiRoutes();
+
+        $this->mapAdminRoutes();
+        $this->mapBlogAdminRoutes();
+
+        $this->mapDriverRoutes();
+        $this->mapBusinessRoutes();
+        $this->mapWebRoutes();
+    }
+
+    protected function mapVersionApiRoutes()
+    {
+        Route::middleware('api')
+            ->namespace($this->storesApiNamespace)
+            ->prefix('api')
+            ->group(base_path('routes/api/version.php'));
+    }
+
+    protected function mapStoresApiRoutes()
+    {
+        Route::middleware('api')
+            ->namespace($this->storesApiNamespace)
+            ->prefix('api/tstore')
+            ->group(base_path('routes/api/stores.php'));
+    }
+
+    protected function mapDriversApiRoutes()
+    {
+        Route::middleware('api')
+            ->namespace($this->driversApiNamespace)
+            ->prefix('api/tdriver')
+            ->group(base_path('routes/api/drivers.php'));
+    }
+
+    protected function mapBusinessApiRoutes()
+    {
+        Route::middleware('api')
+            ->namespace($this->businessApiNamespace)
+            ->prefix('api/tbusiness')
+            ->group(base_path('routes/api/business.php'));
+    }
+
+    protected function mapAdminRoutes()
+    {
+        Route::middleware(['web' , 'auth' , 'admin'])
+            ->namespace($this->adminNamespace)
+            ->prefix('administracion')
+            ->group(base_path('routes/admin/admin.php'));
+    }
+
+    protected function mapBlogAdminRoutes()
+    {
+        Route::middleware(['web' , 'auth' , 'blog'])
+            ->namespace($this->adminBlogNamespace)
+            ->prefix('blog/admin')
+            ->group(base_path('routes/admin/blog.php'));
+    }
+
+    protected function mapDriverRoutes()
+    {
+        Route::middleware('driver')
+            ->namespace($this->driversNamespace)
+            ->prefix('drivers')
+            ->domain(env('APP_DOMAIN'))
+            ->group(base_path('routes/drivers.php'));
+    }
+
+    protected function mapBusinessRoutes()
+    {
+        Route::middleware('business')
+            ->namespace($this->businessNamespace)
+            // ->prefix('business')
+            ->group(base_path('routes/business.php'));
+    }
+
+    protected function mapWebRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->rootNamespace)
+            ->group(base_path('routes/web.php'));
     }
 }

@@ -1,0 +1,173 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('/fonts/transportericons/transporter.eot?5mzhst');
+    src: url('/fonts/transportericons/transporter.eot?5mzhst#iefix') format('embedded-opentype'), url('/fonts/transportericons/transporter.ttf?5mzhst') format('truetype'), url('/fonts/transportericons/icomoon.woff?5mzhst') format('woff'), url('/fonts/transportericons/transporter.svg?5mzhst#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-alertas:before {
+    content: "\e903";
+}
+.icon-desconectarse:before {
+    content: "\e901";
+}
+.icon-ver-perfil:before {
+    content: "\e932";
+}
+.icon-editar-perfil:before {
+    content: "\e900";
+}
+.icon-burger-menu:before {
+    content: "\e902";
+}
+.icon-anadido:before {
+    content: "\e904";
+}
+.icon-anadir:before {
+    content: "\e905";
+}
+.icon-blog:before {
+    content: "\e906";
+}
+.icon-buscar:before {
+    content: "\e907";
+}
+.icon-cerrar:before {
+    content: "\e908";
+}
+.icon-cobertura:before {
+    content: "\e909";
+}
+.icon-confirmar:before, .icon-validado:before {
+    content: "\e90a";
+}
+.icon-contacto:before {
+    content: "\e90b";
+}
+.icon-contenido:before {
+    content: "\e90c";
+}
+.icon-contrasena:before {
+    content: "\e90d";
+}
+.icon-cp:before {
+    content: "\e90e";
+}
+.icon-editar:before {
+    content: "\e90f";
+}
+.icon-editar-perfil2:before {
+    content: "\e910";
+}
+.icon-envio-recogida:before {
+    content: "\e911";
+}
+.icon-envios:before, .icon-creado:before {
+    content: "\e912";
+}
+.icon-euros:before, .icon-pagado:before {
+    content: "\e913";
+}
+.icon-fecha:before {
+    content: "\e914";
+}
+.icon-funcionamiento:before {
+    content: "\e915";
+}
+.icon-historial-paquetes:before {
+    content: "\e916";
+}
+.icon-horario:before {
+    content: "\e917";
+}
+.icon-info:before {
+    content: "\e918";
+}
+.icon-movil:before {
+    content: "\e919";
+}
+.icon-pagos:before {
+    content: "\e91a";
+}
+.icon-paquete:before {
+    content: "\e91b";
+}
+.icon-paquete-anadido:before {
+    content: "\e91c";
+}
+.icon-peso:before {
+    content: "\e91d";
+}
+.icon-politicas:before {
+    content: "\e91e";
+}
+.icon-preguntas:before {
+    content: "\e91f";
+}
+.icon-punto:before, .icon-entrega:before, .icon-recogida:before, .icon-intermedio:before {
+    content: "\e920";
+}
+.icon-reportar:before {
+    content: "\e921";
+}
+.icon-rutas:before {
+    content: "\e922";
+}
+.icon-siguiente:before {
+    content: "\e923";
+}
+.icon-tamano:before {
+    content: "\e924";
+}
+.icon-tarjeta:before {
+    content: "\e925";
+}
+.icon-transporte:before, .icon-ruta:before {
+    content: "\e926";
+}
+.icon-transporter:before {
+    content: "\e927";
+}
+.icon-ubicacion:before {
+    content: "\e928";
+}
+.icon-usuario:before, .icon-finalizado:before {
+    content: "\e929";
+}
+.icon-flecha-up:before {
+    content: "\e931";
+}
+.icon-flecha-r:before {
+    content: "\e92a";
+}
+.icon-flecha-l:before {
+    content: "\e92b";
+}
+.icon-flecha-down:before {
+    content: "\e92c";
+}
+.icon-crear-envio:before {
+    content: "\e92d";
+}
+.icon-panel:before {
+    content: "\e92e";
+}
+.icon-opiniones:before {
+    content: "\e92f";
+}
+.icon-admin:before {
+    content: "\e930";
+}
