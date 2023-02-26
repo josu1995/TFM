@@ -23,8 +23,8 @@
                                 <button type="button" id="eliminarRegla" disabled class="btn btn-danger" style="height:34px;border-radius: 3px;" aria-haspopup="true" aria-expanded="false">
                                     <i class="far fa-trash-alt"></i>
                                 </button>
-                                <button type="button"  class="btn btn-success" style="height:34px;margin-left: 9px;border-radius: 3px;"  aria-haspopup="true" aria-expanded="false">
-                                <i style="line-height: 0.9;vertical-align: middle;" class="material-icons">add_circle_outline</i> Crear regla 
+                                <button type="button" onclick="openCrearModal();"  class="btn btn-success" style="height:34px;margin-left: 9px;border-radius: 3px;"  aria-haspopup="true" aria-expanded="false">
+                                <i style="line-height: 0.9;vertical-align: middle;" class="material-icons">add_circle_outline</i> Crear palabra 
                                 </button>
                                 
                             </div>
@@ -96,8 +96,10 @@
         </div>
     </div>   
 </div>
+</section>
 
-    </section>
+@include('business.partials.crearPalabra')
+
 @endsection
 
 @push('javascripts-head')
@@ -111,7 +113,8 @@
 <script>
     var checkedRows = [];
     function openCrearModal(){
-        $('#crearRegla').modal();
+        
+        $('#crearPalabra').modal();
     }
 
     function eliminarReglas(){

@@ -33,6 +33,7 @@ Route::group(['prefix' => '/nuevo-envio'], function () {
 Route::group(['prefix' => '/admin'], function () {
     Route::get('/palabras', ['as' => 'business_envios_pendientes_pago', 'uses' => 'AdminController@getPalabras']);
     Route::get('/buscar',['as' => 'admin_buscar', 'uses' => 'AdminController@buscar']);
+    Route::post('/crearPalabra',['as' =>'admin_crear_palabra','uses' => 'AdminController@crearPalabra']);
 });
 
 Route::group(['prefix' => '/devoluciones'], function () {

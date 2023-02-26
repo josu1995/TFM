@@ -33,7 +33,12 @@
                                 </span>
                             </td>
 
-                            <td style="white-space: nowrap;">{{$recurso->texto}}</td>
+                            <td class="editable" style="white-space: nowrap;">
+                                <span class="field" data-edit-name="regla_nombre">
+                                    <span class="value">{{$recurso->texto}}</span>
+                                    <i class="fas fa-pencil-alt"></i>
+                                </span>
+                            </td>
 
                             <td class="editable">
                                 <span class="field" data-edit-name="activa">
