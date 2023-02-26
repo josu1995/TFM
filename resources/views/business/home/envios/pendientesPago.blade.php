@@ -20,7 +20,7 @@
     <div class="row">
         <div class="row-xs buscar-row" id="tableCheckOut" style="padding-top: 20px;">
                             <div class="btn-group pull-right">
-                                <button type="button" id="eliminarRegla" disabled class="btn btn-danger" style="height:34px;border-radius: 3px;" aria-haspopup="true" aria-expanded="false">
+                                <button type="button" id="eliminarRegla" onclick="eliminarReglas();" disabled class="btn btn-danger" style="height:34px;border-radius: 3px;" aria-haspopup="true" aria-expanded="false">
                                     <i class="far fa-trash-alt"></i>
                                 </button>
                                 <button type="button" onclick="openCrearModal();"  class="btn btn-success" style="height:34px;margin-left: 9px;border-radius: 3px;"  aria-haspopup="true" aria-expanded="false">
@@ -124,7 +124,7 @@
             checkedRows = -1;
         }
 
-        var eliminar = '{!! route('business_configuracion_checkout_eliminarReglas') !!}';
+        var eliminar = '{!! route('admin_eliminar_palabra') !!}';
         var csrf = '{!! csrf_token() !!}';
         $.ajax({
             url: eliminar,

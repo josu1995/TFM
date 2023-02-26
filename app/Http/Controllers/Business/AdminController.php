@@ -107,8 +107,44 @@ class AdminController extends Controller
         $dificultad = dificultad::all();
         
         return back()->with(['success' => 'Palabra creada correctamente']);
-
-
        
+    }
+
+    public function eliminarPalabra(Request $request){
+        Log::info('eliminar');
+
+        $ids = $request->ids;
+
+        if(is_null($ids)){
+                
+            return 'ok';
+        }else{
+            if($ids == -1){
+                $recursos = recurso::all();
+                foreach($recursos as $r){
+                    $recuro = recurso::where('id','=',$r->id)->get()->first();
+                    $recurso->delete();
+                    $dificultadRecursos = dificultadRecurso::where('recurso_id','=',$r->id)->get();
+                    foreach($dificultadRecursos as $dif){
+                        $dif->delete();
+                    }
+                }
+            }else{
+                foreach($ids as $id){
+                    if(!is_null($id)){
+                        foreach($id as $i){
+                            $recurso = recurso::where('id','=',$i)->get()->first();
+                            $recurso->delete();
+                            $dificultadRecursos = dificultadRecurso::where('recurso_id','=',$i)->get();
+                            foreach($dificultadRecursos as $dif){
+                                $dif->delete();
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+        return back()->with(['success' => 'Palabras eliminada correctamente']);
     }
 }
