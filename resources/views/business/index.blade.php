@@ -8,7 +8,7 @@
 
     <meta name="description" content="{{ Lang::get('business.meta.description') }}">
 
-    <meta name="theme-color" content="#0097a7" />
+    <meta name="theme-color" content="#ee8026" />
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="">

@@ -41,6 +41,7 @@
                         <th style="white-space: nowrap;">Idioma</th>
                         <th>Traduccion</th>
                         <th>Familia</th>
+                        <th>hide</th>
                     
                     </tr>
                     </thead>
@@ -50,12 +51,14 @@
                         <tr>
                             <td id="{{ $recurso->id }}">
                                 <input class="table-checkbox field" data-edit-name="regla_id" id="regla_id" type="checkbox" value="{{ $recurso->id }}" autocomplete="off" >
+                                
                             </td>
                             <td class="editable">
                                 <span class="field" data-edit-name="vocabulario">
                                     <span class="value">{{$recurso->vocabulario->nombre}}</span>
                                     <i class="fas fa-pencil-alt"></i>
                                 </span>
+                               
                             </td>
                 
                             <td class="editable">
@@ -73,6 +76,7 @@
                                     <i class="fas fa-pencil-alt"></i>
                                 </span>
                             </td>
+                            
                         </tr>
                         @endforeach
 
@@ -160,9 +164,20 @@
         $(this).parent().find('.field').each(function() {
             var text = $(this).find('.value').text().trim();
             var name = $(this).attr('data-edit-name');
-            var input = editModal.find('input[name="' + name + '"]')
 
-            input.val(text);
+
+            if(name == 'idioma_id'){
+                
+                var select = editModal.find('select[name="idioma"]').val(text);
+           
+            }else{
+
+                var input = editModal.find('input[name="' + name + '"]')
+                input.val(text);
+
+            }
+           
+            
 
 
         });

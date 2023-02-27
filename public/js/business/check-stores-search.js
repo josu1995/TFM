@@ -468,7 +468,7 @@ function showResultadoBusqueda(puntos, paquetes, ahorro) {
         var color = 'black';
     
         if(punto.metodo == "store"){
-            color = '#0097a7';
+            color = '#ee8026';
         }else if(punto.metodo == "tienda"){
             color = '#CED7DB';
         }
@@ -609,7 +609,7 @@ function hoverStore(elem) {
     var color = 'black';
     
     if(punto.metodo == "store"){
-        color = '#0097a7';
+        color = '#ee8026';
     }else if(punto.metodo == "tienda"){
         color = '#CED7DB';
     }

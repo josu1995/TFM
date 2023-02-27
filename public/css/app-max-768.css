@@ -14,7 +14,7 @@
         position: relative;
     }
     .m-principal-ayuda .guia-ayuda a {
-        color: #0097a7;
+        color: #ee8026;
         margin:0;
         position: initial;
     }
@@ -426,7 +426,7 @@
         padding: 0 20px !important; }
     .paquetes-punto .lista-paquetes .datos-paquete {
         padding-right: 0 !important; }
-    /*.row-servicios--store{background-color:#0097a7}*/
+    /*.row-servicios--store{background-color:#ee8026}*/
     .inner-perfil {
         padding: 20px 0; }
     .links-perfil {
@@ -952,7 +952,7 @@
     }
 
     .store-active::before {
-        border-top: 6px solid #0097a7 !important;
+        border-top: 6px solid #ee8026 !important;
         border-left: none !important;
         width: 100%;
     }

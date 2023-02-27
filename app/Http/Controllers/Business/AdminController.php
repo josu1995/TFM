@@ -209,7 +209,7 @@ class AdminController extends Controller
         $usuarios = Usuario::paginate(10);
         $idioma = idioma::all();
         $dificultad = dificultad::all();
-
+        
         return view('business.home.envios.adminUsuario',['usuarios' => $usuarios,'idiomas' => $idioma,'dificultades' => $dificultad,'errorMessage' => '']);
     }
 

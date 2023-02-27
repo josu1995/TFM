@@ -13,11 +13,20 @@
                     </thead>
                     <tbody>
                     @if($usuarios)
-                        @foreach($usuarios as $usuarios)
+                        @foreach($usuarios as $usuario)
                             @foreach($usuario->configuracion as $configuracion)
                                 <tr>
                                     <td id="{{ $configuracion->id }}">
                                         <input class="table-checkbox field" data-edit-name="configuracion_id" id="configuracion_id" type="checkbox" value="{{ $configuracion->id }}" autocomplete="off" >
+                                    
+                                        <span  class="field" data-edit-name="idioma_id">
+                                            <span style="display:none;" class="value">{{$configuracion->idioma->id}}</span>
+                                        
+                                        </span>
+                                        <span  class="field" data-edit-name="dificultad_id">
+                                            <span style="display:none;" class="value">{{$configuracion->dificultad->id}}</span>
+                                            
+                                        </span>
                                     </td>
                                     <td >
                                         <span class="field" data-edit-name="nombre">
@@ -33,22 +42,18 @@
                                         </span>
                                     </td>
 
-                                    <span style="display:none;" class="field" data-edit-name="idioma_id">
-                                        <span class="value">{{$configuracion->idioma->id}}</span>
-                                        
-                                    </span>
+                                   
+
+                                    
 
                                     <td class="editable">
                                         <span class="field" data-edit-name="idioma">
-                                            <span class="value">{$configuracion->idioma->nombre}}</span>
-                                            <i class="fas fa-pencil-alt">{</i>
+                                            <span class="value">{{$configuracion->idioma->nombre}}</span>
+                                            <i class="fas fa-pencil-alt"></i>
                                         </span>
                                     </td>
 
-                                    <span style="display:none;" class="field" data-edit-name="dificultad_id">
-                                        <span class="value">{{$configuracion->dificultad->id}}</span>
-                                        
-                                    </span>
+                                    
                                     <td class="editable">
                                         <span class="field" data-edit-name="dificultad">
                                             <span class="value">{{$configuracion->dificultad->nombre}}</span>

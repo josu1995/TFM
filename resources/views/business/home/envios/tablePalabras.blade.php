@@ -17,7 +17,15 @@
                         @foreach($recursos as $recurso)
                         <tr>
                             <td id="{{ $recurso->id }}">
+                                
                                 <input class="table-checkbox field" data-edit-name="regla_id" id="regla_id" type="checkbox" value="{{ $recurso->id }}" autocomplete="off" >
+                                
+                                <span class="field" data-edit-name="idioma_id">
+                                    <span style="display:none;" class="value">{{$recurso->idioma->id}}</span>
+                                   
+                                </span>
+
+                                
                             </td>
                             <td class="editable">
                                 <span class="field" data-edit-name="vocabulario">
@@ -33,10 +41,7 @@
                                 </span>
                             </td>
 
-                            <span style="display:none;" class="field" data-edit-name="idioma_id">
-                                    <span class="value">{{$recurso->idioma->id}}</span>
-                                    <i class="fas fa-pencil-alt"></i>
-                            </span>
+                           
 
                             <td class="editable" style="white-space: nowrap;">
                                 <span class="field" data-edit-name="recurso">

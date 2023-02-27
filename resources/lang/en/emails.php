@@ -39,7 +39,7 @@ return array(
     'destinoMR.autorizacion.fecha' => 'Date:........................ Signature:',
 
     'avisoDestinatario.asunto' => 'It\'s been one week since your order was at destination',
-    'avisoDestinatario.subtitulo1' => 'Your shipment with code <span style="color:#0097a7;font-weight:bold;">:localizador</span> has been in <span style="color:#0097a7;font-weight:bold;">:nombre</span> for one week. Remember that you have 7 days to collect it before it\'s automatically returned to the sender.',
+    'avisoDestinatario.subtitulo1' => 'Your shipment with code <span style="color:#ee8026;font-weight:bold;">:localizador</span> has been in <span style="color:#ee8026;font-weight:bold;">:nombre</span> for one week. Remember that you have 7 days to collect it before it\'s automatically returned to the sender.',
 
     'devolucion.asunto' => 'Your :nombre return request',
     'devolucion.subtitulo1' => 'We have received a request for the return of your order <span class="text-orange"><strong>:localizador</strong></span>.',

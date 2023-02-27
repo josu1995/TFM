@@ -16,7 +16,7 @@ nav .link {
 }
 
 nav .link:hover {
-    color: #0097a7;
+    color: #ee8026;
 }
 
 /* Hamburger start */
@@ -256,7 +256,7 @@ nav .link:hover {
 }
 
 .transporter-fill {
-    fill: #0097a7 !important;
+    fill: #ee8026 !important;
 }
 
 .svg-container > svg {
@@ -298,13 +298,13 @@ footer {
  }
 
 .copyright a:hover {
-    color: #0097a7;
+    color: #ee8026;
     outline: none;
 }
 
 .social-link:hover {
-    background-color: #0097a7;
-    border-color: #0097a7;
+    background-color: #ee8026;
+    border-color: #ee8026;
 }
 
 .social-link i {
@@ -367,7 +367,7 @@ footer {
 }
 
 .register-link {
-    color: #0097a7;
+    color: #ee8026;
     font-weight: bold;
 }
 
@@ -395,13 +395,13 @@ footer {
 .sesion-activa-container > a {
     font-size: 0.7em;
     padding-top: 5px !important;
-    color: #0097a7;
+    color: #ee8026;
     font-weight: bold;
 }
 
 input[type="checkbox"]:checked+span:after {
-    border: 2px solid #0097a7 !important;
-    background-color: #0097a7 !important;
+    border: 2px solid #ee8026 !important;
+    background-color: #ee8026 !important;
 }
 
 .login-close {
@@ -437,10 +437,10 @@ input[type="checkbox"]:checked+span:after {
 a.texto-corporativo {
     font-weight: bold !important; }
 a.texto-corporativo:hover, a.texto-corporativo:focus {
-    color: #0097a7 !important;
+    color: #ee8026 !important;
     text-decoration: underline; }
 .texto-corporativo {
-    color: #0097a7; }
+    color: #ee8026; }
 .bold {
     font-weight: bold;
 }

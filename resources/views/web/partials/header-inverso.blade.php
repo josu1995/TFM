@@ -24,7 +24,7 @@ $route = \Request::route() ? Request::route()->getName() : null;
                 </a>
                 <div class="header-separator"></div>
                 <div class="header-link">
-                    <a style="color:#0097a7" href="#" data-toggle="modal" data-target="#modalLogin" class="link">
+                    <a style="color:#ee8026" href="#" data-toggle="modal" data-target="#modalLogin" class="link">
                         Iniciar sesión
                     </a>
                 </div>

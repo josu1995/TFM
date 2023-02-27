@@ -5,10 +5,22 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
 
-
-            <li class="treeview" id="pendientes-pago"><a href="{{ route('business_envios_pendientes_pago') }}"><i class="far fa-circle"></i> Gestión de palabras</a></li>
-            <li class="treeview" id="pendientes-pago"><a href="{{ route('admin_usuarios') }}"><i class="far fa-circle"></i> Gestión de usuarios</a></li>
-                   
+            <li>
+             <a href="{{ route('business_envios_pendientes_pago') }}">
+                   <span>Gestión de palabras</span>
+                    <span class="pull-right-container">
+                       
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('admin_usuarios') }}">
+                    <span>Gestión de usuarios</span>
+                    <span class="pull-right-container">
+                        
+                    </span>
+                </a>    
+            </li>
      
             
             

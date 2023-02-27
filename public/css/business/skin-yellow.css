@@ -3,7 +3,7 @@
  * ------------
  */
 .skin-yellow .main-header .navbar {
-  background-color: #0097a7;
+  background-color: #ee8026;
 }
 .skin-yellow .main-header .navbar .nav > li > a {
   color: #ffffff;
@@ -30,7 +30,7 @@
 }
 .skin-yellow .main-header .navbar .sidebar-toggle:hover {
 	/* background-color: #e08e0b;*/
-	background-color: #007b89;
+	background-color: #c15700;
 }
 @media (max-width: 767px) {
   .skin-yellow .main-header .navbar .dropdown-menu li.divider {
@@ -44,7 +44,7 @@
   }
 }
 .skin-yellow .main-header .logo {
-  background-color: #0097a7;
+  background-color: #ee8026;
   color: #ffffff;
   border-bottom: 0 solid transparent;
 }
@@ -78,7 +78,7 @@
 }
 .skin-yellow .sidebar-menu > li.active > a {
   /*border-left-color: #f39c12;*/
-  border-left-color: #007b89;
+  border-left-color: #c15700;
 }
 .skin-yellow .sidebar-menu > li > .treeview-menu {
   margin: 0 1px;

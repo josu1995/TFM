@@ -6098,7 +6098,7 @@ button.close {
  * ------------
  */
 .skin-yellow .main-header .navbar {
-  background-color: #0097a7;
+  background-color: #ee8026;
 }
 .skin-yellow .main-header .navbar .nav > li > a {
   color: #ffffff;
@@ -6138,7 +6138,7 @@ button.close {
   }
 }
 .skin-yellow .main-header .logo {
-  background-color: #0097a7;
+  background-color: #ee8026;
   color: #ffffff;
   border-bottom: 0 solid transparent;
 }
@@ -6317,7 +6317,7 @@ button.close {
 }
 
 .icono-naranja {
-  color: #0097a7;
+  color: #ee8026;
 }
 
 .text-secondary {
@@ -6334,7 +6334,7 @@ button.close {
 }
 
 .texto-corporativo {
-  color: #0097a7;
+  color: #ee8026;
 }
 
 .texto-inverso {
@@ -6350,7 +6350,7 @@ button.close {
 }
 
 .fondo-corporativo {
-  background-color: #0097a7;
+  background-color: #ee8026;
 }
 
 @media (min-width: 768px) {
@@ -6569,7 +6569,7 @@ button.close {
 }
 
 .box {
-  border-top: 3px solid #0097a7;
+  border-top: 3px solid #ee8026;
 }
 
 .box .box-title {
@@ -7168,7 +7168,7 @@ aside li.active i.fa-angle-left {
 }
 
 .form-orange-link {
-  color: #0097a7;
+  color: #ee8026;
 }
 
 .form-orange-link:hover {
@@ -7284,7 +7284,7 @@ button:active {
 }
 
 .business-btn {
-  background-color: #0097a7;
+  background-color: #ee8026;
   border-radius: 0;
   font-size: 1.1em;
   width: 50%;
@@ -7303,9 +7303,9 @@ button:active {
 }
 
 .business-btn-outline {
-  color: #0097a7;
+  color: #ee8026;
   background-color: #ffffff;
-  border: 1px solid #0097a7;
+  border: 1px solid #ee8026;
   position: relative;
 }
 
@@ -7315,7 +7315,7 @@ button:active {
 }
 
 .business-btn-outline.with-icon-left > i.icon-editar-perfil {
-  border: 2px solid #0097a7;
+  border: 2px solid #ee8026;
   border-radius: 50%;
   padding: 4px;
   font-size: 0.75em;
@@ -7327,7 +7327,7 @@ button:active {
 }
 
 .business-btn-outline:hover {
-  background-color: #0097a7;
+  background-color: #ee8026;
   color: #ffffff;
 }
 
@@ -7630,7 +7630,7 @@ button.close {
 }
 
 .transporter-alert .ui-pnotify-icon > span {
-  color: #0097a7;
+  color: #ee8026;
 }
 
 .transporter-alert .ui-pnotify-closer {
@@ -7655,7 +7655,7 @@ button.close {
 }
 
 .business-table > thead {
-  background-color: #0097a7;
+  background-color: #ee8026;
   color: #ffffff;
 }
 
@@ -7780,7 +7780,7 @@ button.close {
   }
 
   .business-table thead {
-    border-right: 1px solid #0097a7;
+    border-right: 1px solid #ee8026;
   }
 
   .business-table tbody tr td:last-child {
@@ -7949,7 +7949,7 @@ button.close {
 
 .pagination a.active,
 .pagination .active span {
-  background-color: #0097a7;
+  background-color: #ee8026;
   color: #ffffff;
   border: 1px solid #e1e1e1;
 }
@@ -8092,12 +8092,12 @@ button.close {
 [type="radio"]:checked + label:after,
 [type="radio"].with-gap:checked + label:before,
 [type="radio"].with-gap:checked + label:after {
-  border: 2px solid #0097a7;
+  border: 2px solid #ee8026;
 }
 
 [type="radio"]:checked + label:after,
 [type="radio"].with-gap:checked + label:after {
-  background-color: #0097a7;
+  background-color: #ee8026;
 }
 
 [type="radio"]:checked + label:after {
@@ -8122,12 +8122,12 @@ button.close {
 /* Disabled Radio With gap */
 
 [type="radio"].with-gap:disabled:checked + label:before {
-  border: 2px solid #0097a7;
+  border: 2px solid #ee8026;
 }
 
 [type="radio"].with-gap:disabled:checked + label:after {
   border: none;
-  background-color: #0097a7;
+  background-color: #ee8026;
 }
 
 /* Disabled style */
@@ -8327,8 +8327,8 @@ button.close {
   top: 2px;
   width: 20px;
   height: 20px;
-  border: 2px solid #0097a7;
-  background-color: #0097a7;
+  border: 2px solid #ee8026;
+  background-color: #ee8026;
   z-index: 0;
 }
 
@@ -8340,8 +8340,8 @@ button.close {
 
 .material-checkbox.filled-in.tabbed:checked:focus + span:not(.lever):after {
   border-radius: 2px;
-  background-color: #0097a7;
-  border-color: #0097a7;
+  background-color: #ee8026;
+  border-color: #ee8026;
 }
 
 .material-checkbox.filled-in:disabled:not(:checked) + span:not(.lever):before {
@@ -8861,7 +8861,7 @@ y-axis
 }
 
 .orange-link {
-  color: #0097a7;
+  color: #ee8026;
 }
 
 .orange-link:hover {
@@ -9363,7 +9363,7 @@ input[type="checkbox"] {
 }
 
 .stores-list .punto-list-item.store-active::before {
-  border-left: 6px solid #0097a7;
+  border-left: 6px solid #ee8026;
   top: 0;
   left: 0;
   height: 100%;
@@ -9582,7 +9582,7 @@ input[type="checkbox"] {
   }
 
   .store-active::before {
-    border-top: 6px solid #0097a7 !important;
+    border-top: 6px solid #ee8026 !important;
     border-left: none !important;
     width: 100%;
   }
@@ -9601,7 +9601,7 @@ input[type="checkbox"] {
 }
 
 .ajustes-devolucion-box .marca-form .marca-input-group > .input-group-addon > button {
-  background: #0097a7;
+  background: #ee8026;
 }
 
 .ajustes-devolucion-box .marca-form .marca-input-group i {

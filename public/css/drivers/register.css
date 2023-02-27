@@ -14,7 +14,7 @@ form {
 }
 
 input:focus, select:focus {
-    border-color: #0097a7 !important;
+    border-color: #ee8026 !important;
     box-shadow: none !important;
 }
 
@@ -48,7 +48,7 @@ html, body {
 }
 
 .texto-corporativo {
-    color: #0097a7;
+    color: #ee8026;
 }
 
 .flex {
@@ -237,7 +237,7 @@ section {
 .wizard > .steps .current a:hover,
 .wizard > .steps .current a:active
 {
-    background: #0097a7;
+    background: #ee8026;
     color: #fff;
     cursor: default;
     font-weight: bold;
@@ -426,7 +426,7 @@ section {
 .wizard > .actions a[href="#finish"]:hover,
 .wizard > .actions a[href="#finish"]:active
 {
-    background: #0097a7;
+    background: #ee8026;
 }
 
 .wizard > .actions .disabled a,

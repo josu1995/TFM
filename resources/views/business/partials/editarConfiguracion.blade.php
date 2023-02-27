@@ -7,7 +7,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{ route('admin_editar_palabra') }}" method="post">
+            <form action="{{ route('admin_editar_configuracion','') }}" method="post">
                 <div class="modal-body">
 
                     @if ($errorMessage)
@@ -48,11 +48,19 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group no-mg-768">
-                        <div class="row no-mg-768">
-                            <div class="col-xs-12 col-sm-12">
-                                <label>RECURSO</label>
-                                <input type="text" class="form-control" name="recurso" value="{{ old('recurso') ? old('recurso') : '' }}" required>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                                <label>DIFICULTAD</label>
+                                <select class="form-control" id="dificultad" name="dificultad">
+                            
+                                    @foreach($dificultades as $dificultad)
+
+                                        <option value="{{$dificultad->id}}">{{$dificultad->nombre}}</option>
+
+                                    @endforeach
+
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -62,7 +70,7 @@
                
                 <div class="modal-footer">
                     <a type="button" class="btn btn-link" data-dismiss="modal">Cerrar</a>
-                    <button type="submit" class="btn btn-corporativo business-btn m-w-200">Crear</button>
+                    <button type="submit" class="btn btn-corporativo business-btn m-w-200">Editar</button>
                 </div>
             </form>
         </div>

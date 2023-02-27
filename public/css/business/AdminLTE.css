@@ -170,7 +170,7 @@ a:active,
 a:focus {
   outline: none;
   text-decoration: none;
-  color: #0097a7;
+  color: #ee8026;
 }
 /* Page Header */
 .page-header {
@@ -1278,7 +1278,7 @@ a:focus {
   height: 40px;
 }
 .form-control:focus {
-  border-color: #0097a7;
+  border-color: #ee8026;
   box-shadow: none;
 }
 .form-control::-moz-placeholder,

@@ -85,7 +85,7 @@ class TestCase extends \Illuminate\Foundation\Testing\TestCase
 
         $usuario->configuracionBusiness->ajustesDevolucion()->save(factory(AjustesDevolucionBusiness::class)->make([
             'plazo' => 14,
-            'color' => '#0097a7',
+            'color' => '#ee8026',
             'opcion_etiqueta_id' => OpcionEtiquetaDevolucionBusiness::PREIMPRESA,
             'opcion_store' => 1,
             'opcion_domicilio' => 0,

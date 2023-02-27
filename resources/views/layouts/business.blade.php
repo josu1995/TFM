@@ -6,7 +6,7 @@
   <title>{{ Lang::get('dashboard.meta.title') }}</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <meta name="theme-color" content="#0097a7" />
+  <meta name="theme-color" content="#ee8026" />
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

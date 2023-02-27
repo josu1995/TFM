@@ -39,7 +39,7 @@ return array(
     'destinoMR.autorizacion.fecha' => 'Fecha:........................ Firma:',
 
     'avisoDestinatario.asunto' => 'Tu pedido lleva una semana en destino',
-    'avisoDestinatario.subtitulo1' => 'Tu envío con nº <span style="color:#0097a7;font-weight:bold;">:localizador</span> se encuentra en el punto <span style="color:#0097a7;font-weight:bold;">:nombre</span> desde hace una semana. Recuerda que dispones de 7 días para recogerlo antes de ser devuelto al remitente.',
+    'avisoDestinatario.subtitulo1' => 'Tu envío con nº <span style="color:#ee8026;font-weight:bold;">:localizador</span> se encuentra en el punto <span style="color:#ee8026;font-weight:bold;">:nombre</span> desde hace una semana. Recuerda que dispones de 7 días para recogerlo antes de ser devuelto al remitente.',
 
     'devolucion.asunto' => 'Tu solicitud de devolución a :nombre',
     'devolucion.subtitulo1' => 'Hemos recibido la solicitud de devolución de tu pedido <span class="text-orange"><strong>:localizador</strong></span>.',

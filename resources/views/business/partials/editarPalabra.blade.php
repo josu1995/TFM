@@ -61,8 +61,8 @@
                 {{ csrf_field() }}
                
                 <div class="modal-footer">
-                    <a type="button" class="btn btn-link" data-dismiss="modal">Editar</a>
-                    <button type="submit" class="btn btn-corporativo business-btn m-w-200">Crear</button>
+                    <a type="button" class="btn btn-link" data-dismiss="modal">Cerrar</a>
+                    <button type="submit" class="btn btn-corporativo business-btn m-w-200">Editar</button>
                 </div>
             </form>
         </div>

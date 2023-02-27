@@ -4,12 +4,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1 class="section-title">
-            Gestión de palabras
+            Gestión de usuarios
         </h1>
         <ol class="breadcrumb">
             <li class="icon-crumb"><i class="material-icons">home</i></li>
             <li class="active">Admin</li>
-            <li class="active">Gestión de palabras</li>
+            <li class="active">Gestión de usuarios</li>
         </ol>
     </section>
 
@@ -20,7 +20,7 @@
     <div class="row">
         <div class="row-xs buscar-row" id="tableCheckOut" style="padding-top: 20px;">
                             <div class="btn-group pull-right">
-                                <button type="button" id="eliminarRegla" disabled class="btn btn-danger" style="height:34px;border-radius: 3px;" aria-haspopup="true" aria-expanded="false">
+                                <button type="button" id="eliminarRegla" onclick="eliminarConfiguracion();" disabled class="btn btn-danger" style="height:34px;border-radius: 3px;" aria-haspopup="true" aria-expanded="false">
                                     <i class="far fa-trash-alt"></i>
                                 </button>
                                 
@@ -43,39 +43,42 @@
                     </thead>
                     <tbody>
                     @if($usuarios)
-                        @foreach($usuarios as $usuarios)
+                        @foreach($usuarios as $usuario)
                             @foreach($usuario->configuracion as $configuracion)
                                 <tr>
                                     <td id="{{ $configuracion->id }}">
                                         <input class="table-checkbox field" data-edit-name="configuracion_id" id="configuracion_id" type="checkbox" value="{{ $configuracion->id }}" autocomplete="off" >
                                     </td>
-                                    <td class="editable">
+                                    <td>
                                         <span class="field" data-edit-name="nombre">
                                             <span class="value"></span>
-                                            <i class="fas fa-pencil-alt">{{$usuario->nombre}} {{$usuario->apellido}}</i>
+                                           {{$usuario->nombre}} {{$usuario->apellido}}
                                         </span>
                                     </td>
                         
-                                    <td class="editable">
+                                    <td>
                                         <span class="field" data-edit-name="email">
                                             <span class="value"></span>
-                                            <i class="fas fa-pencil-alt">{{$usuario->email}}</i>
+                                            {{$usuario->email}}
                                         </span>
                                     </td>
 
                                     <td class="editable">
                                         <span class="field" data-edit-name="idioma">
-                                            <span class="value"></span>
-                                            <i class="fas fa-pencil-alt">{{$configuracion->idioma->nombre}}</i>
+                                            <span class="value">{{$configuracion->idioma->nombre}}</span>
+                                            <i class="fas fa-pencil-alt"></i>
                                         </span>
                                     </td>
 
                                     <td class="editable">
                                         <span class="field" data-edit-name="dificultad">
-                                            <span class="value"></span>
-                                            <i class="fas fa-pencil-alt">{{$configuracion->dificultad->nombre}}</i>
+                                            <span class="value">{{$configuracion->dificultad->nombre}}</span>
+                                            <i class="fas fa-pencil-alt"></i>
                                         </span>
                                     </td>
+
+                                    
+                                    
                                 </tr>
                             @endforeach
                         @endforeach
@@ -102,7 +105,7 @@
 </div>
 </section>
 
-@include('business.partials.crearPalabra')
+@include('business.partials.editarConfiguracion')
 
 @endsection
 
@@ -118,7 +121,7 @@
     var checkedRows = [];
    
 
-    function eliminarReglas(){
+    function eliminarConfiguracion(){
         
         if($('input.header-checkbox').is(':checked')){
             //Eliminamos todos
@@ -149,7 +152,7 @@
         e.preventDefault();
        
         var id = $(this).parent().children().first().attr('id');
-        var route = $('#editarConfiguracion').find('form').attr('action');
+        var route = 'http://127.0.0.1:8000/admin/editarConfiguracion';
 
         var editModal = $('#editarConfiguracion');
 
@@ -161,6 +164,16 @@
             var text = $(this).find('.value').text().trim();
             var name = $(this).attr('data-edit-name');
             var input = editModal.find('input[name="' + name + '"]')
+
+            if(name == "dificultad_id"){
+                var select = editModal.find('select[name="dificultad"]').val(text);
+            }
+
+            if(name == "idioma_id"){
+                var select = editModal.find('select[name="idioma"]').val(text);
+            }
+
+        
 
             input.val(text);
 
