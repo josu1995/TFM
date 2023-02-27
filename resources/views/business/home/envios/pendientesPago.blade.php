@@ -99,6 +99,7 @@
 </section>
 
 @include('business.partials.crearPalabra')
+@include('business.partials.editarPalabra')
 
 @endsection
 
@@ -148,7 +149,7 @@
         e.preventDefault();
        
         var id = $(this).parent().children().first().attr('id');
-        var route = $('#editarPalabra').find('form').attr('action');
+        var route = 'http://127.0.0.1:8000/admin/editarPalabra';
 
         var editModal = $('#editarPalabra');
 

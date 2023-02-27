@@ -7,7 +7,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{ route('admin_editar_palabra') }}" method="post">
+            <form action="{{ route('admin_editar_palabra','') }}" method="post">
                 <div class="modal-body">
 
                     @if ($errorMessage)
@@ -61,7 +61,7 @@
                 {{ csrf_field() }}
                
                 <div class="modal-footer">
-                    <a type="button" class="btn btn-link" data-dismiss="modal">Cerrar</a>
+                    <a type="button" class="btn btn-link" data-dismiss="modal">Editar</a>
                     <button type="submit" class="btn btn-corporativo business-btn m-w-200">Crear</button>
                 </div>
             </form>
