@@ -20,11 +20,8 @@
     <div class="row">
         <div class="row-xs buscar-row" id="tableCheckOut" style="padding-top: 20px;">
                             <div class="btn-group pull-right">
-                                <button type="button" id="eliminarRegla" onclick="eliminarReglas();" disabled class="btn btn-danger" style="height:34px;border-radius: 3px;" aria-haspopup="true" aria-expanded="false">
+                                <button type="button" id="eliminarRegla" disabled class="btn btn-danger" style="height:34px;border-radius: 3px;" aria-haspopup="true" aria-expanded="false">
                                     <i class="far fa-trash-alt"></i>
-                                </button>
-                                <button type="button" onclick="openCrearModal();"  class="btn btn-success" style="height:34px;margin-left: 9px;border-radius: 3px;"  aria-haspopup="true" aria-expanded="false">
-                                <i style="line-height: 0.9;vertical-align: middle;" class="material-icons">add_circle_outline</i> Crear palabra 
                                 </button>
                                 
                             </div>
@@ -32,48 +29,55 @@
 
         </div>
         <div class="business-table-row row-xs no-pd-h mg-t-6">
-            <div class="table-responsive table-flow" id='tableResponsiveCheckOut' style="width: 100%;padding: 0px;padding-top: 14px;">
+            <div class="table-responsive table-flow" id='tableResponsiveUsuarios' style="width: 100%;padding: 0px;padding-top: 14px;">
                 <table class="table table-striped business-table"  style="font-size: 14px;">
                     <thead>
                     <tr>
                         <th><input class="header-checkbox" type="checkbox" autocomplete="off" ></th>
-                        <th>Vocabulario</th>
-                        <th style="white-space: nowrap;">Idioma</th>
-                        <th>Traduccion</th>
-                        <th>Familia</th>
+                        <th>Nombre</th>
+                        <th style="white-space: nowrap;">Email</th>
+                        <th>Idioma</th>
+                        <th>Dificultad</th>
                     
                     </tr>
                     </thead>
                     <tbody>
-                    @if($recursos)
-                        @foreach($recursos as $recurso)
-                        <tr>
-                            <td id="{{ $recurso->id }}">
-                                <input class="table-checkbox field" data-edit-name="regla_id" id="regla_id" type="checkbox" value="{{ $recurso->id }}" autocomplete="off" >
-                            </td>
-                            <td class="editable">
-                                <span class="field" data-edit-name="vocabulario">
-                                    <span class="value">{{$recurso->vocabulario->nombre}}</span>
-                                    <i class="fas fa-pencil-alt"></i>
-                                </span>
-                            </td>
-                
-                            <td class="editable">
-                                <span class="field" data-edit-name="idioma">
-                                    <span class="value">{{$recurso->idioma->nombre}}</span>
-                                    <i class="fas fa-pencil-alt"></i>
-                                </span>
-                            </td>
+                    @if($usuarios)
+                        @foreach($usuarios as $usuarios)
+                            @foreach($usuario->configuracion as $configuracion)
+                                <tr>
+                                    <td id="{{ $configuracion->id }}">
+                                        <input class="table-checkbox field" data-edit-name="configuracion_id" id="configuracion_id" type="checkbox" value="{{ $configuracion->id }}" autocomplete="off" >
+                                    </td>
+                                    <td class="editable">
+                                        <span class="field" data-edit-name="nombre">
+                                            <span class="value"></span>
+                                            <i class="fas fa-pencil-alt">{{$usuario->nombre}} {{$usuario->apellido}}</i>
+                                        </span>
+                                    </td>
+                        
+                                    <td class="editable">
+                                        <span class="field" data-edit-name="email">
+                                            <span class="value"></span>
+                                            <i class="fas fa-pencil-alt">{{$usuario->email}}</i>
+                                        </span>
+                                    </td>
 
-                            <td style="white-space: nowrap;">{{$recurso->texto}}</td>
+                                    <td class="editable">
+                                        <span class="field" data-edit-name="idioma">
+                                            <span class="value"></span>
+                                            <i class="fas fa-pencil-alt">{{$configuracion->idioma->nombre}}</i>
+                                        </span>
+                                    </td>
 
-                            <td class="editable">
-                                <span class="field" data-edit-name="activa">
-                                    <span class="value">{{$recurso->vocabulario->familia->nombre}}</span>
-                                    <i class="fas fa-pencil-alt"></i>
-                                </span>
-                            </td>
-                        </tr>
+                                    <td class="editable">
+                                        <span class="field" data-edit-name="dificultad">
+                                            <span class="value"></span>
+                                            <i class="fas fa-pencil-alt">{{$configuracion->dificultad->nombre}}</i>
+                                        </span>
+                                    </td>
+                                </tr>
+                            @endforeach
                         @endforeach
 
 
@@ -90,7 +94,7 @@
                     @endif
                     </tbody>
                 </table>
-                {{ $recursos->links() }}
+                {{ $usuarios->links() }}
             </div>
             
         </div>
@@ -112,10 +116,7 @@
     
 <script>
     var checkedRows = [];
-    function openCrearModal(){
-        
-        $('#crearPalabra').modal();
-    }
+   
 
     function eliminarReglas(){
         
@@ -124,7 +125,7 @@
             checkedRows = -1;
         }
 
-        var eliminar = '{!! route('admin_eliminar_palabra') !!}';
+        var eliminar = '{!! route('admin_eliminar_configuracion') !!}';
         var csrf = '{!! csrf_token() !!}';
         $.ajax({
             url: eliminar,
@@ -148,9 +149,9 @@
         e.preventDefault();
        
         var id = $(this).parent().children().first().attr('id');
-        var route = $('#editarPalabra').find('form').attr('action');
+        var route = $('#editarConfiguracion').find('form').attr('action');
 
-        var editModal = $('#editarPalabra');
+        var editModal = $('#editarConfiguracion');
 
         editModal.find('form').attr('action', route + '/' + id);
         
@@ -180,7 +181,7 @@
 
     function filterListData(text) {
 
-        var rutaSearchRegla = '{!! route('admin_buscar') !!}';
+        var rutaSearchRegla = '{!! route('admin_buscar_usuario') !!}';
         $('.business-table-row').load(rutaSearchRegla + '?t=' + encodeURIComponent(text), function () {
             
             initCheckboxes();

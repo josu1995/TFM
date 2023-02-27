@@ -103,5 +103,9 @@ class Usuario extends Authenticatable
         $this->notify(new ResetPasswordNotification($token, $this));
     }
 
+    public function configuracion(){
+        return $this->hasMany('App\Models\configuracion','usuario_id');
+    }
+
     
 }

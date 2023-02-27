@@ -20,28 +20,33 @@
                                 <input class="table-checkbox field" data-edit-name="regla_id" id="regla_id" type="checkbox" value="{{ $recurso->id }}" autocomplete="off" >
                             </td>
                             <td class="editable">
-                                <span class="field" data-edit-name="regla_prioridad">
+                                <span class="field" data-edit-name="vocabulario">
                                     <span class="value">{{$recurso->vocabulario->nombre}}</span>
                                     <i class="fas fa-pencil-alt"></i>
                                 </span>
                             </td>
                 
                             <td class="editable">
-                                <span class="field" data-edit-name="regla_nombre">
+                                <span class="field" data-edit-name="idioma">
                                     <span class="value">{{$recurso->idioma->nombre}}</span>
                                     <i class="fas fa-pencil-alt"></i>
                                 </span>
                             </td>
 
+                            <span style="display:none;" class="field" data-edit-name="idioma_id">
+                                    <span class="value">{{$recurso->idioma->id}}</span>
+                                    <i class="fas fa-pencil-alt"></i>
+                            </span>
+
                             <td class="editable" style="white-space: nowrap;">
-                                <span class="field" data-edit-name="regla_nombre">
+                                <span class="field" data-edit-name="recurso">
                                     <span class="value">{{$recurso->texto}}</span>
                                     <i class="fas fa-pencil-alt"></i>
                                 </span>
                             </td>
 
                             <td class="editable">
-                                <span class="field" data-edit-name="activa">
+                                <span class="field" data-edit-name="familia">
                                     <span class="value">{{$recurso->vocabulario->familia->nombre}}</span>
                                     <i class="fas fa-pencil-alt"></i>
                                 </span>

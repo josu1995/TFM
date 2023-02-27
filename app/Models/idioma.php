@@ -12,4 +12,8 @@ class idioma extends Model
     public function recursos(){
         return $this->hasMany('App\Models\recurso','idioma_id');
     }
+
+    public function configuraciones(){
+        return $this->hasMany('App\Models\configuracion','idioma_id');
+    }
 }

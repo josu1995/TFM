@@ -12,5 +12,9 @@ class dificultad extends Model
     public function recurso(){
         return $this->hasMany('App\Models\dificultadRecurso','dificultad_id');
     }
+
+    public function configuraciones(){
+        return $this->hasMany('App\Models\configuracion','dificultad_id');
+    }
     
 }

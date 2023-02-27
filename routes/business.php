@@ -34,7 +34,12 @@ Route::group(['prefix' => '/admin'], function () {
     Route::get('/palabras', ['as' => 'business_envios_pendientes_pago', 'uses' => 'AdminController@getPalabras']);
     Route::get('/buscar',['as' => 'admin_buscar', 'uses' => 'AdminController@buscar']);
     Route::post('/crearPalabra',['as' =>'admin_crear_palabra','uses' => 'AdminController@crearPalabra']);
+    Route::post('/editarPalabra/{id}',['as' => 'admin_editar_palabra','uses' => 'AdminController@editarPalabra']);
     Route::post('eliminarPalabra',['as' => 'admin_eliminar_palabra','uses' => 'AdminController@eliminarPalabra']);
+    Route::get('/usuarios',['as' => 'admin_usuarios','uses' => 'AdminController@getUsuarios']);
+    Route::post('/editarConfiguracion/{id}',['as' => 'admin_editar_configuracion','uses' => 'AdminController@editConfiguracion']);
+    Route::post('eliminarConfiguracion',['as' => 'admin_eliminar_configuracion','uses' => 'AdminController@deleteConfiguracion']);
+    Route::get('/buscarUsuario',['as' => 'admin_buscar_usuario', 'uses' => 'AdminController@buscarUsuario']);
 });
 
 Route::group(['prefix' => '/devoluciones'], function () {
