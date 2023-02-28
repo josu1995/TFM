@@ -42,6 +42,12 @@ Route::group(['prefix' => '/admin'], function () {
     Route::get('/buscarUsuario',['as' => 'admin_buscar_usuario', 'uses' => 'AdminController@buscarUsuario']);
 });
 
+Route::group(['prefix' => '/usuario'],function(){
+    Route::get('/perfilUsuario', ['as' => 'usuario_get_datos', 'uses' => 'HomeController@getDatosUsuario']);
+    Route::post('/editarPerfil', ['as' => 'usuario_post_perfil', 'uses' => 'HomeController@postPerfil']);
+    Route::post('/editarContraseña', ['as' => 'usuario_post_contraseña', 'uses' => 'HomeController@postContraseña']);
+});
+
 Route::group(['prefix' => '/devoluciones'], function () {
     Route::get('/pendientes', ['as' => 'business_devoluciones_pendientes', 'uses' => 'DevolucionesController@getPendientes']);
     Route::get('/pendientes/search', ['as' => 'business_devoluciones_pendientes_search', 'uses' => 'DevolucionesController@searchPendientes']);

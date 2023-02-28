@@ -36,11 +36,7 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li id="datos-usuario"><a href="{{ route('business_cuenta_datos_usuario') }}"><i class="far fa-circle"></i> Datos de usuario</a></li>
-                    <li id="datos-pago"><a href="{{ route('business_cuenta_datos_pago') }}"><i class="far fa-circle"></i> Datos de pago</a></li>
-                    <li id="datos-facturacion"><a href="{{ route('business_cuenta_datos_facturacion') }}"><i class="far fa-circle"></i> Datos de facturación</a></li>
-                    <li id="facturas"><a href="{{ route('business_cuenta_facturas') }}"><i class="far fa-circle"></i> Facturas</a></li>
-                    <li id="condiciones-servicio"><a href="{{ route('business_cuenta_condiciones_servicio') }}"><i class="far fa-circle"></i> Condiciones de servicio</a></li>
+                    <li id="datos-usuario"><a href="{{ route('usuario_get_datos') }}"><i class="far fa-circle"></i> Datos de usuario</a></li>
                 </ul>
             </li>
             <li id="soporte" class="treeview">
