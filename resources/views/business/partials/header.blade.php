@@ -8,12 +8,7 @@
         </a>
     </nav>
     <!-- Logo -->
-    <span class="logo">
-        <!-- mini logo for sidebar mini 50x50 pixels -->
-        <!-- <span class="logo-mini">@svg('img/identidad/citystock-white.svg')</span> -->
-        <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg">@svg('img/identidad/logotipo.svg')</span>
-    </span>
+    
 </header>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
