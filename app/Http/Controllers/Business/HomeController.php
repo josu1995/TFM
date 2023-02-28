@@ -34,7 +34,7 @@ class HomeController extends Controller
 
      public function getDatosUsuario(Request $request) {
 
-        Log::info('veamos los datos',array(Auth::user()));
+        Log::info('veamos los datos',array(Auth::user()->rol));
 
         return view('business.home.envios.datosUsuario', ['usuario' => Auth::user(), 'message' => $request->session()->get('message')]);
     }
@@ -124,7 +124,9 @@ class HomeController extends Controller
         }
     }
 
-
+    public function getEstudios(){
+        return view('business.home.envios.estudios');
+    }
 
 
 

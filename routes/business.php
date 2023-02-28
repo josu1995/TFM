@@ -46,6 +46,7 @@ Route::group(['prefix' => '/usuario'],function(){
     Route::get('/perfilUsuario', ['as' => 'usuario_get_datos', 'uses' => 'HomeController@getDatosUsuario']);
     Route::post('/editarPerfil', ['as' => 'usuario_post_perfil', 'uses' => 'HomeController@postPerfil']);
     Route::post('/editarContraseña', ['as' => 'usuario_post_contraseña', 'uses' => 'HomeController@postContraseña']);
+    Route::get('/estudios', ['as' => 'usuario_get_estudios', 'uses' => 'HomeController@getEstudios']);
 });
 
 Route::group(['prefix' => '/devoluciones'], function () {

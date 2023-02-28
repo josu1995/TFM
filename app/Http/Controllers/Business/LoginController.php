@@ -59,10 +59,18 @@ class LoginController extends Controller
 
         if ($this->attemptLogin($request)) {
             //Auth::guard('web')->user()->roles()->whereIn('id', [Rol::ADMINISTRADOR])->first()
-            if(true) {
-                Auth::guard('business')->login(Auth::guard('web')->user());
+            Log::info('Auth',array(Auth::user()));
+            Auth::guard('business')->login(Auth::guard('web')->user());
+            if(Auth::user()->rol == 1) {
+
+                return $this->sendLoginResponse($request);
+                
+            }else{
+
+                return view('business.home.envios.estudios');
+
             }
-            return $this->sendLoginResponse($request);
+            
         }
 
         $this->incrementLoginAttempts($request);

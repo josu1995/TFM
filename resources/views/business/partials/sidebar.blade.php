@@ -4,23 +4,33 @@
     <section class="sidebar">
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
-
-            <li>
-             <a href="{{ route('business_envios_pendientes_pago') }}">
-                   <span>Gestión de palabras</span>
-                    <span class="pull-right-container">
-                       
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('admin_usuarios') }}">
-                    <span>Gestión de usuarios</span>
-                    <span class="pull-right-container">
+            @if(\Auth::user()->rol == 1)
+                <li>
+                <a href="{{ route('business_envios_pendientes_pago') }}">
+                    <span>Gestión de palabras</span>
+                        <span class="pull-right-container">
                         
-                    </span>
-                </a>    
-            </li>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('admin_usuarios') }}">
+                        <span>Gestión de usuarios</span>
+                        <span class="pull-right-container">
+                            
+                        </span>
+                    </a>    
+                </li>
+            @else
+                <li>
+                    <a href="{{ route('usuario_get_estudios') }}">
+                        <span>Estudios</span>
+                        <span class="pull-right-container">
+                            
+                        </span>
+                    </a>    
+                </li>
+            @endif
      
             
             
