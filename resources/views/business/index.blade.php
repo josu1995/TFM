@@ -202,7 +202,7 @@
 
     <div class="business-hero bg-transparent relative overflow-hidden">
         <video autoplay muted loop class="fullscreen">
-            <source src="{{ asset( 'video/citystock_bg.mp4' ) }}" type="video/mp4">
+            
         </video>
         <div class="business-header desktop-header">
             <a href="{{ route('business_landing_index') }}">
@@ -246,8 +246,8 @@
 
         <div class="content">
             <div>
-                <h1 class="titulo">IMPRESIONA A TUS CLIENTES</h1>
-                <h2 class="subtitulo">La tecnología al servicio de tu negocio</h2>
+                <h1 class="titulo">APRENDE IDIOMAS FÁCILMENTE</h1>
+                <h2 class="subtitulo">Variedad de idiomas a tu alcance</h2>
                 <a href="{{ route('business_register') }}" class="btn btn-corporativo"
                     style="padding: 1rem 1.5rem; font-weight: bold; font-size: 1.6rem;">
                     Pruébalo gratis<i class="fas fa-chevron-right" style="margin-left:1rem"></i>
@@ -363,21 +363,9 @@
             $.src="//v2.zopim.com/?3dFUiB17IFQTlGyKEvqodFDcsjr60z58";z.t=+new Date;$.
                 type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 </script>
-{{-- End of Zopim Live Chat Script--}}
 
-{{--DESCOMENTAR EN PROD--}}
-{{--<script>
-    --}}
-    {{--(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){--}}
-    {{--(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),--}}
-    {{--m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)--}}
-    {{--})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');--}}
 
-    {{--ga('create', 'G-6G416JV0PT', 'auto');--}}
-    {{--ga('send', 'pageview');--}}
 
-    {{--
-</script>--}}
 
 
 {{-- Llamadas dinámicas a js de footer --}}

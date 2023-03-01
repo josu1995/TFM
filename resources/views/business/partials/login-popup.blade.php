@@ -10,7 +10,7 @@
         <a class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </a>
-        <p class="login-title text-center mg-b-20">Entra en tu cuenta Citystock</p>
+        <p class="login-title text-center mg-b-20">Entra en tu cuenta IdioGrabber</p>
           <form id="login-form" class="form-horizontal" role="form" method="POST" action="{{ route('business_login') }}">
              {!! csrf_field() !!}
              <div class="form-group">
