@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
 use App\Models\Usuario;
+use App\Models\configuracion;
+use App\Models\dificultad;
+use App\Models\idioma;
+use App\Models\recurso;
 
 use Auth;
 use Validator;
@@ -125,13 +129,89 @@ class HomeController extends Controller
     }
 
     public function getEstudios(){
-        return view('business.home.envios.estudios');
+
+        $usuario = Auth::user();
+
+        $configuraciones = configuracion::where('usuario_id','=',$usuario->id)->get();
+        $dificultades = dificultad::all();
+        $idiomas = idioma::all();
+
+        return view('business.home.envios.estudios', ["configuraciones" => $configuraciones]);
+
     }
 
 
+    public function crearNuevaConfiguracion(Request $request){
+        $usuario = Auth::user();
+        $idioma = $request->idioma;
+        $dificultad = $request->dificultad;
 
+        $configuracion = configuracion::where('usuario_id','=',$usuario->id)
+        ->where('idioma_id','=',$idioma)
+        ->where('dificultad_id','=',$dificultad)
+        ->get()->first();
 
+        if($configuracion){
+            return redirect()->back()->withErrors(['configuracion' => 'Ya tienes unos estudios con estas opciones.'], 'configuracion');
+        }else{
+            $newConfiguracion = new configuracion();
+            $newConfiguracion->usuario_id = $usuario->id;
+            $newConfiguracion->idioma_id = $idioma;
+            $newConfiguracion->dificultad_id = $dificultad;
+            $newConfiguracion->save();
+        }   
 
+        $request->session()->flash('message', 'Nueva configuración creada correctamente.');
+        return redirect()->route('usuario_get_estudios');
+        
+    }
+
+    public function jugar(Request $request){
+        //hay que mandar un recurso que es el que se va a adivinar
+        //¿como se dice te? --> mandamos el recurso en español Te
+    }
+
+    public function comprobar(Request $request){
+        //Recivimos un id, que es el del recurso a adivinar
+        //Recivimos una respuesta
+        //EJEMPLO
+        //---------
+        //¿como se dice te?
+        //Te
+        $usuario = Auth::user();
+        $respuesta = $request->repuesta;
+        $idioma = $request->idioma;
+
+        $recurso = recurso::where('id','=',$request->id)->get()->first();
+
+        if($recurso->tipo = 'Palabra'){
+            //Comprobamos las palabras
+            $adivinar = recurso::where('idioma_id','=',$idioma)
+            ->where('vocabulario_id','=',$recurso->vocabulario_id)
+            ->get()->first();
+
+            $estudio = estudia::where('usuario_id','=',$usuario->id)
+            ->where('recurso_id','=',$adivinar->id)
+            ->get()->first();
+
+            if($adivinar == $respuesta){
+                if($estudio->nivel < 10 ){
+                    $estudio->nivel = $estudio->nivel + 1;
+                   
+                }
+            }else{
+                if($estudio->nivel > 1){
+                    $estudio->nivel = $estudio->nivel - 1;
+                }
+            }
+
+            $estudio->updated_at = Carbon::now();
+            $estudio->save();
+
+        }
+
+        return 'ok';
+    }
 
 
 
