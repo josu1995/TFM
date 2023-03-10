@@ -67,7 +67,7 @@ class LoginController extends Controller
                 
             }else{
 
-                return view('business.home.envios.estudios');
+                return redirect()->route('usuario_get_estudios');
 
             }
             

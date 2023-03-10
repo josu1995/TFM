@@ -14,8 +14,35 @@
 
     <!-- Main content -->
     <section class="content">
-    
+        @if($errors->hasBag('configuracion'))
 
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->getBag('configuracion')->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+
+        @endif
+        @foreach($configuraciones as $configuracion)
+            <div class="row" style="margin-top: 18px;">  
+                <div id="cards" class="row StoreGrid col-lg-12" style="display:block;padding-right:0;">
+                    @component('business.partials.configuracion-card', [
+                        'configuracion' => $configuracion
+                    ]) @endcomponent
+                </div>
+            </div>
+        @endforeach
+
+        <div class="row" style="margin-top: 18px;">  
+            <div id="cards" class="row StoreGrid col-lg-12" style="display:block;padding-right:0;">
+                @component('business.partials.new-configuracion-card', [
+                        'idiomas' => $idiomas,
+                        'dificultades' => $dificultades
+                ]) @endcomponent     
+            </div>
+        </div>
     </section>
 
 

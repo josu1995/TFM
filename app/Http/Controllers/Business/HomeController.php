@@ -12,6 +12,7 @@ use App\Models\configuracion;
 use App\Models\dificultad;
 use App\Models\idioma;
 use App\Models\recurso;
+use App\Models\estudia;
 
 use Auth;
 use Validator;
@@ -130,18 +131,21 @@ class HomeController extends Controller
 
     public function getEstudios(){
 
+        Log::info('por aqui no?');
+
         $usuario = Auth::user();
 
         $configuraciones = configuracion::where('usuario_id','=',$usuario->id)->get();
         $dificultades = dificultad::all();
         $idiomas = idioma::all();
 
-        return view('business.home.envios.estudios', ["configuraciones" => $configuraciones]);
+        return view('business.home.envios.estudios', ["configuraciones" => $configuraciones,'dificultades' => $dificultades, 'idiomas' => $idiomas]);
 
     }
 
 
     public function crearNuevaConfiguracion(Request $request){
+        Log::info('crear configuracion');
         $usuario = Auth::user();
         $idioma = $request->idioma;
         $dificultad = $request->dificultad;
