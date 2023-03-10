@@ -163,6 +163,21 @@ class HomeController extends Controller
             $newConfiguracion->idioma_id = $idioma;
             $newConfiguracion->dificultad_id = $dificultad;
             $newConfiguracion->save();
+
+            $recursos = recurso::join('dificultad_recursos','recursos.id','=','dificultad_recursos.recurso_id')
+            ->where('idioma_id','=',$idioma)
+            ->where('dificultad_id','=',$dificultad)
+            ->get();
+
+            foreach($recursos as $recurso){
+                $estudia = new estudia();
+                $estudia->usuario_id = $usuario->id;
+                $estudia->recurso_id = $recurso->recurso_id;
+                $estudia->nivel = 1;
+                $estudia->save();
+
+            }
+            
         }   
 
         $request->session()->flash('message', 'Nueva configuración creada correctamente.');
