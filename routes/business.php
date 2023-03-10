@@ -41,6 +41,8 @@ Route::group(['prefix' => '/admin'], function () {
     Route::post('eliminarConfiguracion',['as' => 'admin_eliminar_configuracion','uses' => 'AdminController@deleteConfiguracion']);
     Route::get('/buscarUsuario',['as' => 'admin_buscar_usuario', 'uses' => 'AdminController@buscarUsuario']);
     Route::get('/descargarPlantilla',['as' => 'admin_plantilla', 'uses' => 'AdminController@descargarPlantilla']);
+    Route::post('/importarExcel',['as' => 'admin_importar_excel', 'uses' => 'AdminController@importarExcel']);
+    
 });
 
 Route::group(['prefix' => '/usuario'],function(){

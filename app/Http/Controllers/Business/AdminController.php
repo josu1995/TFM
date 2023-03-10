@@ -277,9 +277,13 @@ class AdminController extends Controller
     }
 
     public function importarExcel(Request $request){
-
+        Log::info('importar excel');
         foreach ($request->data as $item) {
-            $recurso = recurso::where('texto','=',$item["texto"])->where('idioma_id','=',$item["idioma"])->get()->first();
+            $idioma = idioma::where('nombre','=',$item["idioma"])->get()->first();
+            if(!$idioma){
+                return back()->with(['errorMessage' => 'No existe el idioma.']);
+            }
+            $recurso = recurso::where('texto','=',$item["texto"])->where('idioma_id','=',$idioma->id)->get()->first();
             if($recurso){
                 return back()->with(['errorMessage' => 'Ya existe el recurso: '.$item["texto"]]);
             }else{
@@ -305,17 +309,17 @@ class AdminController extends Controller
 
                 }
 
-                $recurso = recurso::where('texto','=',$item["texto"])->where('idioma_id','=',$item["idioma"])->where('vocabulario_id','=',$vocabulario->id)->get()->first();
+                $recurso = recurso::where('texto','=',$item["texto"])->where('idioma_id','=',$idioma->id)->where('vocabulario_id','=',$vocabulario->id)->get()->first();
                 if($recurso){
                     return back()->with(['errorMessage' => 'Ya existe el recurso '.$item["texto"].' con estos datos.']);
                 }else{
                     $newRecurso = new recurso();
 
-                    $newRecurso->tipo_recurso = 'Palabra';
+                    $newRecurso->tipo_recurso = $item["tipo"];
                     $newRecurso->texto = $item["texto"];
                     $newRecurso->orden = 1;
                     $newRecurso->vocabulario_id = $vocabulario->id;
-                    $newRecurso->idioma_id = $item["idioma"];
+                    $newRecurso->idioma_id = $idioma->id;
                     $newRecurso->save();
 
                     $dificultadRecurso = new dificultadRecurso();
