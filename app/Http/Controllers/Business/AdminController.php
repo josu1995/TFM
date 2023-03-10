@@ -270,4 +270,65 @@ class AdminController extends Controller
         
         return view('business.home.envios.tableUsuarios',['usuarios' => $usuarios]);
     }
+
+    public function descargarPlantilla(){
+
+        return response()->download(public_path() . '/docs/Plantilla_recursos.xlsx');
+    }
+
+    public function importarExcel(Request $request){
+
+        foreach ($request->data as $item) {
+            $recurso = recurso::where('texto','=',$item["texto"])->where('idioma_id','=',$item["idioma"])->get()->first();
+            if($recurso){
+                return back()->with(['errorMessage' => 'Ya existe el recurso: '.$item["texto"]]);
+            }else{
+
+                $familia = familiaRecurso::where('nombre','=',$item["familia"])->get()->first();
+                if($familia){
+
+                }else{
+                    $familia = new familiaRecurso();
+                    $familia->nombre = $item["familia"];
+                    $familia->save();
+                }
+
+                $vocabulario = vocabulario::where('nombre','=',$item["vocabulario"])->where('familia_id','=',$familia->id)->get()->first();
+                if($vocabulario){
+                    
+                }else{
+
+                    $vocabulario = new vocabulario();
+                    $vocabulario->nombre =   $item["vocabulario"];
+                    $vocabulario->familia_id = $familia->id;
+                    $vocabulario->save();
+
+                }
+
+                $recurso = recurso::where('texto','=',$item["texto"])->where('idioma_id','=',$item["idioma"])->where('vocabulario_id','=',$vocabulario->id)->get()->first();
+                if($recurso){
+                    return back()->with(['errorMessage' => 'Ya existe el recurso '.$item["texto"].' con estos datos.']);
+                }else{
+                    $newRecurso = new recurso();
+
+                    $newRecurso->tipo_recurso = 'Palabra';
+                    $newRecurso->texto = $item["texto"];
+                    $newRecurso->orden = 1;
+                    $newRecurso->vocabulario_id = $vocabulario->id;
+                    $newRecurso->idioma_id = $item["idioma"];
+                    $newRecurso->save();
+
+                    $dificultadRecurso = new dificultadRecurso();
+                    $dificultadRecurso->recurso_id = $newRecurso->id;
+                    $dificultadRecurso->dificultad_id = $item["dificultad"];
+                    $dificultadRecurso->save();
+                }
+            }
+        }
+
+
+        $request->session()->flash('message', 'Recursos importados correctamente.');
+        return redirect()->route('business_envios_pendientes_pago');
+
+    }
 }

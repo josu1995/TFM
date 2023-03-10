@@ -40,6 +40,7 @@ Route::group(['prefix' => '/admin'], function () {
     Route::post('/editarConfiguracion/{id}',['as' => 'admin_editar_configuracion','uses' => 'AdminController@editConfiguracion']);
     Route::post('eliminarConfiguracion',['as' => 'admin_eliminar_configuracion','uses' => 'AdminController@deleteConfiguracion']);
     Route::get('/buscarUsuario',['as' => 'admin_buscar_usuario', 'uses' => 'AdminController@buscarUsuario']);
+    Route::get('/descargarPlantilla',['as' => 'admin_plantilla', 'uses' => 'AdminController@descargarPlantilla']);
 });
 
 Route::group(['prefix' => '/usuario'],function(){

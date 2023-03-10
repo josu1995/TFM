@@ -20,11 +20,9 @@
     <div class="row">
         <div class="row-xs buscar-row" id="tableCheckOut" style="padding-top: 20px;">
                             <div class="btn-group pull-right">
-                            <button type="button"   class="btn btn-danger" style="height:34px;margin-left: 9px;border-radius: 3px;"  aria-haspopup="true" aria-expanded="false">
-                                Descargar plantilla
-                                </button>
-                                <button type="button"   class="btn btn-primary" style="height:34px;margin-left: 9px;border-radius: 3px;margin-right: 9px;"  aria-haspopup="true" aria-expanded="false">
-                               Importar palabras 
+                                <a class="btn btn-danger" style="height:34px;margin-left: 9px;border-radius: 3px;" href="{{ route('admin_plantilla') }}">Descargar plantilla</a>
+                                <button type="button"class="btn btn-primary import-from-excel-btn" style="height:34px;margin-left: 9px;border-radius: 3px;margin-right: 9px;"  aria-haspopup="true" aria-expanded="false">
+                                    Importar palabras 
                                 </button>
                                 <button type="button" id="eliminarRegla" onclick="eliminarReglas();" disabled class="btn btn-danger" style="height:34px;border-radius: 3px;" aria-haspopup="true" aria-expanded="false">
                                     <i class="far fa-trash-alt"></i>
@@ -106,6 +104,11 @@
         </div>
     </div>   
 </div>
+
+<form action="{{ route('business_configuracion_paquetes_importar_excel') }}" method="post" class="import-from-excel-form" enctype="multipart/form-data">
+        <input type="file" name="excel">
+        {{ csrf_field() }}
+</form>
 </section>
 
 @include('business.partials.crearPalabra')
@@ -123,6 +126,7 @@
     
 <script>
     var checkedRows = [];
+   
     function openCrearModal(){
         
         $('#crearPalabra').modal();
@@ -408,6 +412,14 @@
 
         filterListData('');
         
+    });
+
+    $('.import-from-excel-btn').click(function() {
+        $('.import-from-excel-form > input').click();
+    });
+
+    $('.import-from-excel-form > input').change(function() {
+        parseExcelAndPost($('.import-from-excel-form > input[type="file"]').prop('files')[0]);
     });
 
 

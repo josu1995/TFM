@@ -1,4 +1,4 @@
--Descargar plantilla
+
 -Importar excel
 -Cards con las configuraciones
 -Añadir configuraciones

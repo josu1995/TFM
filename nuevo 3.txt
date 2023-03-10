@@ -1,31 +1,57 @@
-//ANGULAR
-					
-https://blog.hubspot.es/website/que-es-angular
-https://medium.com/gdg-ipn/angular-2020-77754e3f4254
-https://platzi.com/clases/2478-angular/41035-que-es-angular-y-como-aprenderlo/
-https://blog.koalite.com/2013/06/angularjs-lo-bueno-y-lo-malo/
-//REACT
+ $('.import-from-excel-form > input').change(function() {
+        parseExcelAndPost($('.import-from-excel-form > input[type="file"]').prop('files')[0]);
+    });
+
+var parseExcelAndPost = function(file) {
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+        var data = e.target.result;
+        var workbook = XLSX.read(data, {
+            type: 'binary'
+        });
+
+        if(!workbook.Sheets["Recursos"] || workbook.Sheets["Recursos"].A1.v !== "Tipo" || workbook.Sheets["Recursos"].B1.v !== "Texto" || workbook.Sheets["Recursos"].C1.v !== "Orden" || workbook.Sheets["Recursos"].D1.v !== "Vocabulario" || workbook.Sheets["Recursos"].E1.v !== "Familia"|| workbook.Sheets["Recursos"].F1.v !== "Idioma" || workbook.Sheets["Recursos"].G1.v !== "Dificultad") {
+            new PNotify({
+                title: 'IdioGrabber',
+                text: 'El excel introducido no es correcto. Prueba a descargar nuestra plantilla desde el menú de acciones.',
+                addclass: 'transporter-alert',
+                autoDisplay: true,
+                hide: true,
+                delay: 5000,
+                closer: false,
+            });
+            $('.import-from-excel-form > input[type="file"]').val('');
+        } else {
+            var excelJson = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[workbook.SheetNames[0]], {
+                header: ["tipo", "texto", "ordem", "vocabulario","familia","idioma","dificultad"],
+                range: 1
+            });
+			var importarRecurso = '';
+			var csrf = '{!! csrf_token() !!}';
+            $.ajax({
+                url: importarRecurso,
+                headers: { 'X-CSRF-TOKEN': csrf },
+                type: 'POST',
+                data: {'data' : excelJson},
+                success: function (data) {
+                    $('.import-from-excel-form > input[type="file"]').val('');
+                    location.reload();
+                },
+                error: function (data) {
+   
+                }
+            });
+        }
+    };
+
+    reader.onerror = function(ex) {
+        console.log(ex);
+    };
+
+    reader.readAsBinaryString(file);
+};
 
 
-https://www.solbyte.com/blog/react-js-ventajas-e-inconvenientes/#:~:text=Desventajas%20de%20React%20JS&text=La%20alta%20velocidad%20de%20desarrollo,tenemos%20que%20tomar%20demasiadas%20decisiones.
-https://logica7web.es/apps/reactjs-vs-react-native-diferencias-clave-ventajas-y-desventajas/
-
-//HTML + CSS + JS
 
 
-https://keepcoding.io/blog/porque-usar-javascript/#Ventajas_de_JavaScript
-https://blogueropro.com/blog/ventajas-y-desventajas-de-usar-javascript-en-la-programacion-web
-
-//Base de datos no relacionales
-
-
-//https://ayudaleyprotecciondatos.es/bases-de-datos/no-relacional/#Que_es_una_base_de_datos_no_relacional_Definicion
-
-
-//.net
-
-
-https://blogueropro.com/blog/ventajas-y-desventajas-de-usar-asp-net-en-la-programaci%C3%B3n-web
-https://estradawebgroup.com/Post/Ventajas-y-desventajas-de-ASP-NET-Core/20611
-
-//laravel
