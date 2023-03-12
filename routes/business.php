@@ -51,7 +51,7 @@ Route::group(['prefix' => '/usuario'],function(){
     Route::post('/editarContraseña', ['as' => 'usuario_post_contraseña', 'uses' => 'HomeController@postContraseña']);
     Route::get('/estudios', ['as' => 'usuario_get_estudios', 'uses' => 'HomeController@getEstudios']);
     Route::post('/crearConfiguracion',['as' => 'usuario_new_configuracion','uses' => 'HomeController@crearNuevaConfiguracion']);
-    Route::get('/jugar',['as' => 'usuario_jugar', 'uses' => 'HomeController@jugar']);
+    Route::get('/jugar/{id}',['as' => 'usuario_jugar', 'uses' => 'HomeController@jugar']);
     Route::get('/comprobar',['as' => 'usuario_comprobar', 'uses' => 'HomeController@comprobar']);
 });
 

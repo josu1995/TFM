@@ -13,10 +13,12 @@ use App\Models\dificultad;
 use App\Models\idioma;
 use App\Models\recurso;
 use App\Models\estudia;
+use App\Models\vocabulario;
 
 use Auth;
 use Validator;
 use Hash;
+use Carbon;
 
 class HomeController extends Controller
 {
@@ -174,6 +176,7 @@ class HomeController extends Controller
                 $estudia->usuario_id = $usuario->id;
                 $estudia->recurso_id = $recurso->recurso_id;
                 $estudia->nivel = 1;
+                $estudia->fecha_ultima_repeticion = Carbon::now()->subDays(30);
                 $estudia->save();
 
             }
@@ -185,9 +188,55 @@ class HomeController extends Controller
         
     }
 
-    public function jugar(Request $request){
-        //hay que mandar un recurso que es el que se va a adivinar
-        //¿como se dice te? --> mandamos el recurso en español Te
+    public function jugar(Request $request,$id){
+        Log::info('jugar');
+        $usuario = Auth::user();
+        $configuracion = configuracion::where('id','=',$id)->get()->first();
+
+        $juego = [];
+
+        $recurso = recurso::select('recursos.*')
+        ->join('dificultad_recursos','recursos.id','=','dificultad_recursos.recurso_id')
+        ->join('estudias','recursos.id','=','estudias.recurso_id')
+        ->where('dificultad_recursos.dificultad_id','=',$configuracion->dificultad_id)
+        ->where('recursos.idioma_id','=',$configuracion->idioma_id)
+        ->where('estudias.usuario_id','=',$usuario->id)
+        ->where('fecha_ultima_repeticion','!=',Carbon::now()->format('Y-m-d'))
+        ->orderBy('fecha_ultima_repeticion','ASC')
+        ->orderBy('orden','ASC')
+        ->get()->first();
+        Log::info('recurso',array($recurso));
+        if($recurso){
+
+        
+            $traduccion = $recurso->vocabulario->nombre;
+            array_push($juego,$recurso->id);
+            
+            $vocabularios = vocabulario::where('familia_id','=',$recurso->vocabulario->familia_id)
+            ->where('id','!=',$recurso->vocabulario->id)
+            ->inRandomOrder()->limit(2)->get();
+
+            $vocs = [];
+            foreach($vocabularios as $v){
+                array_push($vocs,$v->id);
+            }
+
+            $recursosFalsos = recurso::whereIn('vocabulario_id',$vocs)
+            ->where('idioma_id','=',$configuracion->idioma_id)
+            ->get();
+
+            foreach($recursosFalsos as $r){
+                array_push($juego,$r->id);
+            }
+
+            $recursosJuego = recurso::whereIn('id',$juego)->inRandomOrder()->get();
+        }else{
+            $recursosJuego = recurso::where('id','=',0)->get();
+        }
+        
+
+        return view('business.home.envios.juego', ['traduccion' => $recurso,'recursos' => $recursosJuego]);
+        
     }
 
     public function comprobar(Request $request){
@@ -198,38 +247,34 @@ class HomeController extends Controller
         //¿como se dice te?
         //Te
         $usuario = Auth::user();
-        $respuesta = $request->repuesta;
-        $idioma = $request->idioma;
-
-        $recurso = recurso::where('id','=',$request->id)->get()->first();
-
-        if($recurso->tipo = 'Palabra'){
+        $correcto = $request->correcto;
+        $respuesta = $request->recurso;
+        $resultado = 'false';
+        $recurso = recurso::where('id','=',$correcto)->get()->first();
+        if($recurso->tipo_recurso = 'Palabra'){
             //Comprobamos las palabras
-            $adivinar = recurso::where('idioma_id','=',$idioma)
-            ->where('vocabulario_id','=',$recurso->vocabulario_id)
-            ->get()->first();
-
             $estudio = estudia::where('usuario_id','=',$usuario->id)
-            ->where('recurso_id','=',$adivinar->id)
+            ->where('recurso_id','=',$correcto)
             ->get()->first();
 
-            if($adivinar == $respuesta){
+            if($correcto == $respuesta){
                 if($estudio->nivel < 10 ){
                     $estudio->nivel = $estudio->nivel + 1;
-                   
                 }
+                $resultado = 'true';
             }else{
                 if($estudio->nivel > 1){
                     $estudio->nivel = $estudio->nivel - 1;
                 }
+                $resultado = 'false';
             }
 
-            $estudio->updated_at = Carbon::now();
+            $estudio->fecha_ultima_repeticion = Carbon::now();
             $estudio->save();
 
         }
 
-        return 'ok';
+        return $resultado;
     }
 
 
