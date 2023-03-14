@@ -41,8 +41,52 @@
                 @endforeach
             @elseif($traduccion->tipo_recurso == 'Frase')
                 <h1>{{$traduccion->vocabulario->nombre}}</h1>
+                <div class="row" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    <div class="col-md-12" style="height:50px;background-color: red;">
+                    </div>
+                </div>
+               
+                @php($cont = 0)
+                @php($margin = 5)
+                @foreach($recursos as $r)
+                    @if($cont == 0)
+                        <div class="row" style="margin-top: {{$margin}}%;" > 
+                    @endif
+
+                    <div id="cards" class="row StoreGrid col-lg-2" style="display:block;padding-right:0;height:0px" >
+                        
+                        @component('business.partials.frases-card', [
+                            'recurso' => $r, 
+                            'correcto' => $traduccion 
+                        ]) @endcomponent  
+
+                    </div>
+
+                    @if($cont == 0)
+                        @php($cont++)
+                    @else
+                        @php($cont++)
+                            @if($cont == 5)
+                                </div >
+                                @php($cont = 0)
+                                @php($margin = $margin + 2)
+                            @endif
+                    @endif
+                    
+                @endforeach
             @else
-                <h1> {{$traduccion->vocabulario->nombre}} </h1>
+                <h1>Audio del recurso {{$traduccion->vocabulario->nombre}} </h1>
+                @foreach($recursos as $r)
+                    <div id="cards" class="row StoreGrid col-lg-6" style="display:block;padding-right:0;margin-top: 10%;height:300px">
+                        
+                        @component('business.partials.juego-card', [
+                            'recurso' => $r, 
+                            'correcto' => $traduccion 
+                        ]) @endcomponent  
+
+                    </div>
+                    
+                @endforeach
             @endif
         @else
             <h1>No hay mas para estudiar hoy :( </h1>
@@ -59,7 +103,27 @@
 @endpush
 
 @push('javascripts-footer')
+<script>
 
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+ 
+    $('#'+data).css('width','8%');
+    $('#div-'+data).removeClass('col-md-12');
+    $('#div-'+data).addClass('col-md-2');
+    ev.target.appendChild(document.getElementById(data));
+    }
+
+</script>
 
 
 @endpush

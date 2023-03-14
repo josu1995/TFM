@@ -203,59 +203,107 @@ class HomeController extends Controller
         ->where('estudias.usuario_id','=',$usuario->id)
         ->where('fecha_ultima_repeticion','!=',Carbon::now()->format('Y-m-d'))
         ->orderBy('fecha_ultima_repeticion','ASC')
+        ->orderBy('nivel','ASC')
         ->orderBy('orden','ASC')
-        ->get()->first();
-        Log::info('recurso',array($recurso));
-        if($recurso){
-
         
-            $traduccion = $recurso->vocabulario->nombre;
-            array_push($juego,$recurso->id);
-            
-            $vocabularios = vocabulario::where('familia_id','=',$recurso->vocabulario->familia_id)
-            ->where('id','!=',$recurso->vocabulario->id)
-            ->inRandomOrder()->limit(2)->get();
+        ->get()->first();
 
-            $vocs = [];
-            foreach($vocabularios as $v){
-                array_push($vocs,$v->id);
+        Log::info('recurso',array($recurso));
+
+        if($recurso){
+            if($recurso->tipo_recurso == 'Palabra' || $recurso->tipo_recurso == 'Audio'){
+
+                $traduccion = $recurso->vocabulario->nombre;
+                array_push($juego,$recurso->id);
+                
+                if($recurso->tipo_recurso == 'Palabra'){
+                    $vocabularios = vocabulario::where('familia_id','=',$recurso->vocabulario->familia_id)
+                    ->where('id','!=',$recurso->vocabulario->id)
+                    ->inRandomOrder()->limit(2)->get();
+                }else{
+                    $vocabularios = vocabulario::where('familia_id','=',$recurso->vocabulario->familia_id)
+                    ->where('id','!=',$recurso->vocabulario->id)
+                    ->inRandomOrder()->limit(3)->get();
+                }
+
+
+                $vocs = [];
+                foreach($vocabularios as $v){
+                    array_push($vocs,$v->id);
+                }
+
+                $recursosFalsos = recurso::whereIn('vocabulario_id',$vocs)
+                ->where('idioma_id','=',$configuracion->idioma_id)
+                ->get();
+
+                foreach($recursosFalsos as $r){
+                    array_push($juego,$r->id);
+                }
+
+                $recursosJuego = recurso::whereIn('id',$juego)->inRandomOrder()->get();
+
+                return view('business.home.envios.juego', ['traduccion' => $recurso,'recursos' => $recursosJuego]);
+
+            }else if($recurso->tipo_recurso == 'Frase'){
+				
+                $traduccion = $recurso->vocabulario->nombre;
+                array_push($juego,$recurso->id);
+
+                $vocabularios = vocabulario::where('familia_id','=',$recurso->vocabulario->familia_id)
+                ->where('id','!=',$recurso->vocabulario->id)
+                ->inRandomOrder()->limit(2)->get();
+
+                $vocs = [];
+                foreach($vocabularios as $v){
+                    array_push($vocs,$v->id);
+                }
+
+                $recursosFalsos = recurso::whereIn('vocabulario_id',$vocs)
+                ->where('idioma_id','=',$configuracion->idioma_id)
+                ->get();
+
+                foreach($recursosFalsos as $r){
+                    array_push($juego,$r->id);
+                }
+
+                $recursosJuego = recurso::whereIn('id',$juego)->inRandomOrder()->get();
+
+                //Hasta aqui tengo la frase buena y dos malas
+                //Ahora hay que recorrer todas las frases y un split con espacio para coger cada vocablo y devolver ese array
+                $palabras = [];
+                foreach($recursosJuego as $recurso){
+                    $texto = explode(' ',$recurso->texto);
+                    $palabras = array_merge($palabras,$texto);
+
+                }
+                $resultado = array_unique($palabras);
+                shuffle($resultado);
+
+
+                return view('business.home.envios.juego', ['traduccion' => $recurso,'recursos' => $resultado]);
             }
-
-            $recursosFalsos = recurso::whereIn('vocabulario_id',$vocs)
-            ->where('idioma_id','=',$configuracion->idioma_id)
-            ->get();
-
-            foreach($recursosFalsos as $r){
-                array_push($juego,$r->id);
-            }
-
-            $recursosJuego = recurso::whereIn('id',$juego)->inRandomOrder()->get();
         }else{
             $recursosJuego = recurso::where('id','=',0)->get();
         }
         
 
-        return view('business.home.envios.juego', ['traduccion' => $recurso,'recursos' => $recursosJuego]);
+      
         
     }
 
     public function comprobar(Request $request){
-        //Recivimos un id, que es el del recurso a adivinar
-        //Recivimos una respuesta
-        //EJEMPLO
-        //---------
-        //¿como se dice te?
-        //Te
+
         $usuario = Auth::user();
         $correcto = $request->correcto;
         $respuesta = $request->recurso;
         $resultado = 'false';
         $recurso = recurso::where('id','=',$correcto)->get()->first();
-        if($recurso->tipo_recurso = 'Palabra'){
-            //Comprobamos las palabras
-            $estudio = estudia::where('usuario_id','=',$usuario->id)
-            ->where('recurso_id','=',$correcto)
-            ->get()->first();
+
+        $estudio = estudia::where('usuario_id','=',$usuario->id)
+        ->where('recurso_id','=',$correcto)
+        ->get()->first();
+
+        if($recurso->tipo_recurso = 'Palabra' || $recurso->tipo_recurso = 'Audio'){
 
             if($correcto == $respuesta){
                 if($estudio->nivel < 10 ){
@@ -269,11 +317,29 @@ class HomeController extends Controller
                 $resultado = 'false';
             }
 
-            $estudio->fecha_ultima_repeticion = Carbon::now();
-            $estudio->save();
+            
 
+        }else{
+            //La cosa es recibir la frase que se ha formado
+            //y el id de la solucion
+            //Comprobar textos y a tomar por culo
+
+            if($recurso->texto == $respuesta){
+                if($estudio->nivel < 10 ){
+                    $estudio->nivel = $estudio->nivel + 1;
+                }
+                $resultado = 'true';
+            }else{
+                if($estudio->nivel > 1){
+                    $estudio->nivel = $estudio->nivel - 1;
+                }
+                $resultado = $recurso->texto;
+            }
         }
 
+        $estudio->fecha_ultima_repeticion = Carbon::now();
+        $estudio->save();
+        //Si no es verdadero devuelvo la frase correcta, en verde debajo de lo que ha puesto el en rojo para que vea el fallo
         return $resultado;
     }
 

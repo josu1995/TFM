@@ -15,6 +15,7 @@ use App\Models\Usuario;
 use App\Models\configuracion;
 
 
+
 class AdminController extends Controller
 {
     public function getPalabras(){
@@ -99,6 +100,21 @@ class AdminController extends Controller
                 $dificultadRecurso->recurso_id = $newRecurso->id;
                 $dificultadRecurso->dificultad_id = $request->dificultad;
                 $dificultadRecurso->save();
+
+                $usuarios = Usuario::select('usuarios.*')
+                ->join('configuracions','usuarios.id','=','configuracions.usuario_id')
+                ->where('configuracions.idioma_id','=',$request->idioma)
+                ->where('dificultad_id','=', $request->dificultad)
+                ->get();
+
+                foreach($usuarios as $usuario){
+                    $estudia = new estudia();
+                    $estudia->usuario_id = $usuario->id;
+                    $estudia->recurso_id = $newRecurso->id;
+                    $estudia->nivel = 1;
+                    $estudia->fecha_ultima_repeticion = Carbon::now()->subDays(30);
+                    $estudia->save();
+                }
             }
 
         }
@@ -326,6 +342,23 @@ class AdminController extends Controller
                     $dificultadRecurso->recurso_id = $newRecurso->id;
                     $dificultadRecurso->dificultad_id = $item["dificultad"];
                     $dificultadRecurso->save();
+
+                    $usuarios = Usuario::select('usuarios.*')
+                    ->join('configuracions','usuarios.id','=','configuracions.usuario_id')
+                    ->where('configuracions.idioma_id','=',$idioma->id)
+                    ->where('dificultad_id','=', $item["dificultad"])
+                    ->get();
+
+                    foreach($usuarios as $usuario){
+                        $estudia = new estudia();
+                        $estudia->usuario_id = $usuario->id;
+                        $estudia->recurso_id = $newRecurso->id;
+                        $estudia->nivel = 1;
+                        $estudia->fecha_ultima_repeticion = Carbon::now()->subDays(30);
+                        $estudia->save();
+                    }
+
+
                 }
             }
         }

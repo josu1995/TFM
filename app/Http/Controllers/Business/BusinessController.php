@@ -138,7 +138,9 @@ class BusinessController extends Controller
         $recursos = recurso::select('recursos.id')
         ->join('dificultad_recursos','recursos.id','=','dificultad_recursos.recurso_id')
         ->where('dificultad_recursos.dificultad_id','=',$request->dificultad)
+        ->where('idioma_id','=',$request->idioma)
         ->get();
+
 
         foreach($recursos as $recurso){
             $estudia = new estudia();
