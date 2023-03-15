@@ -29,7 +29,7 @@
             @if($traduccion->tipo_recurso == 'Palabra')
                 <h1>¿Cómo se dice {{$traduccion->vocabulario->nombre}} ?</h1>
                 @foreach($recursos as $r)
-                    <div id="cards" class="row StoreGrid col-lg-4" style="display:block;padding-right:0;margin-top: 10%;height:300px">
+                    <div id="cards" class="row StoreGrid col-lg-4 animate__animated animate__rollIn" style="display:block;padding-right:0;margin-top: 10%;height:300px">
                         
                         @component('business.partials.juego-card', [
                             'recurso' => $r, 
@@ -40,7 +40,7 @@
                     
                 @endforeach
             @elseif($traduccion->tipo_recurso == 'Frase')
-                <h1 id="traduccionFrase" class="animate__animated animate__bounceInDown ">{{$traduccion->vocabulario->nombre}}</h1>
+                <h1 id="traduccionFrase" class="animate__animated animate__bounceInDown">{{$traduccion->vocabulario->nombre}}</h1>
                 <div class="row">
 
                     <div class="col-md-11">

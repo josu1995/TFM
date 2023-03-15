@@ -25,11 +25,25 @@
                 console.log(data);
                 if(data == 'true'){
                     $('#recurso-'+recurso).css('color','#62ec09');
-                    setTimeout(location.reload(), 3000);
+                    setTimeout(() => {
+                        $('.StoreGrid').removeClass('animate__rollIn');
+                        $('.StoreGrid').addClass('animate__rollOut');
+                        setTimeout(() => {
+                            location.reload();
+                        }, 1000);
+                    }, 1000);
+                    
                 }else{
                     $('#recurso-'+recurso).css('color','red');
                     $('#recurso-'+correcto).css('color','#62ec09');
-                    setTimeout(location.reload(), 3000);
+                    setTimeout(() => {
+                        $('.StoreGrid').removeClass('animate__rollIn');
+                        $('.StoreGrid').addClass('animate__rollOut');
+                        setTimeout(() => {
+                            location.reload();
+                        }, 1000);
+                    }, 2000);
+                    
                 }
             },
             error: function (data) {
