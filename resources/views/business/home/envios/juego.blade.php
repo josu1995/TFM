@@ -41,8 +41,8 @@
                 @endforeach
             @elseif($traduccion->tipo_recurso == 'Frase')
                 <h1>{{$traduccion->vocabulario->nombre}}</h1>
-                <div class="row" ondrop="drop(event)" ondragover="allowDrop(event)" >
-                    <div class="col-md-12" style="height:50px;background-color: red;">
+                <div class="row arrastrar" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    <div class="col-md-12 arrastrar" style="height:50px;background-color: red;">
                     </div>
                 </div>
                
@@ -50,14 +50,28 @@
                 @php($margin = 5)
                 @foreach($recursos as $r)
                     @if($cont == 0)
-                        <div class="row" style="margin-top: {{$margin}}%;" > 
+                        <div class="row arrastrar palabras" style="margin-top: {{$margin}}%; height:50px;" ondrop="drop(event)" ondragover="allowDrop(event)"> 
                     @endif
-
-                    <div id="cards" class="row StoreGrid col-lg-2" style="display:block;padding-right:0;height:0px" >
+                    @php($resource = '')
+                    @if($r == '?')
+                        @php($resource = 'ask2')
+                    @elseif ($r == '!' )
+                        @php($resource = 'exc2')
+                    @elseif($r == ',' )
+                        @php($resource = 'coma')
+                    @elseif($r == '¿' )
+                        @php($resource = 'ask1')
+                    @elseif($r == '¡' )
+                        @php($resource = 'exc1')
+                    @else
+                        @php($resource = $r)
+                    @endif
+                    <div id="{{$resource}}" class="row StoreGrid col-lg-2" style="display:block;padding-right:0;height:0px" draggable="true" ondragstart="drag(event)">
                         
                         @component('business.partials.frases-card', [
                             'recurso' => $r, 
-                            'correcto' => $traduccion 
+                            'correcto' => $traduccion ,
+                            'resource' => $resource
                         ]) @endcomponent  
 
                     </div>
@@ -115,13 +129,44 @@
 
     function drop(ev) {
     ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
- 
-    $('#'+data).css('width','8%');
-    $('#div-'+data).removeClass('col-md-12');
-    $('#div-'+data).addClass('col-md-2');
-    ev.target.appendChild(document.getElementById(data));
-    }
+        if(ev.target.classList.contains('arrastrar')){
+            if(ev.target.classList.contains('palabras')){
+                let numb = ev.target.childElementCount;
+                if(numb <=4){
+                    var data = ev.dataTransfer.getData("text");
+                    $('#'+data).css('width','auto');
+                    $('#div-'+data).removeClass('col-md-12');
+                    $('#div-'+data).addClass('col-md-2');
+                    console.log(ev.target);
+                    ev.target.appendChild(document.getElementById(data));
+                }else{
+                    $(function() {
+                        new PNotify({
+                        title: 'IdioGrabber',
+                        text: 'No puedes poner mas palabras en esa fila',
+                        addclass: 'transporter-alert',
+                        icon: '',
+                        autoDisplay: true,
+                        hide: true,
+                        delay: 5000,
+                        closer: false,
+                        });
+                    });
+                }
+                
+            }else{
+                var data = ev.dataTransfer.getData("text");
+                $('#'+data).css('width','auto');
+                $('#div-'+data).removeClass('col-md-12');
+                $('#div-'+data).addClass('col-md-2');
+                console.log(ev.target);
+                ev.target.appendChild(document.getElementById(data));
+            }
+           
+
+        }
+
+        }
 
 </script>
 
