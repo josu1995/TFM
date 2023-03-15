@@ -342,7 +342,6 @@ class HomeController extends Controller
 
         $estudio->fecha_ultima_repeticion = Carbon::now();
         //$estudio->save();
-        //Si no es verdadero devuelvo la frase correcta, en verde debajo de lo que ha puesto el en rojo para que vea el fallo
         return $resultado;
     }
 
