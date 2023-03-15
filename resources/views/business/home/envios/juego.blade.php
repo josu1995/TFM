@@ -40,12 +40,23 @@
                     
                 @endforeach
             @elseif($traduccion->tipo_recurso == 'Frase')
-                <h1>{{$traduccion->vocabulario->nombre}}</h1>
-                <div class="row arrastrar" ondrop="drop(event)" ondragover="allowDrop(event)" >
-                    <div class="col-md-12 arrastrar" style="height:50px;background-color: red;">
+                <h1 id="traduccionFrase" class="animate__animated animate__bounceInDown ">{{$traduccion->vocabulario->nombre}}</h1>
+                <div class="row">
+
+                    <div class="col-md-11">
+                        <div id ="solucion" class="row arrastrar" ondrop="drop(event)" ondragover="allowDrop(event)" style="height:50px;border-radius: 0.5rem;box-shadow: 0 0 7px 1px rgba(0,0,0,.2);">  
+                        </div>  
                     </div>
+
+                    <div class="col-md-1" style="margin-top: 6px;">
+                        <button onclick="enviarRespuesta('{{$traduccion->id}}');" class="btn rounded-btn-primary" style="color:white; left:calc(162px);background-color: #ee8026;border-radius: 100%;box-shadow: 0 0 7px 1px rgba(0,0,0,.2);height: 4rem;padding: 0;width: 4rem;" @click="openModalButton();">
+
+                            <i style="font-weight: 700;margin-top: 5px;"class="material-icons">check</i>
+
+                        </button>
+                    </div>
+
                 </div>
-               
                 @php($cont = 0)
                 @php($margin = 5)
                 @foreach($recursos as $r)
@@ -66,7 +77,7 @@
                     @else
                         @php($resource = $r)
                     @endif
-                    <div id="{{$resource}}" class="row StoreGrid col-lg-2" style="display:block;padding-right:0;height:0px" draggable="true" ondragstart="drag(event)">
+                    <div id="{{$resource}}" class="row StoreGrid col-lg-2 animate__animated animate__jackInTheBox animate__delay-1s" style="display:block;padding-right:0;height:0px" draggable="true" ondragstart="drag(event)">
                         
                         @component('business.partials.frases-card', [
                             'recurso' => $r, 
@@ -128,16 +139,27 @@
     }
 
     function drop(ev) {
-    ev.preventDefault();
+        ev.preventDefault();
         if(ev.target.classList.contains('arrastrar')){
+            var numb = ev.target.childElementCount;
             if(ev.target.classList.contains('palabras')){
-                let numb = ev.target.childElementCount;
+         
                 if(numb <=4){
                     var data = ev.dataTransfer.getData("text");
                     $('#'+data).css('width','auto');
+                    $('#'+data).css('marginTop','0px');
                     $('#div-'+data).removeClass('col-md-12');
                     $('#div-'+data).addClass('col-md-2');
-                    console.log(ev.target);
+                 
+                    
+                    $('#'+data).removeClass(' animate__jackInTheBox');
+                    $('#'+data).removeClass('animate__heartBeat');
+                    $('#'+data).removeClass('animate__tada');
+                    $('#'+data).removeClass('animate__delay-1s');
+                    
+
+                    $('#'+data).addClass('animate__tada');
+                    
                     ev.target.appendChild(document.getElementById(data));
                 }else{
                     $(function() {
@@ -155,18 +177,109 @@
                 }
                 
             }else{
+               
                 var data = ev.dataTransfer.getData("text");
                 $('#'+data).css('width','auto');
+                $('#'+data).css('marginTop','5px');
                 $('#div-'+data).removeClass('col-md-12');
                 $('#div-'+data).addClass('col-md-2');
-                console.log(ev.target);
+
+                
+                $('#'+data).removeClass(' animate__jackInTheBox');
+                $('#'+data).removeClass('animate__heartBeat');
+                $('#'+data).removeClass('animate__tada');
+                $('#'+data).removeClass('animate__delay-1s');
+
+                $('#'+data).addClass('animate__heartBeat');
+                
+                
                 ev.target.appendChild(document.getElementById(data));
             }
            
 
         }
 
-        }
+    }
+
+    function enviarRespuesta(correcto){
+        
+        var respuesta = '';
+        document.getElementById("solucion").querySelectorAll('span').forEach(element => {
+          
+            respuesta = respuesta + ' ' +element.innerText;
+        })
+
+        //console.log(respuesta);
+
+        var comprobar = '{!! route('usuario_comprobar') !!}';
+        $.ajax({
+            url: comprobar,
+            data: {'recurso':respuesta,'correcto':correcto},
+            type: 'GET',
+            success: function (data) {
+                
+                if(data == 'true'){
+
+                    document.getElementById("solucion").querySelectorAll('span').forEach(element => {
+          
+                       console.log(element);
+                       element.style.color ="#62ec09";
+                        setTimeout(() => {
+                            $('#solucion').addClass('animate__animated')
+                            $('#solucion').addClass('animate__hinge')
+                            $('.rounded-btn-primary').addClass('animate__animated')
+                            $('.rounded-btn-primary').addClass('animate__hinge')
+                            $('#traduccionFrase').addClass('animate__hinge')
+
+                            $('.StoreGrid').removeClass(' animate__jackInTheBox');
+                            $('.StoreGrid').removeClass('animate__heartBeat');
+                            $('.StoreGrid').removeClass('animate__tada');
+                            $('.StoreGrid').removeClass('animate__delay-1s');
+                            
+                            $('.StoreGrid').addClass('animate__hinge')
+
+                            setTimeout(() => {
+                                location.reload();
+                            }, 2500);
+
+                        }, 2000);
+
+                        
+                      
+                    })
+
+                }else{
+                    console.log(data);
+                    $('#solucion').empty();
+                    $('#solucion').append("<h2 style='margin-top: 7px;color: red;font-weight: bold;'>"+data+'</h2>')
+                    
+                    setTimeout(() => {
+                            $('#solucion').addClass('animate__animated')
+                            $('#solucion').addClass('animate__hinge')
+                            $('.rounded-btn-primary').addClass('animate__animated')
+                            $('.rounded-btn-primary').addClass('animate__hinge')
+                            $('#traduccionFrase').addClass('animate__hinge')
+
+                            $('.StoreGrid').removeClass(' animate__jackInTheBox');
+                            $('.StoreGrid').removeClass('animate__heartBeat');
+                            $('.StoreGrid').removeClass('animate__tada');
+                            $('.StoreGrid').removeClass('animate__delay-1s');
+
+                            $('.StoreGrid').addClass('animate__hinge')
+                            
+                            setTimeout(() => {
+                                location.reload();
+                            }, 2500);
+
+                    }, 2000);
+
+                }
+            },
+            error: function (data) {
+                
+            }
+        });
+    }
 
 </script>
 

@@ -1,7 +1,7 @@
 
 
 
-<div class="GlobalStoreCard col-md-2" style="padding-right: 0px;padding-left: 0px;cursor: pointer;height: 41px;width: 100%;min-height: 41px;" >
+<div class="GlobalStoreCard col-md-2" style="padding-right: 0px;padding-left: 0px;cursor: pointer;height: 41px;width: auto;min-height: 41px;" >
  
     <form action="{{ route('usuario_comprobar') }}" method="get">
         <div id="div-{{$resource}}" class="col-md-12" style="text-align:center;">
@@ -10,32 +10,3 @@
     </form>
      
 </div>
-
-<script>
-
- function checkAnswer(recurso,correcto){
-
-
-    var comprobar = '{!! route('usuario_comprobar') !!}';
-    $.ajax({
-            url: comprobar,
-            data: {'recurso':recurso,'correcto':correcto},
-            type: 'GET',
-            success: function (data) {
-                //location.reload();
-                console.log(data);
-                if(data == 'true'){
-                    $('#recurso-'+recurso).css('color','#62ec09');
-                    setTimeout(location.reload(), 3000);
-                }else{
-                    $('#recurso-'+recurso).css('color','red');
-                    $('#recurso-'+correcto).css('color','#62ec09');
-                    setTimeout(location.reload(), 3000);
-                }
-            },
-            error: function (data) {
-                
-            }
-        });
- }
-</script>

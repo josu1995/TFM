@@ -303,8 +303,10 @@ class HomeController extends Controller
         ->where('recurso_id','=',$correcto)
         ->get()->first();
 
-        if($recurso->tipo_recurso = 'Palabra' || $recurso->tipo_recurso = 'Audio'){
+        Log::info('recurso',array($recurso->tipo_recurso));
 
+        if($recurso->tipo_recurso == 'Palabra' || $recurso->tipo_recurso == 'Audio'){
+            
             if($correcto == $respuesta){
                 if($estudio->nivel < 10 ){
                     $estudio->nivel = $estudio->nivel + 1;
@@ -323,7 +325,8 @@ class HomeController extends Controller
             //La cosa es recibir la frase que se ha formado
             //y el id de la solucion
             //Comprobar textos y a tomar por culo
-
+            Log::info('respuesta',array($respuesta));
+            Log::info('recurso',array($recurso->texto));
             if($recurso->texto == $respuesta){
                 if($estudio->nivel < 10 ){
                     $estudio->nivel = $estudio->nivel + 1;
@@ -338,7 +341,7 @@ class HomeController extends Controller
         }
 
         $estudio->fecha_ultima_repeticion = Carbon::now();
-        $estudio->save();
+        //$estudio->save();
         //Si no es verdadero devuelvo la frase correcta, en verde debajo de lo que ha puesto el en rojo para que vea el fallo
         return $resultado;
     }
