@@ -25,7 +25,28 @@
         </div>
 
         @endif
-        
+        <div class="row">
+            <div class="col-md-8">
+                {{$correccion->titulo}}
+            </div>
+            <div class="col-md-4">
+                {{$correccion->idioma->nombre}}
+            </div>
+        </div>
+
+        <div class="form.group">
+            <label>Redaccion</label>
+            <textarea name="texto" id="editor" rows="10" cols="80" readonly>
+                {{$correccion->texto}}   
+            </textarea>
+        </div>
+
+        <div class="form.group">
+            <label>Corrección</label>
+            <textarea name="texto" id="editor" rows="10" cols="80" readonly>
+                {{$correccion->correccion}}  
+            </textarea>
+        </div>
 
         
     </section>
@@ -39,7 +60,7 @@
 @endpush
 
 @push('javascripts-footer')
-
+<script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
 
 
 @endpush

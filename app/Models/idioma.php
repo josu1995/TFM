@@ -16,4 +16,8 @@ class idioma extends Model
     public function configuraciones(){
         return $this->hasMany('App\Models\configuracion','idioma_id');
     }
+
+    public function redacciones(){
+        return $this->hasMany('App\Models\redaccion','idioma_id');
+    }
 }
