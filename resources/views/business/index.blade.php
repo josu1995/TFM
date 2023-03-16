@@ -263,10 +263,10 @@
                 <div class="col-text col-left">
                     <div>
                         <h1 class="title">
-                            Entregas inmediatas para tu negocio
+                            Aprende diferentes idiomas
                         </h1>
-                        <p class="text">Impulsa tus ventas ofreciendo la opción de envíos same day en menos de 1h o en
-                            la franja horaria seleccionada y diferénciate de la competencia.</p>
+                        <p class="text">Descubre la variedad de idiomas y recursos que ofrecemos, 
+                            para un aprendizaje más completo.</p>
                     </div>
                 </div>
                 <div class="col-img gif" style="position:relative">
@@ -281,10 +281,10 @@
                 <div class="col-text col-right">
                     <div>
                         <h1 class="title">
-                            Conecta tu tienda <br> en minutos...
+                            Método de estudio diferente
                         </h1>
-                        <p class="text">Nuestra tecnología se integra perfectamente con todas las principales
-                            plataformas de eCommerce y marketplaces utilizando nuestra API o módulos de tiendas online.
+                        <p class="text">Nuestra web ofrece una metodología novedosa, que ayudarán
+                            a que aprendas de formas mas eficiente.
                         </p>
                     </div>
                 </div>
@@ -300,11 +300,10 @@
                 <div class="col-text col-left">
                     <div>
                         <h1 class="title">
-                            Administra todo en un mismo lugar
+                            Totalmente gratis
                         </h1>
-                        <p class="text">Simplifica la gestión logística de tu empresa. Sincroniza tu inventario, importa
-                            pedidos, sigue los envíos en tiempo real y controla tus gastos en un sólo panel fácil de
-                            usar.</p>
+                        <p class="text">Podrás estudiar todos los idiomas y dificultades que quieras,
+                            sin ningún tipo de coste.</p>
                     </div>
                 </div>
                 <div class="col-img">
@@ -317,12 +316,9 @@
 
         <div class="final-text">
             <h1 class="title">
-                Date de alta en Citystock totalmente gratis
+                Date de alta en IdioGrabber totalmente gratis
             </h1>
-            <p class="text">
-                Sin compromisos ni contratos ni volúmenes mínimos.<br>
-                Ahorra tiempo y dinero creando una cuenta para tu negocio.
-            </p>
+            
             <a href="{{ route('business_register') }}" class="btn btn-corporativo">EMPEZAR&nbsp&nbsp<i
                     class="fas fa-chevron-right"></i></a>
         </div>

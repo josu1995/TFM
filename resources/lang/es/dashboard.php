@@ -2,6 +2,6 @@
 
 return [
 
-    'meta.title' => 'Dashboard | Citystock',
+    'meta.title' => 'IdioGrabber',
 
 ];
