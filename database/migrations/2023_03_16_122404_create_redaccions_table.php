@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('redaccions', function (Blueprint $table) {
             $table->bigIncrements('id');    
             $table->string('usuario_id');
+            $table->integer('idioma_id');
+            $table->string('titulo');
             $table->longText('texto');
             $table->longText('coreccion');
             $table->integer('corregido');

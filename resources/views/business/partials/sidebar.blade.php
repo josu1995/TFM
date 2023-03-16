@@ -30,6 +30,14 @@
                         </span>
                     </a>    
                 </li>
+                <li>
+                    <a href="{{ route('usuario_get_redaccion') }}">
+                        <span>Redaccion</span>
+                        <span class="pull-right-container">
+                            
+                        </span>
+                    </a>    
+                </li>
             @endif
      
             

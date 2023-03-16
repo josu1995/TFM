@@ -14,6 +14,7 @@ use App\Models\idioma;
 use App\Models\recurso;
 use App\Models\estudia;
 use App\Models\vocabulario;
+use App\Models\redaccion;
 
 use Auth;
 use Validator;
@@ -343,6 +344,36 @@ class HomeController extends Controller
         $estudio->fecha_ultima_repeticion = Carbon::now();
         //$estudio->save();
         return $resultado;
+    }
+
+    public function getRedaccion(){
+        Log::info('redacciones');
+        $usuario = Auth::user();
+        $redacciones = redaccion::where('usuario_id','=',$usuario->id)->get();
+        $idiomas = idioma::all();
+
+        return view('business.home.envios.redacciones', ["redacciones" => $redacciones, 'idiomas' => $idiomas]);
+
+    }
+
+    public function getNuevaRedaccion(){
+        $idiomas = idioma::all();
+        return view('business.home.envios.nueva-redaccion', ['idiomas' => $idiomas]);
+    }
+
+    public function crearNuevaRedaccion(Request $request){
+        //Comprobar que tenga 150 palabras minimo
+        $usuario = Auth::user();
+
+        $redaccion = new redaccion();
+        $redaccion->usuario_id = $usuario->id;
+        $redaccion->idioma_id = $request->idioma;
+        $redaccion->titulo = $request->titulo;
+        $redaccion->texto = $request->texto;
+        $redaccion->corregido = 0;
+        $redaccion->save();
+
+        return redirect()->route('usuario_get_redaccion');
     }
 
 
