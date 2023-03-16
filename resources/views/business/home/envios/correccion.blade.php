@@ -27,24 +27,24 @@
         @endif
         <div class="row">
             <div class="col-md-8">
-                {{$correccion->titulo}}
+                <h1>{{$correccion->titulo}}</h1>
             </div>
             <div class="col-md-4">
-                {{$correccion->idioma->nombre}}
+                <h3>{{$correccion->idioma->nombre}}</h3>
             </div>
         </div>
 
-        <div class="form.group">
-            <label>Redaccion</label>
-            <textarea name="texto" id="editor" rows="10" cols="80" readonly>
+        <div class="form.group" style="margin-top:4%;text-align: center;">
+            <h4>Redacción</h4>
+            <textarea name="texto" id="texto" rows="10" cols="80" readonly>
                 {{$correccion->texto}}   
             </textarea>
         </div>
 
-        <div class="form.group">
-            <label>Corrección</label>
-            <textarea name="texto" id="editor" rows="10" cols="80" readonly>
-                {{$correccion->correccion}}  
+        <div class="form.group" style="margin-top:4%;text-align: center;">
+            <h4>Corrección</h4>
+            <textarea name="texto" id="correccion" rows="10" cols="80" readonly>
+                {{$correccion->coreccion}}  
             </textarea>
         </div>
 
@@ -61,6 +61,18 @@
 
 @push('javascripts-footer')
 <script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+
+<script>
+
+    window.addEventListener("load", function(event) {
+        CKEDITOR.replace( 'texto' ); 
+    });
+
+    window.addEventListener("load", function(event) {
+        CKEDITOR.replace( 'correccion' ); 
+    });
+
+</script>
 
 
 @endpush

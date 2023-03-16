@@ -47,8 +47,8 @@
                 </div>
             </div>
 
-            <div class="form.group">
-                <label>Redaccion</label>
+            <div class="form.group" style="margin-top: 4%;text-align: center;">
+                <h2>Redacción</h2>
                 <textarea name="texto" id="editor" rows="10" cols="80">
                            
                 </textarea>
@@ -72,6 +72,7 @@
 
 @endsection
 
+
 @push('javascripts-head')
 
 @endpush
@@ -79,5 +80,12 @@
 @push('javascripts-footer')
 <script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
 
+<script>
+
+    window.addEventListener("load", function(event) {
+        CKEDITOR.replace( 'editor' ); 
+    });
+
+</script>
 
 @endpush
