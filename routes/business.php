@@ -56,6 +56,8 @@ Route::group(['prefix' => '/usuario'],function(){
     Route::get('/redaccion', ['as' => 'usuario_get_redaccion', 'uses' => 'HomeController@getRedaccion']);
     Route::get('/nuevaRedaccion', ['as' => 'usuario_get_nueva_redaccion', 'uses' => 'HomeController@getNuevaRedaccion']);
     Route::post('/crearRedaccion',['as' => 'usuario_new_redaccion','uses' => 'HomeController@crearNuevaRedaccion']);
+    Route::get('/correccion/{id}', ['as' => 'usuario_get_correccion', 'uses' => 'HomeController@getCorreccion']);
+    
     
 });
 

@@ -376,6 +376,12 @@ class HomeController extends Controller
         return redirect()->route('usuario_get_redaccion');
     }
 
+    public function getCorreccion($id){
+        $correccion = redaccion::where('id','=',$id)->get()->first();
+
+        return view('business.home.envios.correccion', ['correccion' => $correccion]);
+    }
+
 
 
     public function getBadges() {
