@@ -100,11 +100,32 @@
                     
                 @endforeach
             @else
-                <h1>Audio del recurso {{$traduccion->vocabulario->nombre}} </h1>
+                <div class="row animate__animated animate__heartBeat title">
+                    <div class="col-md-3">
+                        <h1>Reproduce</h1>
+                    </div>
+                    <div class="col-md-9">
+                        <audio controls style="margin-top: 2%;">
+                            <source src="{{ asset('audios/'.$traduccion->vocabulario->nombre.'.mp4') }}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+                @php($cont = 0)
                 @foreach($recursos as $r)
-                    <div id="cards" class="row StoreGrid col-lg-6" style="display:block;padding-right:0;margin-top: 10%;height:300px">
-                        
-                        @component('business.partials.juego-card', [
+
+                @if($cont == 0)
+                    <div id="cards" class="row StoreGrid col-lg-6 animate__animated animate__fadeInTopLeft card0" style="display:block;padding-right:0;margin-top: 3%;">    
+                @elseif($cont == 1)
+                    <div id="cards" class="row StoreGrid col-lg-6 animate__animated animate__fadeInTopRight card1" style="display:block;padding-right:0;margin-top: 3%;">
+                @elseif($cont == 2)
+                    <div id="cards" class="row StoreGrid col-lg-6 animate__animated animate__fadeInBottomLeft card2" style="display:block;padding-right:0;margin-top: 3%;">
+                @elseif($cont == 3)
+                    <div id="cards" class="row StoreGrid col-lg-6 animate__animated animate__fadeInBottomRight card3" style="display:block;padding-right:0;margin-top: 3%;"> 
+                @endif
+                @php($cont++)
+                 
+                        @component('business.partials.audio-card', [
                             'recurso' => $r, 
                             'correcto' => $traduccion 
                         ]) @endcomponent  
