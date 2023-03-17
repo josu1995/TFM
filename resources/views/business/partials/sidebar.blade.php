@@ -21,6 +21,14 @@
                         </span>
                     </a>    
                 </li>
+                <li>
+                    <a href="{{ route('admin_redaccion') }}">
+                        <span>Corrección de redacciones</span>
+                        <span class="pull-right-container">
+                            
+                        </span>
+                    </a>    
+                </li>
             @else
                 <li>
                     <a href="{{ route('usuario_get_estudios') }}">

@@ -13,6 +13,7 @@ use App\Models\familiaRecurso;
 use App\Models\dificultadRecurso;
 use App\Models\Usuario;
 use App\Models\configuracion;
+use App\Models\redaccion;
 
 
 
@@ -368,4 +369,48 @@ class AdminController extends Controller
         return redirect()->route('business_envios_pendientes_pago');
 
     }
+
+    public function corregirRedaccion(){
+        $redacciones = redaccion::where('corregido','=',0)->paginate(10);
+
+        return view('business.home.envios.correccionRedaccion',['redacciones' => $redacciones]);
+
+    }
+
+    public function buscarRedaccion(Request $request){
+        $text = $request->t;
+
+        Log::info('buscar',array($text));
+       
+        
+        if(is_null($text)){
+            $redaccion = redaccion::where('corregido','=',0)->paginate(10);
+        }else{
+            $redaccion = redaccion::join('idiomas','redaccions.idioma_id','=','idiomas.id')
+            ->where([['titulo', 'like', '%' . $text . '%']])
+            ->orWhere([['idiomas.nombre', 'like', '%' . $text . '%']])
+            ->paginate(10);
+        }
+      
+        
+        return view('business.home.envios.tableRedaccion',['redaccion' => $redaccion]);
+    }
+
+    public function getRedaccion($id){
+        $redaccion = redaccion::where('id','=',$id)->get()->first();
+
+        return view('business.home.envios.corregir',['redaccion' => $redaccion]);
+    }
+
+    public function saveRedaccion(Request $request,$id){
+        $redaccion = redaccion::where('id','=',$id)->get()->first();
+
+        $redaccion->coreccion = $request->texto;
+        $redaccion->corregido = 1;
+        $redaccion->save();
+
+        return redirect()->route('admin_redaccion');
+
+    }
+
 }

@@ -42,6 +42,10 @@ Route::group(['prefix' => '/admin'], function () {
     Route::get('/buscarUsuario',['as' => 'admin_buscar_usuario', 'uses' => 'AdminController@buscarUsuario']);
     Route::get('/descargarPlantilla',['as' => 'admin_plantilla', 'uses' => 'AdminController@descargarPlantilla']);
     Route::post('/importarExcel',['as' => 'admin_importar_excel', 'uses' => 'AdminController@importarExcel']);
+    Route::get('/corregirRedaccion',['as' => 'admin_redaccion', 'uses' => 'AdminController@corregirRedaccion']);
+    Route::get('/buscarRedaccion',['as' => 'admin_buscar_redaccion', 'uses' => 'AdminController@buscarRedaccion']);
+    Route::get('/getRedaccion/{id}',['as' => 'admin_get_redaccion', 'uses' => 'AdminController@getRedaccion']);
+    Route::post('/saveRedaccion/{id}',['as' => 'admin_save_redaccion', 'uses' => 'AdminController@saveRedaccion']);
     
 });
 
