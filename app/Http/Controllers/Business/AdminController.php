@@ -384,16 +384,16 @@ class AdminController extends Controller
        
         
         if(is_null($text)){
-            $redaccion = redaccion::where('corregido','=',0)->paginate(10);
+            $redacciones = redaccion::where('corregido','=',0)->paginate(10);
         }else{
-            $redaccion = redaccion::join('idiomas','redaccions.idioma_id','=','idiomas.id')
+            $redacciones = redaccion::join('idiomas','redaccions.idioma_id','=','idiomas.id')
             ->where([['titulo', 'like', '%' . $text . '%']])
             ->orWhere([['idiomas.nombre', 'like', '%' . $text . '%']])
             ->paginate(10);
         }
       
         
-        return view('business.home.envios.tableRedaccion',['redaccion' => $redaccion]);
+        return view('business.home.envios.tableRedaccion',['redacciones' => $redacciones]);
     }
 
     public function getRedaccion($id){

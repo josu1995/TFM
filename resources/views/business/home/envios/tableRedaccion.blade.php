@@ -6,7 +6,7 @@
                         <th><input class="header-checkbox" type="checkbox" autocomplete="off" ></th>
                         <th>Titulo</th>
                         <th>Idioma</th>
-                        <th>Dificultad</th>
+                        <th>Corregir</th>
                     
                     </tr>
                     </thead>
@@ -33,11 +33,14 @@
                                     </td>
 
 
-                                    <td class="editable">
-                                        <span class="field" data-edit-name="dificultad">
-                                            <span class="value">botton</span>
-                                            <i class="fas fa-pencil-alt"></i>
-                                        </span>
+                                    <td>
+                                        <form class="get-redaccion" action="{{ route('admin_get_redaccion',$redaccion->id) }}" method="get">
+                                            <button class="btn rounded-btn-primary" style="color:white; left:calc(162px);background-color: #ee8026;border-radius: 100%;box-shadow: 0 0 7px 1px rgba(0,0,0,.2);height: 4rem;padding: 0;width: 4rem;">
+
+                                            <i style="font-weight: 700;margin-top: 5px;"class="material-icons">manage_search</i>
+
+                                            </button>
+                                        </form>
                                     </td>
 
                                     
@@ -60,7 +63,7 @@
                     @endif
                     </tbody>
                 </table>
-                {{ $redaccion->links() }}
+                {{ $redacciones->links() }}
             </div>
             
         </div>

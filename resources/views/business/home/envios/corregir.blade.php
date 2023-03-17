@@ -25,7 +25,7 @@
         </div>
 
         @endif
-        <form class="save-redaccion" action="{{ route('admin_save_redaccion',{{$redaccion->id}}) }}" method="post">
+        <form class="save-redaccion" action="{{ route('admin_save_redaccion',$redaccion->id) }}" method="post">
 
             <div class="row">
                 <div class="col-md-8">
@@ -48,10 +48,10 @@
 
             {{ csrf_field() }}
 
-            <div class="col-md-4" style="margin-top:4px;">
-                <button class="btn rounded-btn-primary" style="color:white;position:absolute; left:calc(162px);background-color: #ee8026;border-radius: 100%;box-shadow: 0 0 7px 1px rgba(0,0,0,.2);height: 4rem;padding: 0;width: 4rem;">
+            <div class="col-md-12" style="margin-top:4px;text-align: center;margin-top: 3%;">
+                <button class="btn rounded-btn-primary" style="color:white; left:calc(162px);background-color: #ee8026;box-shadow: 0 0 7px 1px rgba(0,0,0,.2);height: 4rem;padding: 0;width: 50%;">
 
-                    <i style="font-weight: 700;margin-top: 5px;"class="material-icons">add</i>
+                    Corregir
                 
                 </button>
             </div>

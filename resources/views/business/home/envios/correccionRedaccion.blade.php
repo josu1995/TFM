@@ -20,9 +20,7 @@
     <div class="row">
         <div class="row-xs buscar-row" id="tableCheckOut" style="padding-top: 20px;">
                             <div class="btn-group pull-right">
-                                <button type="button" id="eliminarRegla" onclick="eliminarConfiguracion();" disabled class="btn btn-danger" style="height:34px;border-radius: 3px;" aria-haspopup="true" aria-expanded="false">
-                                    <i class="far fa-trash-alt"></i>
-                                </button>
+                                
                                 
                             </div>
                             <input id="buscarInputTalbeCheckOut" class="buscar-input pull-left" type="text" placeholder="Buscar">
@@ -36,7 +34,7 @@
                         <th><input class="header-checkbox" type="checkbox" autocomplete="off" ></th>
                         <th>Titulo</th>
                         <th>Idioma</th>
-                        <th>Dificultad</th>
+                        <th>Corregir</th>
                     
                     </tr>
                     </thead>
@@ -63,11 +61,11 @@
                                     </td>
 
 
-                                    <td class="field">
-                                        <form class="get-redaccion" action="{{ route('admin_get_redaccion',{{$redaccion->id}}) }}" method="get">
-                                            <button class="btn rounded-btn-primary" style="color:white;position:absolute; left:calc(162px);background-color: #ee8026;border-radius: 100%;box-shadow: 0 0 7px 1px rgba(0,0,0,.2);height: 4rem;padding: 0;width: 4rem;">
+                                    <td>
+                                        <form class="get-redaccion" action="{{ route('admin_get_redaccion',$redaccion->id) }}" method="get">
+                                            <button class="btn rounded-btn-primary" style="color:white; left:calc(162px);background-color: #ee8026;border-radius: 100%;box-shadow: 0 0 7px 1px rgba(0,0,0,.2);height: 4rem;padding: 0;width: 4rem;">
 
-                                            <i style="font-weight: 700;margin-top: 5px;"class="material-icons">add</i>
+                                            <i style="font-weight: 700;margin-top: 5px;"class="material-icons">manage_search</i>
 
                                             </button>
                                         </form>
@@ -93,7 +91,7 @@
                     @endif
                     </tbody>
                 </table>
-                {{ $redaccion->links() }}
+                {{ $redacciones->links() }}
             </div>
             
         </div>
