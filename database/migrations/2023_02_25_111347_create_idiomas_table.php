@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('idiomas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre');
+            $table->string('name');
             $table->string('acronimo');
             $table->timestamps();
         });

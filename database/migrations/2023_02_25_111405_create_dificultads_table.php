@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('dificultads', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre');
+            $table->string('name');
             $table->timestamps();
         });
     }

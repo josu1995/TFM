@@ -20,6 +20,7 @@ use Auth;
 use Validator;
 use Hash;
 use Carbon;
+use Session;
 
 class HomeController extends Controller
 {
@@ -135,6 +136,7 @@ class HomeController extends Controller
     public function getEstudios(){
 
         Log::info('por aqui no?');
+        Log::info('locale',array(Session::get('locale')));
 
         $usuario = Auth::user();
 
