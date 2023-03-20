@@ -16,15 +16,15 @@
             
                 @if($configuracion->idioma->nombre == 'Español')
                     <button type="submit" id="jugar"  class="btn btn-danger" style="height:34px;border-radius: 3px;width: 100%; background-image: url(/img/banderas/español.png);background-repeat: no-repeat; background-size: 100% 32px;font-weight: bold;color: #000903;" aria-haspopup="true" aria-expanded="false">
-                            Jugar     
+                        {!! trans('usuario.jugar') !!}     
                     </button>
                 @elseif($configuracion->idioma->nombre == 'Francés')
                     <button type="submit" id="jugar"  class="btn btn-danger" style="height:34px;border-radius: 3px;width: 100%; background-image: url(/img/banderas/frances.png);background-repeat: no-repeat; background-size: 100% 32px;font-weight: bold;color: #000903;" aria-haspopup="true" aria-expanded="false">
-                            Jugar     
+                        {!! trans('usuario.jugar') !!}          
                     </button>
                 @elseif($configuracion->idioma->nombre == 'Inglés')
                     <button type="submit" id="jugar"  class="btn btn-danger" style="height:34px;border-radius: 3px;width: 100%; background-image: url(/img/banderas/ingles.png);background-repeat: no-repeat; background-size: 100% 32px;font-weight: bold;color: #000903;" aria-haspopup="true" aria-expanded="false">
-                            Jugar     
+                        {!! trans('usuario.jugar') !!}          
                     </button>
                 @endif
             

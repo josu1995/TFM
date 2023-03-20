@@ -210,10 +210,10 @@
             </a>
             <div class="header-separator"></div>
             <div class="header-link">
-                <a href="#" data-toggle="modal" data-target="#modalLogin" class="link">Iniciar sesión</a>
+                <a href="#" data-toggle="modal" data-target="#modalLogin" class="link">{!! trans('messagesIndex.iniciar') !!}</a>
             </div>
             <div class="header-link">
-                <a href="{{ route('business_register') }}" class="btn btn-corporativo">Registrarse&nbsp&nbsp<i
+                <a href="{{ route('business_register') }}" class="btn btn-corporativo">{!! trans('messagesIndex.registrar') !!}<i
                         class="fas fa-chevron-right"></i></a>
             </div>
         </div>
@@ -235,22 +235,22 @@
             </div>
             <div class="mobile-header-content business">
                 <div class="link">
-                    <a href="#" data-toggle="modal" data-target="#modalLogin">Iniciar sesión
+                    <a href="#" data-toggle="modal" data-target="#modalLogin">{!! trans('messagesIndex.iniciar') !!}
                         <i class="fas fa-arrow-right pull-right"></i></a>
                 </div>
                 <div class="bottom-button pd-20 text-center">
-                    <a href="{{ route('business_register') }}" class="btn btn-corporativo">Registrarse</a>
+                    <a href="{{ route('business_register') }}" class="btn btn-corporativo">{!! trans('messagesIndex.registrar') !!}</a>
                 </div>
             </div>
         </div>
 
         <div class="content">
             <div>
-                <h1 class="titulo">APRENDE IDIOMAS FÁCILMENTE</h1>
-                <h2 class="subtitulo">Variedad de idiomas a tu alcance</h2>
+                <h1 class="titulo">{!! trans('messagesIndex.titulo') !!}</h1>
+                <h2 class="subtitulo">{!! trans('messagesIndex.variedad') !!}</h2>
                 <a href="{{ route('business_register') }}" class="btn btn-corporativo"
                     style="padding: 1rem 1.5rem; font-weight: bold; font-size: 1.6rem;">
-                    Pruébalo gratis<i class="fas fa-chevron-right" style="margin-left:1rem"></i>
+                    {!! trans('messagesIndex.probar') !!}<i class="fas fa-chevron-right" style="margin-left:1rem"></i>
                 </a>
             </div>
         </div>
@@ -263,10 +263,9 @@
                 <div class="col-text col-left">
                     <div>
                         <h1 class="title">
-                            Aprende diferentes idiomas
+                        {!! trans('messagesIndex.aprender') !!}
                         </h1>
-                        <p class="text">Descubre la variedad de idiomas y recursos que ofrecemos, 
-                            para un aprendizaje más completo.</p>
+                        <p class="text">{!! trans('messagesIndex.aprender1') !!}</p>
                     </div>
                 </div>
                 <div class="col-img gif" style="position:relative">
@@ -281,10 +280,9 @@
                 <div class="col-text col-right">
                     <div>
                         <h1 class="title">
-                            Método de estudio diferente
+                        {!! trans('messagesIndex.metodo') !!}
                         </h1>
-                        <p class="text">Nuestra web ofrece una metodología novedosa, que ayudarán
-                            a que aprendas de formas mas eficiente.
+                        <p class="text">{!! trans('messagesIndex.metodo1') !!}
                         </p>
                     </div>
                 </div>
@@ -300,10 +298,9 @@
                 <div class="col-text col-left">
                     <div>
                         <h1 class="title">
-                            Totalmente gratis
+                        {!! trans('messagesIndex.gratis') !!}
                         </h1>
-                        <p class="text">Podrás estudiar todos los idiomas y dificultades que quieras,
-                            sin ningún tipo de coste.</p>
+                        <p class="text">  {!! trans('messagesIndex.gratis1') !!}</p>
                     </div>
                 </div>
                 <div class="col-img">
@@ -316,10 +313,10 @@
 
         <div class="final-text">
             <h1 class="title">
-                Date de alta en IdioGrabber totalmente gratis
+            {!! trans('messagesIndex.alta') !!}
             </h1>
             
-            <a href="{{ route('business_register') }}" class="btn btn-corporativo">EMPEZAR&nbsp&nbsp<i
+            <a href="{{ route('business_register') }}" class="btn btn-corporativo"> {!! trans('messagesIndex.empezar') !!}<i
                     class="fas fa-chevron-right"></i></a>
         </div>
 
@@ -328,22 +325,18 @@
     <footer class="business-footer">
         <div class="condiciones" style="float:unset; text-align:left;">
             <a class="mg-r-10"
-                href="{{ route('muestra_pagina_informacion', ['slug2' => 'condiciones-de-uso']) }}">Condiciones de
-                uso</a>
-            <a href="{{ route('muestra_pagina_informacion', ['slug2' => 'politica-de-privacidad-y-cookies']) }}">Política
-                de privacidad y cookies</a>
+                href="{{ route('muestra_pagina_informacion', ['slug2' => 'condiciones-de-uso']) }}">{!! trans('messagesIndex.condiciones') !!}</a>
+            <a href="{{ route('muestra_pagina_informacion', ['slug2' => 'politica-de-privacidad-y-cookies']) }}">{!! trans('messagesIndex.politica') !!}</a>
         </div>
         <div class="copyright-wrapper">
-            <p class="copyright no-mg">© 2022 <a href="{{env('APP_URL')}}"
-                    target="_blank"><strong>Citystock</strong></a>. {{ Lang::get('footer.copyright') }}</p>
+            <p class="copyright no-mg">© 2023 <a href="{{env('APP_URL')}}"
+                    target="_blank"><strong>IdioGrabber</strong></a>. {{ Lang::get('footer.copyright') }}</p>
         </div>
     </footer>
 
     <div id="cookies">
-        <p>Citystock utiliza cookies para mejorar la experiencia de usuario y sus servicios. Si continúa navegando,
-            consideramos que acepta su uso. Más información aquí <b><a
-                    href="{{ route('muestra_pagina_informacion', ['slug2' => 'politica-de-privacidad-y-cookies']) }}">Política
-                    de Privacidad y Cookies</a></b> <a href="#" class="cookieClose"><span
+        <p>{!! trans('messagesIndex.cookie') !!}<b><a
+                    href="{{ route('muestra_pagina_informacion', ['slug2' => 'politica-de-privacidad-y-cookies']) }}">{!! trans('messagesIndex.cookie1') !!}</a></b> <a href="#" class="cookieClose"><span
                     class="glyphicon glyphicon-remove"></span></a> </p>
     </div>
 

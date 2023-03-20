@@ -8,7 +8,7 @@
         </h1>
         <ol class="breadcrumb">
             <li class="icon-crumb"><i class="material-icons">home</i></li>
-            <li class="active">Juego</li>
+            <li class="active">{!! trans('usuario.juego') !!}</li>
         </ol>
     </section>
 
@@ -27,7 +27,7 @@
         @endif
         @if($traduccion)
             @if($traduccion->tipo_recurso == 'Palabra')
-                <h1>¿Cómo se dice {{$traduccion->vocabulario->nombre}} ?</h1>
+                <h1>{!! trans('palabra', [ 'palabra' => $traduccion->vocabulario->nombre,]) !!}</h1>
                 @foreach($recursos as $r)
                     <div id="cards" class="row StoreGrid col-lg-4 animate__animated animate__rollIn" style="display:block;padding-right:0;margin-top: 10%;height:300px">
                         
@@ -102,7 +102,7 @@
             @else
                 <div class="row animate__animated animate__heartBeat title">
                     <div class="col-md-3">
-                        <h1>Reproduce</h1>
+                        <h1>{!! trans('usuario.reproduce') !!}</h1>
                     </div>
                     <div class="col-md-9">
                         <audio controls style="margin-top: 2%;">
@@ -135,7 +135,7 @@
                 @endforeach
             @endif
         @else
-            <h1>No hay mas para estudiar hoy :( </h1>
+            <h1>{!! trans('usuario.nomas') !!} :( </h1>
         @endif
         
     </section>

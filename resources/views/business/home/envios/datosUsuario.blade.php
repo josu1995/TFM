@@ -4,12 +4,12 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1 class="section-title">
-        Datos de usuario
+    {!! trans('usuario.datos') !!}
     </h1>
     <ol class="breadcrumb">
         <li class="icon-crumb"><i class="material-icons">home</i></li>
-        <li class="active">Cuenta</li>
-        <li class="active">Datos de usuario</li>
+        <li class="active">{!! trans('usuario.cuenta') !!}</li>
+        <li class="active">{!! trans('usuario.datos') !!}</li>
     </ol>
 </section>
 
@@ -21,7 +21,7 @@
             <div class="row">
 
                 <div class="col-xs-12 col-sm-6 separator-right">
-                    <p class="separator-bottom"><label class="form-title">PERFIL</label></p>
+                    <p class="separator-bottom"><label class="form-title">{!! trans('usuario.perfil') !!}</label></p>
                     <form class="indent" action="{{ route('usuario_post_perfil') }}" method="POST">
                         @if ($errors->hasBag('datos'))
                             <div class="alert alert-danger">
@@ -33,26 +33,26 @@
                             </div>
                         @endif
                         <div class="form-group">
-                            <label>NOMBRE</label>
+                            <label>{!! trans('usuario.nombre') !!}</label>
                             <input type="text" class="form-control" name="nombre" value="{{ old('nombre') ? old('nombre') : $usuario->nombre }}">
                         </div>
                         <div class="form-group">
-                            <label>APELLIDO</label>
+                            <label>{!! trans('usuario.apellido') !!}</label>
                             <input type="text" class="form-control" name="apellido" value="{{ old('apellido') ? old('apellido') : $usuario->apellidos }}">
                         </div>
                         <div class="form-group">
-                            <label>CORREO ELECTRÓNICO</label>
+                            <label>{!! trans('usuario.correo') !!}</label>
                             <input type="email" class="form-control" name="email" value="{{ old('email') ? old('email') : $usuario->email }}">
                         </div>
                         
                         {{ csrf_field() }}
                    
-                        <button type="submit" class="btn btn-corporativo pull-right mg-t-20 business-btn">Guardar</button>
+                        <button type="submit" class="btn btn-corporativo pull-right mg-t-20 business-btn">{!! trans('usuario.guardar') !!}</button>
                     </form>
                 </div>
 
                 <div class="col-xs-12 col-sm-6">
-                    <p class="separator-bottom"><label class="form-title">CONTRASEÑA</label></p>
+                    <p class="separator-bottom"><label class="form-title">{!! trans('usuario.contraseña') !!}</label></p>
                     <form class="indent" action="{{ route('usuario_post_contraseña') }}" method="POST">
                         @if ($errors->hasBag('password'))
                             <div class="alert alert-danger">
@@ -64,15 +64,15 @@
                             </div>
                         @endif
                         <div class="form-group">
-                            <label>CONTRASEÑA ACTUAL</label>
+                            <label>{!! trans('usuario.contraseña1') !!}</label>
                             <input type="password" name="password" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>NUEVA CONTRASEÑA</label>
+                            <label>{!! trans('usuario.contraseña2') !!}</label>
                             <input type="password" id="password" name="nuevo" class="form-control password">
                         </div>
                         <div class="form-group">
-                            <label>CONFIRMAR NUEVA CONTRASEÑA</label>
+                            <label>{!! trans('usuario.contraseña3') !!}</label>
                             <input type="password" name="nuevo_confirmation" class="form-control">
                         </div>
                         <div id="pwd-container">
@@ -81,7 +81,7 @@
                             </div>
                         </div>
                         {{ csrf_field() }}
-                        <button type="submit" class="btn btn-corporativo pull-right mg-t-20 business-btn">Cambiar contraseña</button>
+                        <button type="submit" class="btn btn-corporativo pull-right mg-t-20 business-btn">{!! trans('usuario.contraseña4') !!}</button>
                     </form>
                 </div>
 

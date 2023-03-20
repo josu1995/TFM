@@ -4,11 +4,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1 class="section-title">
-            Estudios
+        {!! trans('usuario.estudios') !!}
         </h1>
         <ol class="breadcrumb">
             <li class="icon-crumb"><i class="material-icons">home</i></li>
-            <li class="active">Estudios</li>
+            <li class="active">{!! trans('usuario.estudios') !!}</li>
         </ol>
     </section>
 

@@ -45,7 +45,7 @@
 
        
 
-        <h1 class="text-center">Registro de usuario</h1>
+        <h1 class="text-center">{!! trans('register.registro') !!}</h1>
 
         <form action="{{ route('business_post_register_informacion') }}" method="POST" class="business-register-form pd-t-40">
                 @if ($errors->hasBag('datos'))
@@ -60,11 +60,11 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-sm-6 col-xs-12">
-                        <label for="nombre">* NOMBRE</label>
+                        <label for="nombre">* {!! trans('register.nombre') !!}</label>
                         <input type="text" id="nombre" class="form-control" name="nombre" value="{{ old('nombre') }}">
                     </div>
                     <div class="col-sm-6 col-xs-12">
-                        <label for="apellido">* APELLIDO</label>
+                        <label for="apellido">* {!! trans('register.apellido') !!}</label>
                         <input type="text" id="apellido" class="form-control" name="apellido"
                             value="{{ old('apellido') }}">
                     </div>
@@ -73,7 +73,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-sm-12 col-xs-12">
-                        <label for="email">* CORREO ELECTRÓNICO</label>
+                        <label for="email">* {!! trans('register.correo') !!}</label>
                         <input type="email" id="email" class="form-control" name="email" value="{{ old('email') }}">
                     </div>
                 </div>
@@ -81,11 +81,11 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-sm-6 col-xs-12">
-                        <label for="pass">* CONTRASEÑA</label>
+                        <label for="pass">* {!! trans('register.contraseña') !!}</label>
                         <input type="password" id="nuevo" class="form-control" name="nuevo" value="{{ old('pass') }}">
                     </div>
                     <div class="col-sm-6 col-xs-12">
-                        <label for="pass1">* REPITA SU CONTRASEÑA</label>
+                        <label for="pass1">* {!! trans('register.contraseña1') !!}</label>
                         <input type="password" id="nuevo_confirmation" class="form-control" name="nuevo_confirmation"
                             value="{{ old('pass1') }}">
                     </div>
@@ -95,7 +95,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-sm-6 col-xs-12">
-                        <label for="pass">* IDIOMA</label>
+                        <label for="pass">* {!! trans('register.idioma') !!}</label>
                         <select class="form-control" id="idioma" name="idioma">
                             
                             @foreach($idiomas as $idioma)
@@ -107,7 +107,7 @@
                         </select>
                     </div>
                     <div class="col-sm-6 col-xs-12">
-                        <label for="pass1">* DIFICULTAD</label>
+                        <label for="pass1">* {!! trans('register.dificultad') !!}</label>
                             <select class="form-control" id="dificultad" name="dificultad">
 
                                 @foreach($dificultades as $dificultad)
@@ -124,7 +124,7 @@
             <div class="form-group text-center mg-t-50">
                 
                 {!! csrf_field() !!}
-                <button type="submit" class="btn btn-corporativo square-button">Registrarse</button>
+                <button type="submit" class="btn btn-corporativo square-button">{!! trans('register.registrarse') !!}</button>
             </div>
         </form>
 

@@ -32,7 +32,7 @@
             @else
                 <li>
                     <a href="{{ route('usuario_get_estudios') }}">
-                        <span>Estudios</span>
+                        <span>{!! trans('usuario.estudios') !!}</span>
                         <span class="pull-right-container">
                             
                         </span>
@@ -40,7 +40,7 @@
                 </li>
                 <li>
                     <a href="{{ route('usuario_get_redaccion') }}">
-                        <span>Redacción</span>
+                        <span>{!! trans('usuario.redaccion') !!}</span>
                         <span class="pull-right-container">  
                         </span>
                     </a>    
@@ -55,30 +55,30 @@
             <li class="separator"></li>
             <li id="cuenta" class="treeview">
                 <a href="#">
-                    <i class="fas fa-user"></i> <span>Cuenta</span>
+                    <i class="fas fa-user"></i> <span>{!! trans('usuario.cuenta') !!}</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li id="datos-usuario"><a href="{{ route('usuario_get_datos') }}"><i class="far fa-circle"></i> Datos de usuario</a></li>
+                    <li id="datos-usuario"><a href="{{ route('usuario_get_datos') }}"><i class="far fa-circle"></i> {!! trans('usuario.datos') !!}</a></li>
                 </ul>
             </li>
             <li id="soporte" class="treeview">
                 <a href="#">
-                    <i class="material-icons">live_help</i>&nbsp<span class="tree-title">Soporte</span>
+                    <i class="material-icons">live_help</i>&nbsp<span class="tree-title">{!! trans('usuario.soporte') !!}</span>
                     <span class="pull-right-container addMargin">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li id="soporte-ayuda"><a href="{{ route('muestra_inicio_ayuda') }}"><i class="far fa-circle"></i> Ayuda</a></li>
-                    <li id="soporte-atencion-cliente"><a href="{{ route('business_ayuda') }}"><i class="far fa-circle"></i> Atención al cliente</a></li>
+                    <li id="soporte-ayuda"><a href="{{ route('muestra_inicio_ayuda') }}"><i class="far fa-circle"></i> {!! trans('usuario.ayuda') !!}</a></li>
+                    <li id="soporte-atencion-cliente"><a href="{{ route('business_ayuda') }}"><i class="far fa-circle"></i>{!! trans('usuario.atencion') !!}</a></li>
                 </ul>
             </li>
             <li>
                 <a href="{{ route('business_logout') }}">
-                    <i class="fas fa-sign-out-alt fa-rotate-180"></i> <span>Cerrar sesión</span>
+                    <i class="fas fa-sign-out-alt fa-rotate-180"></i> <span>{!! trans('usuario.cerrar') !!}</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>

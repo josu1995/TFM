@@ -4,11 +4,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1 class="section-title">
-            Nueva redacción
+        {!! trans('usuario.nuevaRedaccion') !!}
         </h1>
         <ol class="breadcrumb">
             <li class="icon-crumb"><i class="material-icons">home</i></li>
-            <li class="active">Nueva redacción</li>
+            <li class="active">{!! trans('usuario.nuevaRedaccion') !!}</li>
         </ol>
     </section>
 
@@ -29,12 +29,12 @@
 
             <div class="row">
                 <div class="col-md-8">
-                    <label>TITULO</label>
+                    <label>{!! trans('usuario.titulo') !!}</label>
                     <input name="titulo" type="text" id="titulo"  class="form-control autocomplete-input">
                 </div>
                 
                 <div class="col-md-4">
-                    <label>IDIOMA</label>
+                    <label>{!! trans('usuario.idioma') !!}</label>
                     <select class="form-control" id="idioma" name="idioma">
                                 
                         @foreach($idiomas as $idioma)
@@ -48,7 +48,7 @@
             </div>
 
             <div class="form.group" style="margin-top: 4%;text-align: center;">
-                <h2>Redacción</h2>
+                <h2>{!! trans('usuario.redaccion') !!}</h2>
                 <textarea name="texto" id="editor" rows="10" cols="80">
                            
                 </textarea>

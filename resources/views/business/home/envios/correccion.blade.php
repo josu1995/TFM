@@ -4,11 +4,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1 class="section-title">
-            Correción
+        {!! trans('usuario.correcion') !!}
         </h1>
         <ol class="breadcrumb">
-            <li class="icon-crumb"><i class="material-icons">home</i></li>
-            <li class="active">Correción</li>
+            <li class="icon-crumb"><i class="material-icons">Home</i></li>
+            <li class="active">{!! trans('usuario.correcion') !!}</li>
         </ol>
     </section>
 
@@ -35,14 +35,14 @@
         </div>
 
         <div class="form.group" style="margin-top:4%;text-align: center;">
-            <h4>Redacción</h4>
+            <h4>{!! trans('usuario.redaccion') !!}</h4>
             <textarea name="texto" id="texto" rows="10" cols="80" readonly>
                 {{$correccion->texto}}   
             </textarea>
         </div>
 
         <div class="form.group" style="margin-top:4%;text-align: center;">
-            <h4>Corrección</h4>
+            <h4>{!! trans('usuario.correcion') !!}</h4>
             <textarea name="texto" id="correccion" rows="10" cols="80" readonly>
                 {{$correccion->coreccion}}  
             </textarea>
