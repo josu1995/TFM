@@ -208,11 +208,10 @@ class HomeController extends Controller
         ->orderBy('fecha_ultima_repeticion','ASC')
         ->orderBy('nivel','ASC')
         ->orderBy('orden','ASC')
-        
         ->get()->first();
 
         Log::info('recurso',array($recurso));
-
+        
         if($recurso){
             if($recurso->tipo_recurso == 'Palabra' || $recurso->tipo_recurso == 'Audio'){
 
@@ -287,9 +286,10 @@ class HomeController extends Controller
             }
         }else{
             $recursosJuego = recurso::where('id','=',0)->get();
+            return view('business.home.envios.juego', ['traduccion' => $recursosJuego,'recursos' => $recursosJuego]);
         }
         
-
+       
       
         
     }
@@ -325,9 +325,7 @@ class HomeController extends Controller
             
 
         }else{
-            //La cosa es recibir la frase que se ha formado
-            //y el id de la solucion
-            //Comprobar textos y a tomar por culo
+
             Log::info('respuesta',array($respuesta));
             Log::info('recurso',array($recurso->texto));
             if($recurso->texto == $respuesta){
