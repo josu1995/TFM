@@ -10,7 +10,7 @@
                                 
                     @foreach($idiomas as $idioma)
                 
-                        <option value="{{$idioma->id}}">{{$idioma->nombre}}</option>
+                        <option value="{{$idioma->id}}">{{session()->get('locale') == 'es' ? $idioma->nombre : $idioma->name}}</option>
                 
                     @endforeach
                 
@@ -21,7 +21,7 @@
 
                     @foreach($dificultades as $dificultad)
 
-                        <option value="{{$dificultad->id}}">{{$dificultad->nombre}}</option>
+                        <option value="{{$dificultad->id}}">{{session()->get('locale') == 'es' ? $dificultad->nombre : $dificultad->name}}</option>
 
                     @endforeach
 

@@ -5,11 +5,12 @@
     <div class="row" style="height: 100%;">
         <form action="{{ route('usuario_jugar',$configuracion->id) }}" method="get">
             <div class="col-md-4" style="margin-top:4px;">
-                <span style="color: #607d8b;font-weight: 700;font-size: 2em;">{{$configuracion->idioma->nombre}}</span>
+          
+                <span style="color: #607d8b;font-weight: 700;font-size: 2em;">  {{session()->get('locale') == 'es' ? $configuracion->idioma->nombre : $configuracion->idioma->name}}</span>
             </div>
             <div class="col-md-4" style="margin-top: 4px;">
-                
-                <span style="font-size: 2em;">{{$configuracion->dificultad->nombre}}</span>
+            
+                <span style="font-size: 2em;">{{session()->get('locale') == 'es' ? $configuracion->dificultad->nombre : $configuracion->dificultad->name}}</span>
 
             </div>
             <div id="divPrecioCheck" class="col-md-4" style="margin-top:7px;">

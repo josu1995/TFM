@@ -43,9 +43,8 @@
                 ]) @endcomponent     
             </div>
         </div>
+
     </section>
-
-
 
 @endsection
 

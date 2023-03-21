@@ -204,7 +204,7 @@
         <video autoplay muted loop class="fullscreen">
             
         </video>
-        <div class="business-header desktop-header">
+        <div class="business-header desktop-header" style="padding-right: 40px;">
             <a href="{{ route('business_landing_index') }}">
                 <img class="business-logo" src="{{ asset('img/business/citystock-white-logo.png') }}" />
             </a>
@@ -212,10 +212,26 @@
             <div class="header-link">
                 <a href="#" data-toggle="modal" data-target="#modalLogin" class="link">{!! trans('messagesIndex.iniciar') !!}</a>
             </div>
-            <div class="header-link">
+            <div class="header-link" style="padding-right: 80px;">
                 <a href="{{ route('business_register') }}" class="btn btn-corporativo">{!! trans('messagesIndex.registrar') !!}<i
                         class="fas fa-chevron-right"></i></a>
             </div>
+            @if (config('locale.status') && count(config('locale.languages')) > 1)
+                <div class="top-right links">
+                    @foreach (array_keys(config('locale.languages')) as $lang)
+                        @if ($lang != App::getLocale())
+                            <a href="{!! route('lang.swap', $lang) !!}">
+                                <span style="text-transform: uppercase;"></span>
+                                @if($lang == 'es')
+                                    <img style="width:20px;height: 15px;" class="Image" src="/img/banderas/español.png" alt="Imagen">
+                                @else
+                                    <img style="width:20px;height: 15px;" class="Image" src="/img/banderas/ingles.png" alt="Imagen">
+                                @endif
+                            </a>
+                        @endif
+                    @endforeach
+                </div>
+            @endif
         </div>
 
         <div class="mobile-header-container">

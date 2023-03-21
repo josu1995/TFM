@@ -49,7 +49,6 @@ class LoginController extends Controller
     {
         Log::info('[Loggin Business]');
         Session::put('menu',1);
-        session()->put('locale', 'es');
         $this->validateLogin($request);
 
         if ($this->hasTooManyLoginAttempts($request)) {

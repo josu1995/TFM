@@ -27,16 +27,15 @@
         @endif
         @if($traduccion)
             @if($traduccion->tipo_recurso == 'Palabra')
-                <h1>{!! trans('palabra', [ 'palabra' => $traduccion->vocabulario->nombre]) !!}</h1>
-                <!--
-                    @if(lang == es)
-                        <h1>{!! trans('palabra', [ 'palabra' => $traduccion->vocabulario->nombre]) !!}</h1>
-                    @else
-                        @php($inglis = \App\Models\recurso::where('vocabulario_id','=',$traduccion->vocabulario->id)->where('idioma_id','=',2)->get()->first())
-                          <h1>{!! trans('palabra', [ 'palabra' => $inglis->texto]) !!}</h1>
-                    @endif
-
-                 -->
+                
+                @if(session()->get('locale') == 'es')
+                    <h1>{!! trans('usuario.palabra', [ 'palabrota' => $traduccion->vocabulario->nombre]) !!}</h1>
+                @else
+                    @php($inglis = \App\Models\recurso::where('vocabulario_id','=',$traduccion->vocabulario->id)->where('idioma_id','=',2)->get()->first())
+                        <h1>{!! trans('usuario.palabra', [ 'palabrota' => $inglis->texto]) !!}</h1>
+                @endif
+             
+                
                 @foreach($recursos as $r)
                     <div id="cards" class="row StoreGrid col-lg-4 animate__animated animate__rollIn" style="display:block;padding-right:0;margin-top: 10%;height:300px">
                         
@@ -49,16 +48,16 @@
                     
                 @endforeach
             @elseif($traduccion->tipo_recurso == 'Frase')
-                <h1 id="traduccionFrase" class="animate__animated animate__bounceInDown">{{$traduccion->vocabulario->nombre}}</h1>
-                <!--
-                    @if(lang == es)
-                        <h1 id="traduccionFrase" class="animate__animated animate__bounceInDown">{{$traduccion->vocabulario->nombre}}</h1>
-                    @else
-                        @php($inglis = \App\Models\recurso::where('vocabulario_id','=',$traduccion->vocabulario->id)->where('idioma_id','=',2)->get()->first())
-                        <h1 id="traduccionFrase" class="animate__animated animate__bounceInDown">{{$inglis->texto}}</h1>
-                    @endif
 
-                 -->
+                @if(session()->get('locale') == 'es')
+                    <h1 id="traduccionFrase" class="animate__animated animate__bounceInDown">{{$traduccion->vocabulario->nombre}}</h1>
+                @else
+                    @php($inglis = \App\Models\recurso::where('vocabulario_id','=',$traduccion->vocabulario->id)->where('idioma_id','=',2)->get()->first())
+                    <h1 id="traduccionFrase" class="animate__animated animate__bounceInDown">{{$inglis->texto}}</h1>
+                @endif
+
+                <h1 id="traduccionFrase" class="animate__animated animate__bounceInDown">{{$traduccion->vocabulario->nombre}}</h1>
+                
                 <div class="row">
 
                     <div class="col-md-11">

@@ -342,7 +342,7 @@ class HomeController extends Controller
         }
 
         $estudio->fecha_ultima_repeticion = Carbon::now();
-        //$estudio->save();
+        $estudio->save();
         return $resultado;
     }
 
