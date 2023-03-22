@@ -25,7 +25,7 @@
         </div>
 
         @endif
-        @if($traduccion)
+        @if(!is_null($traduccion))
             @if($traduccion->tipo_recurso == 'Palabra')
                 
                 @if(session()->get('locale') == 'es')
@@ -56,7 +56,7 @@
                     <h1 id="traduccionFrase" class="animate__animated animate__bounceInDown">{{$inglis->texto}}</h1>
                 @endif
 
-                <h1 id="traduccionFrase" class="animate__animated animate__bounceInDown">{{$traduccion->vocabulario->nombre}}</h1>
+               
                 
                 <div class="row">
 

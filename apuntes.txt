@@ -1,0 +1,5 @@
+//Las palabras se agrupan en familias que las relacione con su significado, es decir, coche,avion,bus iran agrupados en transportes
+//Las frases se agrupan todas en una misma familia, asi cogeremos frases aleatorias y las descompondremos.
+//Los sonidos se agrupan en famlias que los relacion con su fonetica,es decir, se agruparan bajo una misma familia recursos que suenen igual.
+  
+https://www.canva.com/design/DAFakXYuaNw/SSdEuzgRaa69BRlubr2UqQ/edit

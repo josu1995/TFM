@@ -285,7 +285,8 @@ class HomeController extends Controller
                 return view('business.home.envios.juego', ['traduccion' => $recurso,'recursos' => $resultado]);
             }
         }else{
-            $recursosJuego = recurso::where('id','=',0)->get();
+            $recursosJuego = recurso::where('id','=',0)->get()->first();
+            Log::info('re',array($recursosJuego));
             return view('business.home.envios.juego', ['traduccion' => $recursosJuego,'recursos' => $recursosJuego]);
         }
         
