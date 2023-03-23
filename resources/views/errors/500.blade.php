@@ -13,7 +13,6 @@
             <li><a class="texto-corporativo" href="{{ route('business_landing_index') }}">Inicio</a></li>
             <li><a class="texto-corporativo" href="{{ route('business_register') }}">Registrarse</a></li>
             <li><a class="texto-corporativo" href="#" data-toggle="modal" data-target="#modalLogin">Iniciar sesión</a></li>
-            <li><a class="texto-corporativo" href="{{ route('blog_get_index') }}">Blog</a></li>
           </ul>
         </div>
       </div>
