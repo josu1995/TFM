@@ -339,11 +339,6 @@
     </div>
 
     <footer class="business-footer">
-        <div class="condiciones" style="float:unset; text-align:left;">
-            <a class="mg-r-10"
-                href="{{ route('muestra_pagina_informacion', ['slug2' => 'condiciones-de-uso']) }}">{!! trans('messagesIndex.condiciones') !!}</a>
-            <a href="{{ route('muestra_pagina_informacion', ['slug2' => 'politica-de-privacidad-y-cookies']) }}">{!! trans('messagesIndex.politica') !!}</a>
-        </div>
         <div class="copyright-wrapper">
             <p class="copyright no-mg">© 2023 <a href="{{env('APP_URL')}}"
                     target="_blank"><strong>IdioGrabber</strong></a>. {{ Lang::get('footer.copyright') }}</p>
