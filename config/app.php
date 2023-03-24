@@ -162,26 +162,6 @@ return [
         // Auth para API
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
 
-        // Envío
-        App\Providers\EnvioServiceProvider::class,
-
-        // Pedido
-        App\Providers\PagoServiceProvider::class,
-
-        // Viaje
-        App\Providers\ViajeServiceProvider::class,
-
-        // Cálculo de comisiones de punto
-        App\Providers\ComisionServiceProvider::class,
-
-        // Provider propio para cálculo de precios
-        App\Providers\CalculoPrecioServiceProvider::class,
-        App\Providers\CalculoViajeServiceProvider::class,
-
-        // Envío de SMS y Mail
-        App\Providers\SMSServiceProvider::class,
-        App\Providers\MailServiceProvider::class,
-
         // Generación de QR
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
 
