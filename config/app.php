@@ -165,32 +165,11 @@ return [
         // Generación de QR
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
 
-        // validar dni
-        'App\Providers\DniServiceProvider',
-
-        // Oauh facebook
-        //'AdamWathan\EloquentOAuthL5\EloquentOAuthServiceProvider',
-
-        // Validar números de teléfono
-        Propaganistas\LaravelPhone\PhoneServiceProvider::class,
-
-        // Validaciones extras (IBAN, etc.)
-        //'Intervention\Validation\ValidationServiceProvider',
-
-        // validar fecha de nacimiento
-        'App\Providers\BirthdateServiceProvider',
 
         // validar Base64
         'App\Providers\Base64ServiceProvider',
 
-        // validar código postal
-        'App\Providers\PostalCodeServiceProvider',
 
-        // validar usuario unico por rol
-        'App\Providers\RoleServiceProvider',
-
-        // Validar opciones de devolucion Business
-        'App\Providers\BusinessServiceProvider',
 
         Barryvdh\DomPDF\ServiceProvider::class,
 
@@ -211,15 +190,6 @@ return [
 
         Milon\Barcode\BarcodeServiceProvider::class,
 
-        'App\Providers\DiasServiceProvider',
-
-        'App\Providers\EmbalajeServiceProvider',
-
-        'App\Providers\StoresServiceProvider',
-
-        'App\Providers\DevolucionServiceProvider',
-
-        'App\Providers\PhoneServiceProvider',
 
     ],
 
