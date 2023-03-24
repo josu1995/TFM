@@ -20,7 +20,7 @@ return [
     'estudios' => 'Studies',
     'juego' => 'Game',
     'reproduce' => 'Play',
-    'nomas' => 'There is no more to study today',
+    'nomas' => 'You do not have more resources to study at this level',
     'nuevaRedaccion' => 'New writting',
     'titulo' => 'TITLE',
     'idioma' => 'LANGUAGE',
