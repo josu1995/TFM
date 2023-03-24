@@ -42,7 +42,7 @@
         </div>
 
         <div class="form.group" style="margin-top:4%;text-align: center;">
-            <h4>{!! trans('usuario.correcion') !!}</h4>
+            <h4>{!! trans('usuario.correccion') !!}</h4>
             <textarea name="texto" id="correccion" rows="10" cols="80" readonly>
                 {{$correccion->coreccion}}  
             </textarea>

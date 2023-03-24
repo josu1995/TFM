@@ -273,15 +273,16 @@ class HomeController extends Controller
                 //Hasta aqui tengo la frase buena y dos malas
                 //Ahora hay que recorrer todas las frases y un split con espacio para coger cada vocablo y devolver ese array
                 $palabras = [];
-                foreach($recursosJuego as $recurso){
-                    $texto = explode(' ',$recurso->texto);
+                foreach($recursosJuego as $r){
+                    $texto = explode(' ',$r->texto);
                     $palabras = array_merge($palabras,$texto);
 
                 }
                 $resultado = array_unique($palabras);
                 shuffle($resultado);
 
-
+                Log::info('recursoFinal',array($recurso));
+                
                 return view('business.home.envios.juego', ['traduccion' => $recurso,'recursos' => $resultado]);
             }
         }else{
