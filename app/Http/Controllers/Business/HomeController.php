@@ -384,6 +384,10 @@ class HomeController extends Controller
         return view('business.home.envios.correccion', ['correccion' => $correccion]);
     }
 
+    public function ayuda(){
+        return view('business.home.envios.ayuda');
+    }
+
 
 
     public function getBadges() {

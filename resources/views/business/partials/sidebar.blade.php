@@ -53,34 +53,25 @@
            
             
             <li class="separator"></li>
-            <li id="cuenta" class="treeview">
-                <a href="#">
-                    <i class="fas fa-user"></i> <span>{!! trans('usuario.cuenta') !!}</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li id="datos-usuario"><a href="{{ route('usuario_get_datos') }}"><i class="far fa-circle"></i> {!! trans('usuario.datos') !!}</a></li>
-                </ul>
-            </li>
+
+                
+            <li id="datos-usuario"><a href="{{ route('usuario_get_datos') }}"><i class="fas fa-user"></i> {!! trans('usuario.datos') !!}</a></li>
+                
+            
             <li id="soporte" class="treeview">
-                <a href="#">
-                    <i class="material-icons">live_help</i>&nbsp<span class="tree-title">{!! trans('usuario.soporte') !!}</span>
+                <a href="{{ route('business_ayuda') }}">
+                    <i class="material-icons">live_help</i>&nbsp<span class="tree-title">{!! trans('usuario.ayuda') !!}</span>
                     <span class="pull-right-container addMargin">
-                        <i class="fa fa-angle-left pull-right"></i>
+                       
                     </span>
                 </a>
-                <ul class="treeview-menu">
-                    <li id="soporte-ayuda"><a href="{{ route('muestra_inicio_ayuda') }}"><i class="far fa-circle"></i> {!! trans('usuario.ayuda') !!}</a></li>
-                    <li id="soporte-atencion-cliente"><a href="{{ route('business_ayuda') }}"><i class="far fa-circle"></i>{!! trans('usuario.atencion') !!}</a></li>
-                </ul>
+                
             </li>
             <li>
                 <a href="{{ route('business_logout') }}">
                     <i class="fas fa-sign-out-alt fa-rotate-180"></i> <span>{!! trans('usuario.cerrar') !!}</span>
                     <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
+                       
                     </span>
                 </a>
             </li>

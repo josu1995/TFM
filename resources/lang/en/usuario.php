@@ -37,7 +37,13 @@ return [
     'ayuda' => 'Help',
     'atencion' => 'Customer service',
     'cerrar' => 'Log out',
-    'palabra' => 'How do you say :palabrota ?'
+    'palabra' => 'How do you say :palabrota ?',
+    'soporte' => 'Support',
+    'atencion' => 'Customer Support',
+    'formas' => 'CONTACT FORMS',
+    'duda' => 'Do you have any doubt? Contact us! Our team is here to help you.',
+    'telefono' => 'Phone',
+    'chat' => 'Chat or speak with your personal advisor (Monday to Friday working days 9:00 - 14:00 to 14:30 - 17:30).'
 
 
 

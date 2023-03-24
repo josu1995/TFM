@@ -37,7 +37,14 @@ return [
     'ayuda' => 'Ayuda',
     'atencion' => 'Atención al cliente',
     'cerrar' => 'Cerrar sesión',
-    'palabra' => '¿Cómo se dice :palabrota ?'
+    'palabra' => '¿Cómo se dice :palabrota ?',
+    'soporte' => 'Soporte',
+    'atencion' => 'Atención al cliente',
+    'formas' => 'FORMAS DE CONTACTO',
+    'duda' => '¿Tienes alguna duda? ¡Contáctanos! Nuestro equipo está aquí para ayudarte.',
+    'telefono' => 'Teléfono',
+    'chat' => 'Chatea o habla con tu asesor personal (Lunes a Viernes laborables 9:00 - 14:00 a 14:30 - 17:30).'
+
 
 
 

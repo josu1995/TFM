@@ -62,6 +62,7 @@ Route::group(['prefix' => '/usuario'],function(){
     Route::post('/crearRedaccion',['as' => 'usuario_new_redaccion','uses' => 'HomeController@crearNuevaRedaccion']);
     Route::get('/correccion/{id}', ['as' => 'usuario_get_correccion', 'uses' => 'HomeController@getCorreccion']);
     Route::get('lang/{lang}', 'LanguageController@swap')->name('lang.swap');
+    Route::get('/atencion-cliente', ['as' => 'business_ayuda', 'uses' => 'HomeController@ayuda']);
     
     
 });
@@ -270,7 +271,7 @@ Route::group(['prefix' => '/cuenta'], function () {
 });
 
 
-Route::get('/atencion-cliente', ['as' => 'business_ayuda', 'uses' => 'AyudaController@index']);
+
 
 Route::group(['prefix' => '/etiqueta'], function () {
     Route::get('/prod', ['as' => 'business_etiqueta_crear_produccion', 'uses' => 'EtiquetaController@etiquetaProduccion']);
