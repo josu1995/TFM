@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Business;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\BusinessRepository;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
@@ -25,14 +25,14 @@ use Session;
 class HomeController extends Controller
 {
 
-    private $businessRepository;
+    
 
     /**
      * Create a new controller instance.
      */
-    public function __construct(BusinessRepository $businessRepository) {
+    public function __construct() {
         $this->middleware('auth.business');
-        $this->businessRepository = $businessRepository;
+        
     }
 
     /**

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Business;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\BusinessRepository;
+
 use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Http\Request;
 use App\Models\dificultad;
@@ -21,14 +21,14 @@ use Carbon\Carbon;
 class BusinessController extends Controller
 {
 
-    private $businessRepository;
+    
 
     /**
      * Create a new controller instance.
      */
-    public function __construct(BusinessRepository $businessRepository) {
+    public function __construct() {
         $this->middleware('auth.business', ['except' => ['getRegistro', 'postRegistro', 'getRegistroInformacion', 'postRegistroInformacion']]);
-        $this->businessRepository = $businessRepository;
+        
     }
 
     /**
