@@ -285,7 +285,7 @@
                     </div>
                 </div>
                 <div class="col-img gif" style="position:relative">
-                    <img style="max-width:350px" data-src="{{ asset('img/business/immediate-deliveries.png') }}"
+                    <img style="max-width:350px" data-src="{{ asset('img/business/idiomas.jpg') }}"
                         width="100%">
                 </div>
             </div>
@@ -303,7 +303,7 @@
                     </div>
                 </div>
                 <div class="col-img stores">
-                    <img data-src="{{ asset('img/business/connect.png') }}" width="100%"
+                    <img data-src="{{ asset('img/business/idiomas1.jpg') }}" width="100%"
                         style="border-radius: 0; box-shadow: none;" />
                 </div>
             </div>
@@ -320,8 +320,8 @@
                     </div>
                 </div>
                 <div class="col-img">
-                    <img style="margin-bottom:-3rem" data-src="{{ asset('img/business/interface.png') }}"
-                        width="100%" />
+                    <img style="margin-bottom:-3rem" data-src="{{ asset('img/business/idiomas2.png') }}"
+                        width="50%" />
                 </div>
             </div>
         </div>
