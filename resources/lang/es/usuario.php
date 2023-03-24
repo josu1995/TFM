@@ -37,7 +37,7 @@ return [
     'ayuda' => 'Ayuda',
     'atencion' => 'Atención al cliente',
     'cerrar' => 'Cerrar sesión',
-    'palabra' => '¿Cómo se dice :palabra ?'
+    'palabra' => '¿Cómo se dice :palabrota ?'
 
 
 
