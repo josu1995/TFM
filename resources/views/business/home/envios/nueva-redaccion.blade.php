@@ -56,8 +56,8 @@
 
             {{ csrf_field() }}
 
-            <div class="col-md-4" style="margin-top:4px;">
-                <button class="btn rounded-btn-primary" style="color:white;position:absolute; left:calc(162px);background-color: #ee8026;border-radius: 100%;box-shadow: 0 0 7px 1px rgba(0,0,0,.2);height: 4rem;padding: 0;width: 4rem;">
+            <div class="col-md-12" style="margin-top:4%;text-align: center;">
+                <button class="btn rounded-btn-primary" style="color:white;background-color: #ee8026;box-shadow: 0 0 7px 1px rgba(0,0,0,.2);height: 4rem;padding: 0;width:30%;">
 
                     <i style="font-weight: 700;margin-top: 5px;"class="material-icons">add</i>
                 
