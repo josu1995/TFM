@@ -1,0 +1,37 @@
+Enrollarme en el tema de las redacciones explicnado que es aglo que no se hace en otras plataformas y el porque lo hago
+Enrollarme en porque hago las relaciones y tal
+Imagen de como se hace modelo vista controlador etc...
+
+Lista de figuras
+
+
+citystock
+CityStock
+stock
+city
+
+
+	
+	
+	
+	
+	
+	
+	
+	Los administradores deben de tener en cuenta unos criterios para que las diferentes 
+	relaciones entre recursos, ya que no se va a tratar de igual forma una palabra, una frase o 
+	un audio.
+	Para las palabras hay que relacionarlas por temática en su familia, por ejemplo, coche, 
+	avión, bus, moto… irán en la familia de transportes, para que cuando busquemos nos salga 
+	una palabra relacionada con ella. Y en su vocabulario ira la traducción general de cada 
+	palabra.
+	Las frases pertenecerán todas a la misma familia llamada Frases, ya que para este tipo de 
+	recurso nos interesa mostrar varias frases fragmentadas para que el usuario pueda 
+	formarla, por lo que nos da igual que frases se cojan.
+	Por último, para los audios será parecido a las palabras, solo que, en este caso en vez de 
+	agruparse por temática, se agruparan por fonética, es decir, que suenan parecido.
+	
+	
+	
+	
+	
