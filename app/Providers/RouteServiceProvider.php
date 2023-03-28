@@ -15,12 +15,6 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     protected $rootNamespace = 'App\Http\Controllers';
-    protected $storesApiNamespace = 'App\Http\Controllers\API\TStore';
-    protected $driversApiNamespace = 'App\Http\Controllers\API\TDriver';
-    protected $businessApiNamespace = 'App\Http\Controllers\API\TBusiness';
-    protected $adminNamespace = 'App\Http\Controllers\Admin';
-    protected $adminBlogNamespace = 'App\Http\Controllers\Admin';
-    protected $driversNamespace = 'App\Http\Controllers\Driver';
     protected $businessNamespace = 'App\Http\Controllers\Business';
 
     /**
