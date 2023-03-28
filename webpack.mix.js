@@ -22,7 +22,7 @@ mix
         './public/css/app-max-768.css',
         './public/css/app-min-768.css',
         './public/css/jquery-ui.css'
-    ], 'public/css/citystock.css')
+    ], 'public/css/idiograbber.css')
     // Drivers styles
     .sass('resources/assets/sass/materialize/materialize.scss', 'public/css/drivers')
     .styles([
@@ -61,7 +61,7 @@ mix
         "public/css/business/skin-yellow.css",
         "public/css/app.css",
         "public/css/bootstrap.css",
-        "public/css/citystock.css",
+        "public/css/idiograbber.css",
         "public/css/stores.css",
         "public/css/drivers/materialize.css",
         "public/css/drivers/drivers.css",

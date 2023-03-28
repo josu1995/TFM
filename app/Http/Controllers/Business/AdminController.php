@@ -14,7 +14,9 @@ use App\Models\dificultadRecurso;
 use App\Models\Usuario;
 use App\Models\configuracion;
 use App\Models\redaccion;
+use App\Models\estudia;
 
+use Carbon;
 
 
 class AdminController extends Controller

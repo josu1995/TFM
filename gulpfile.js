@@ -85,7 +85,7 @@ elixir(function(mix) {
          './public/css/app-max-768.css',
          './public/css/app-min-768.css',
          './public/css/jquery-ui.css'
-     ],'public/css/citystock.css')
+     ],'public/css/idiograbber.css')
 
      // .scripts([
      //     './public/js/i18next.js',
@@ -102,7 +102,7 @@ elixir(function(mix) {
 
      .version([
          "public/css/app.css",
-         "public/css/citystock.css",
+         "public/css/idiograbber.css",
          "public/css/stores.css",
          "public/css/business/materialize.css",
          "public/css/business/business.css",
@@ -175,7 +175,7 @@ gulp.task('minintltelinput', function (cb) {
 });
 
 gulp.task('minify-css-transporter', function() {
-    return gulp.src('public/css/citystock.css')
+    return gulp.src('public/css/idiograbber.css')
         .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest('public/css'));
 });

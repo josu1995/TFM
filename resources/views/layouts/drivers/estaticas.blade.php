@@ -16,7 +16,7 @@
     <meta property="og:image" content="{{asset('img/identidad/citystock.png')}}">
 
     {{-- CSS Transporter --}}
-    <link rel="stylesheet" href="{{ mix('css/citystock.css') }}" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="{{ mix('css/idiograbber.css') }}" media="screen" title="no title" charset="utf-8">
 
     {{-- Llamadas dinámicas a js por view --}}
     @stack('javascripts-head')

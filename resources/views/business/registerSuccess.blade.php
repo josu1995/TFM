@@ -14,7 +14,7 @@
       
     </style>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="{{ mix('css/citystock.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/idiograbber.css') }}">
 
 
 
