@@ -42,13 +42,13 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapVersionApiRoutes();
         $this->mapStoresApiRoutes();
-        $this->mapDriversApiRoutes();
+      
         $this->mapBusinessApiRoutes();
 
         $this->mapAdminRoutes();
         $this->mapBlogAdminRoutes();
 
-        $this->mapDriverRoutes();
+       
         $this->mapBusinessRoutes();
         $this->mapWebRoutes();
     }
@@ -69,13 +69,7 @@ class RouteServiceProvider extends ServiceProvider
             ->group(base_path('routes/api/stores.php'));
     }
 
-    protected function mapDriversApiRoutes()
-    {
-        Route::middleware('api')
-            ->namespace($this->driversApiNamespace)
-            ->prefix('api/tdriver')
-            ->group(base_path('routes/api/drivers.php'));
-    }
+    
 
     protected function mapBusinessApiRoutes()
     {
@@ -101,14 +95,7 @@ class RouteServiceProvider extends ServiceProvider
             ->group(base_path('routes/admin/blog.php'));
     }
 
-    protected function mapDriverRoutes()
-    {
-        Route::middleware('driver')
-            ->namespace($this->driversNamespace)
-            ->prefix('drivers')
-            ->domain(env('APP_DOMAIN'))
-            ->group(base_path('routes/drivers.php'));
-    }
+  
 
     protected function mapBusinessRoutes()
     {
