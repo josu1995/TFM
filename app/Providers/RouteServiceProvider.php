@@ -43,8 +43,8 @@ class RouteServiceProvider extends ServiceProvider
        
        
 
-        $this->mapAdminRoutes();
-        $this->mapBlogAdminRoutes();
+      
+ 
 
        
         $this->mapBusinessRoutes();
@@ -54,21 +54,7 @@ class RouteServiceProvider extends ServiceProvider
    
    
 
-    protected function mapAdminRoutes()
-    {
-        Route::middleware(['web' , 'auth' , 'admin'])
-            ->namespace($this->adminNamespace)
-            ->prefix('administracion')
-            ->group(base_path('routes/admin/admin.php'));
-    }
-
-    protected function mapBlogAdminRoutes()
-    {
-        Route::middleware(['web' , 'auth' , 'blog'])
-            ->namespace($this->adminBlogNamespace)
-            ->prefix('blog/admin')
-            ->group(base_path('routes/admin/blog.php'));
-    }
+   
 
   
 
