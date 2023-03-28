@@ -40,10 +40,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
-        $this->mapVersionApiRoutes();
-        $this->mapStoresApiRoutes();
-      
-        $this->mapBusinessApiRoutes();
+       
+       
 
         $this->mapAdminRoutes();
         $this->mapBlogAdminRoutes();
@@ -53,31 +51,8 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapWebRoutes();
     }
 
-    protected function mapVersionApiRoutes()
-    {
-        Route::middleware('api')
-            ->namespace($this->storesApiNamespace)
-            ->prefix('api')
-            ->group(base_path('routes/api/version.php'));
-    }
-
-    protected function mapStoresApiRoutes()
-    {
-        Route::middleware('api')
-            ->namespace($this->storesApiNamespace)
-            ->prefix('api/tstore')
-            ->group(base_path('routes/api/stores.php'));
-    }
-
-    
-
-    protected function mapBusinessApiRoutes()
-    {
-        Route::middleware('api')
-            ->namespace($this->businessApiNamespace)
-            ->prefix('api/tbusiness')
-            ->group(base_path('routes/api/business.php'));
-    }
+   
+   
 
     protected function mapAdminRoutes()
     {
