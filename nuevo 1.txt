@@ -1,37 +1,35 @@
-Enrollarme en el tema de las redacciones explicnado que es aglo que no se hace en otras plataformas y el porque lo hago
-Enrollarme en porque hago las relaciones y tal
+
 Imagen de como se hace modelo vista controlador etc...
 
-Lista de figuras
-
+FUTURO
+-------
+Añadir una ia que detecte sonido y lo compare con un audio, que tengamos en el sistema.
 
 citystock
 CityStock
 stock
 city
 
+	
+	
+	//Memrise
+	1. No provee suficiente contexto
+	A pesar que la app ofrece mucho vocabulario nuevo, la mayoría de las veces éste no está acompañado de un contexto adecuado para que 
+	el aprender dicho vocabulario sea memorable.
 
+	2. Se basa en repetición
+	En la misma línea del punto anterior, el vocabulario se basa más en memorizar una traducción en vez de utilizarlo en situaciones 
+	de la vida real. Esto no es beneficioso para el aprendizaje ya que el cerebro memoriza nuevo vocabulario cuando se encuentra en el 
+	contexto adecuado mucho más fácilmente que repitiendo la traducción del mismo. 
 	
+	Memrise es realmente una app para aprender vocabulario en inglés y no mucho más que eso
 	
+	//Duolingo
 	
-	
-	
-	
-	
-	Los administradores deben de tener en cuenta unos criterios para que las diferentes 
-	relaciones entre recursos, ya que no se va a tratar de igual forma una palabra, una frase o 
-	un audio.
-	Para las palabras hay que relacionarlas por temática en su familia, por ejemplo, coche, 
-	avión, bus, moto… irán en la familia de transportes, para que cuando busquemos nos salga 
-	una palabra relacionada con ella. Y en su vocabulario ira la traducción general de cada 
-	palabra.
-	Las frases pertenecerán todas a la misma familia llamada Frases, ya que para este tipo de 
-	recurso nos interesa mostrar varias frases fragmentadas para que el usuario pueda 
-	formarla, por lo que nos da igual que frases se cojan.
-	Por último, para los audios será parecido a las palabras, solo que, en este caso en vez de 
-	agruparse por temática, se agruparan por fonética, es decir, que suenan parecido.
-	
-	
-	
-	
-	
+	Los ejercicios pueden ser muy repetitivos y llegar a aburrir a los usuarios.
+	No hay profesores a los que se les pueda consultar una duda durante las lecciones.
+	Requiere autodisciplina.
+	Se centra más en el aprendizaje de vocabulario que en otros aspectos como la gramática, fonética y comprensión lectora.
+	Es por ello, que se aconseja que Duolingo se utilice como una herramienta adicional durante el aprendizaje de un idioma.
+	En el caso de Duolingo utilizan voces robóticas dentro de sus ejercicios, esto no va a ser provechoso para el momento 
+	en el que te toque tener una conversación con personas reales en una reunión.
