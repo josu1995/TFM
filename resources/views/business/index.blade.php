@@ -347,7 +347,7 @@
 
     <div id="cookies">
         <p>{!! trans('messagesIndex.cookie') !!}<b><a
-                    href="{{ route('muestra_pagina_informacion', ['slug2' => 'politica-de-privacidad-y-cookies']) }}">{!! trans('messagesIndex.cookie1') !!}</a></b> <a href="#" class="cookieClose"><span
+                    href="">{!! trans('messagesIndex.cookie1') !!}</a></b> <a href="#" class="cookieClose"><span
                     class="glyphicon glyphicon-remove"></span></a> </p>
     </div>
 

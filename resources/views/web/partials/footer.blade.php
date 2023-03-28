@@ -49,8 +49,8 @@
         <div class="business-footer" style="padding:0">
             @if( ! in_array( Route::currentRouteName( ), [ 'tracking_index', 'muestra_inicio_ayuda', 'muestra_pagina_ayuda' ] ) )
             <div class="condiciones h-100"  style="float:unset; text-align:left;">
-                <a class="mg-r-10" href="{{ route('muestra_pagina_informacion', ['slug2' => 'condiciones-de-uso']) }}">Condiciones de uso</a>
-                <a href="{{ route('muestra_pagina_informacion', ['slug2' => 'politica-de-privacidad-y-cookies']) }}">Política de privacidad y cookies</a>
+                <a class="mg-r-10" href="">Condiciones de uso</a>
+                <a href="">Política de privacidad y cookies</a>
             </div>
             <div class="copyright-wrapper h-100">
                 <p class="copyright">© 2022 <a href="{{env('APP_URL')}}" target="_blank"><strong>Citystock</strong></a>. Todos los derechos reservados</p>
@@ -65,7 +65,7 @@
     </div>
 
     <div id="cookies">
-        <p>Citystock utiliza cookies para mejorar la experiencia de usuario y sus servicios. Si continúa navegando, consideramos que acepta su uso. Más información aquí <b><a href="{{ route('muestra_pagina_informacion', ['slug2' => 'politica-de-privacidad-y-cookies']) }}">Política de Privacidad y Cookies</a></b> <a href="#" class="cookieClose"><span class="glyphicon glyphicon-remove"></span></a> </p>
+        <p>Citystock utiliza cookies para mejorar la experiencia de usuario y sus servicios. Si continúa navegando, consideramos que acepta su uso. Más información aquí <b><a href="">Política de Privacidad y Cookies</a></b> <a href="#" class="cookieClose"><span class="glyphicon glyphicon-remove"></span></a> </p>
     </div>
 
     @if (!Auth::user())
