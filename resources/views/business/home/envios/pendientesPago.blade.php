@@ -105,10 +105,7 @@
     </div>   
 </div>
 
-<form action="{{ route('business_configuracion_paquetes_importar_excel') }}" method="post" class="import-from-excel-form" enctype="multipart/form-data">
-        <input type="file" name="excel">
-        {{ csrf_field() }}
-</form>
+
 </section>
 
 @include('business.partials.crearPalabra')
