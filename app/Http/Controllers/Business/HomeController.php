@@ -192,12 +192,12 @@ class HomeController extends Controller
     }
 
     public function jugar(Request $request,$id){
-        Log::info('jugar');
+       
         $usuario = Auth::user();
         $configuracion = configuracion::where('id','=',$id)->get()->first();
 
         $juego = [];
-
+        //Query que obtiene el recurso mas antiguo y con menos nivel
         $recurso = recurso::select('recursos.*')
         ->join('dificultad_recursos','recursos.id','=','dificultad_recursos.recurso_id')
         ->join('estudias','recursos.id','=','estudias.recurso_id')
@@ -210,11 +210,11 @@ class HomeController extends Controller
         ->orderBy('orden','ASC')
         ->get()->first();
 
-        Log::info('recurso',array($recurso));
+       
         
         if($recurso){
             if($recurso->tipo_recurso == 'Palabra' || $recurso->tipo_recurso == 'Audio'){
-
+                //Si es una palabra o un audio sacaremos mas recursos aleatorios que esten ligados a su familia.
                 $traduccion = $recurso->vocabulario->nombre;
                 array_push($juego,$recurso->id);
                 
@@ -247,7 +247,7 @@ class HomeController extends Controller
                 return view('business.home.envios.juego', ['traduccion' => $recurso,'recursos' => $recursosJuego]);
 
             }else if($recurso->tipo_recurso == 'Frase'){
-				
+				//Si es una frase obtendremos dos frases mas aleatorias
                 $traduccion = $recurso->vocabulario->nombre;
                 array_push($juego,$recurso->id);
 
@@ -270,18 +270,17 @@ class HomeController extends Controller
 
                 $recursosJuego = recurso::whereIn('id',$juego)->inRandomOrder()->get();
 
-                //Hasta aqui tengo la frase buena y dos malas
-                //Ahora hay que recorrer todas las frases y un split con espacio para coger cada vocablo y devolver ese array
+                
                 $palabras = [];
+                //Descomponemos las frases en palabras
                 foreach($recursosJuego as $r){
                     $texto = explode(' ',$r->texto);
                     $palabras = array_merge($palabras,$texto);
 
                 }
                 $resultado = array_unique($palabras);
+                //Barajamos las palabras
                 shuffle($resultado);
-
-                Log::info('recursoFinal',array($recurso));
                 
                 return view('business.home.envios.juego', ['traduccion' => $recurso,'recursos' => $resultado]);
             }
@@ -308,8 +307,8 @@ class HomeController extends Controller
         ->where('recurso_id','=',$correcto)
         ->get()->first();
 
-        Log::info('recurso',array($recurso->tipo_recurso));
-
+       
+        //Comprobamos que el recurso sea correcto
         if($recurso->tipo_recurso == 'Palabra' || $recurso->tipo_recurso == 'Audio'){
             
             if($correcto == $respuesta){
@@ -328,8 +327,7 @@ class HomeController extends Controller
 
         }else{
 
-            Log::info('respuesta',array($respuesta));
-            Log::info('recurso',array($recurso->texto));
+           
             if($recurso->texto == $respuesta){
                 if($estudio->nivel < 10 ){
                     $estudio->nivel = $estudio->nivel + 1;
